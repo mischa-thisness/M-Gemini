@@ -14,30 +14,32 @@ def get_time_of_day(hour):
         return "Night"
 
 def summarize_session(messages):
-    # Find user prompts to understand what was requested
-    prompts = [msg.get('content', '').strip() for msg in messages if msg.get('type') == 'user' and msg.get('content')]
-    if not prompts:
-        return "Collaborative session."
-    
-    # Deduplicate while preserving order, taking just the first line of each prompt
-    seen = set()
-    unique_prompts = []
-    for p in prompts:
-        # Get first line, truncate if too long
-        first_line = p.split('\n')[0][:100].strip()
-        if first_line and first_line not in seen:
-            unique_prompts.append(first_line)
-            seen.add(first_line)
+    interactions = []
+    current_user_prompt = None
+
+    for msg in messages:
+        msg_type = msg.get('type')
+        content = msg.get('content', '').strip()
+
+        if msg_type == 'user':
+            # Extract first line/core command as prompt summary
+            current_user_prompt = content.split('\n')[0][:120].strip()
+        elif msg_type == 'gemini' and current_user_prompt:
+            # Identify core utility: Tool usage or text response
+            tool_calls = msg.get('toolCalls', [])
+            if tool_calls:
+                tools = list(dict.fromkeys([t.get('name') for t in tool_calls]))
+                action = f"Invoke {', '.join(tools)}"
+            else:
+                action = "Technical response"
             
-    # Return up to 5 distinct actions as a bulleted list
-    summary_lines = []
-    for p in unique_prompts[:5]:
-        summary_lines.append(f"- {p}")
+            interactions.append(f"- **Prompt:** {current_user_prompt} | **Utility:** {action}")
+            current_user_prompt = None
+
+    if not interactions:
+        return "- Background/System session"
         
-    if len(unique_prompts) > 5:
-        summary_lines.append(f"- ... ({len(unique_prompts) - 5} more interactions)")
-        
-    return "\n".join(summary_lines)
+    return "\n".join(interactions)
 
 def main():
     repo_root = Path("/home/mischa/M-Gemini")
@@ -65,7 +67,7 @@ def main():
         period = get_time_of_day(hour)
         
         daily_data[date_str][period].append({
-            'timestamp': start_time.strftime('%H:%M:%S'),
+            'timestamp': start_time.strftime('%H:%M'),
             'summary': summarize_session(data.get('messages', []))
         })
         
