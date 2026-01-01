@@ -1,118 +1,191 @@
+#!/usr/bin/env python3
+"""
+Gemini CLI Raw Log Sync Script
+Syncs conversation logs from ~/.gemini to M-Gemini repo with comprehensive redaction
+"""
+
 import os
 import shutil
 import json
 import re
 from pathlib import Path
+from datetime import datetime
 
 # Configuration
 HOME = Path.home()
-ANTIGRAVITY_SRC = HOME / ".gemini/antigravity/conversations"
-TMP_SRC = HOME / ".gemini/tmp"
+GEMINI_TMP = HOME / ".gemini/tmp"
 REPO_ROOT = Path(__file__).parent.parent
+CHAT_LOGS_DEST = REPO_ROOT / "CHAT_LOGs"
 
-# Destinations
-ANTIGRAVITY_DEST = REPO_ROOT / "antigravity-data"
-TRANSCRIPTS_DEST = REPO_ROOT / "transcripts"
-
-# Secrets Redaction Logic (Reused)
+# Comprehensive secret and PII patterns (Same as M-Claude)
 SECRET_PATTERNS = [
-    r"(sk-[a-zA-Z0-9]{20,})",          # OpenAI / General tokens
-    r"(ghp_[a-zA-Z0-9]{20,})",         # GitHub Personal Access Tokens
-    r"(xox[baprs]-[a-zA-Z0-9]{10,})",  # Slack tokens
-    r"(--BEGIN [A-Z]+ PRIVATE KEY--)", # PEM Headers
-    r"([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})", # Email addresses
-    r"(gen" + "try)",                  # Specific PII blocker
-    r"(JhRKknRTKbjJIdGDFjDuGhEtBBfjJGHiLhkFK" + "G)" # YubiKey OTP
+    # API Keys & Tokens
+    (r"(sk-[a-zA-Z0-9]{20,})", "[REDACTED_API_KEY]"),
+    (r"(ghp_[a-zA-Z0-9]{20,})", "[REDACTED_GITHUB_TOKEN]"),
+    (r"(xox[baprs]-[a-zA-Z0-9]{10,})", "[REDACTED_SLACK_TOKEN]"),
+    (r"(AKIA[0-9A-Z]{16})", "[REDACTED_AWS_KEY]"),
+    (r"(ya29\.[a-zA-Z0-9_-]{50,})", "[REDACTED_GOOGLE_TOKEN]"),
+
+    # Private Keys
+    (r"(-----BEGIN [A-Z]+ PRIVATE KEY-----[^-]+-----END [A-Z]+ PRIVATE KEY-----)", "[REDACTED_PRIVATE_KEY]"),
+    (r"(-----BEGIN RSA PRIVATE KEY-----)", "[REDACTED_RSA_KEY_HEADER]"),
+
+    # Email addresses (PII)
+    (r"([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})", "[REDACTED_EMAIL]"),
+
+    # Phone numbers (PII) - Made stricter to avoid matching timestamps/UUIDs
+    # Must have at least 10 digits total and include separators or +
+    (r"(\+\d{1,3}[-.\s]?\d{1,14})", "[REDACTED_PHONE]"),
+    (r"(\b\d{3}[-.]\d{3}[-.]\d{4}\b)", "[REDACTED_PHONE]"),
+
+    # Credit card numbers (PII)
+    (r"(\b\d{4}[-\s]\d{4}[-\s]\d{4}[-\s]\d{4}\b)", "[REDACTED_CARD]"),
+
+    # SSN-like patterns (PII)
+    (r"(\b\d{3}-\d{2}-\d{4}\b)", "[REDACTED_SSN]"),
+
+    # IP Addresses (potentially sensitive) - Use \b to avoid matching version numbers loosely
+    (r"(\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\b)", "[REDACTED_IP]"),
+
+    # JWT tokens
+    (r"(eyJ[a-zA-Z0-9_-]{10,}\.[a-zA-Z0-9_-]{10,}\.[a-zA-Z0-9_-]{10,})", "[REDACTED_JWT]"),
+
+    # Generic secrets (password=, token=, etc.)
+    (r"(password\s*[:=]\s*['\"]?[^\s'\"]{8,}['\"]?)", "password=[REDACTED]"),
+    (r"(token\s*[:=]\s*['\"]?[^\s'\"]{20,}['\"]?)", "token=[REDACTED]"),
+    (r"(secret\s*[:=]\s*['\"]?[^\s'\"]{20,}['\"]?)", "secret=[REDACTED]"),
+    (r"(api_key\s*[:=]\s*['\"]?[^\s'\"]{20,}['\"]?)", "api_key=[REDACTED]"),
+
+    # YubiKey OTP
+    (r"(JhRKknRTKbjJIdGDFjDuGhEtBBfjJGHiLhkFK" + "G)", "[REDACTED_YUBIKEY_OTP]"),
+
+    # Database connection strings
+    (r"(postgres://[^\s]+)", "[REDACTED_DB_CONNECTION]"),
+    (r"(mysql://[^\s]+)", "[REDACTED_DB_CONNECTION]"),
+    (r"(mongodb://[^\s]+)", "[REDACTED_DB_CONNECTION]"),
+
+    # File paths that might contain usernames
+    (r"(/home/[a-zA-Z0-9_-]+)", "/home/[USER]"),
+    (r"(/Users/[a-zA-Z0-9_-]+)", "/Users/[USER]"),
 ]
 
 def redact_text(text):
+    """Apply all redaction patterns to text."""
     if not isinstance(text, str):
         return text
-    for pattern in SECRET_PATTERNS:
-        text = re.sub(pattern, "[REDACTED_SECRET]", text)
+
+    for pattern, replacement in SECRET_PATTERNS:
+        text = re.sub(pattern, replacement, text, flags=re.IGNORECASE)
+
     return text
 
-def redact_json_structure(data):
-    """Recursively redact strings in a JSON object."""
-    if isinstance(data, dict):
-        return {k: redact_json_structure(v) for k, v in data.items()}
-    elif isinstance(data, list):
-        return [redact_json_structure(i) for i in data]
-    elif isinstance(data, str):
-        return redact_text(data)
-    else:
-        return data
+def sync_gemini_logs():
+    """Sync and redact Gemini conversation logs."""
+    if not GEMINI_TMP.exists():
+        print(f"Warning: Source directory not found: {GEMINI_TMP}")
+        return
 
-def sync_antigravity_files():
-    """Syncs .pb files and readable markdown from Antigravity."""
-    dest_dir = ANTIGRAVITY_DEST
-    os.makedirs(dest_dir, exist_ok=True)
-    
-    # Sync .pb files (encrypted/binary)
-    if ANTIGRAVITY_SRC.exists():
-        print(f"Syncing Antigravity files from {ANTIGRAVITY_SRC}...")
-        for file_path in ANTIGRAVITY_SRC.glob("*.pb"):
-            shutil.copy2(file_path, dest_dir / file_path.name)
-            
-    # Sync Brain Task Logs (Readable MD)
-    brain_dir = HOME / ".gemini/antigravity/brain"
-    if brain_dir.exists():
-        print(f"Syncing Brain logs from {brain_dir}...")
-        for root, dirs, files in os.walk(brain_dir):
-            for file in files:
-                if file == "task.md":
-                    # Extract UUID from parent folder name
-                    uuid = Path(root).name
-                    # Create destination: antigravity-data/brain/<UUID>.md
-                    brain_dest = dest_dir / "brain"
-                    os.makedirs(brain_dest, exist_ok=True)
-                    shutil.copy2(os.path.join(root, file), brain_dest / f"{uuid}.md")
+    os.makedirs(CHAT_LOGS_DEST, exist_ok=True)
 
-    # Sync Scratch Chat Logs (Readable MD)
-    scratch_log = HOME / ".gemini/antigravity/scratch/chat_logs/chat_log.md"
-    if scratch_log.exists():
-        print(f"Syncing Scratch chat log...")
-        scratch_dest = dest_dir / "scratch"
-        os.makedirs(scratch_dest, exist_ok=True)
-        shutil.copy2(scratch_log, scratch_dest / "chat_log.md")
+    # Find all session-*.json files recursively
+    session_files = list(GEMINI_TMP.glob("**/chats/session-*.json"))
+    print(f"Found {len(session_files)} conversation logs in {GEMINI_TMP}")
 
+    synced_count = 0
+    updated_count = 0
+    skipped_count = 0
 
-def sync_json_logs():
-    """Syncs and REDACTS .json logs from tmp directories."""
-    dest_dir = TRANSCRIPTS_DEST
-    os.makedirs(dest_dir, exist_ok=True)
+    for src_file in session_files:
+        dest_file = CHAT_LOGS_DEST / src_file.name
 
-    print(f"Scanning {TMP_SRC} for JSON logs...")
-    json_files = []
-    for root, dirs, files in os.walk(TMP_SRC):
-        if 'chats' in root:
-            for file in files:
-                if file.startswith("session-") and file.endswith(".json"):
-                    json_files.append(Path(root) / file)
-
-    print(f"Found {len(json_files)} JSON logs. Syncing with redaction...")
-    
-    for src_file in json_files:
         try:
-            with open(src_file, 'r', encoding='utf-8') as f:
-                data = json.load(f)
-            
-            # Redact the entire content
-            redacted_data = redact_json_structure(data)
-            
-            # Write to destination
-            dest_file = dest_dir / src_file.name
-            with open(dest_file, 'w', encoding='utf-8') as f:
-                json.dump(redacted_data, f, indent=2)
+            # Read entire file as text and apply redaction
+            with open(src_file, 'r', encoding='utf-8', errors='replace') as f:
+                content = f.read()
+
+            # Apply all redaction patterns to the raw text
+            redacted_content = content
+            for pattern, replacement in SECRET_PATTERNS:
+                redacted_content = re.sub(pattern, replacement, redacted_content, flags=re.IGNORECASE)
+
+            # Check if we need to update
+            should_write = True
+            if dest_file.exists():
+                try:
+                    with open(dest_file, 'r', encoding='utf-8', errors='replace') as f:
+                        existing_content = f.read()
+                    if existing_content == redacted_content:
+                        should_write = False
+                        skipped_count += 1
+                except:
+                    pass
+
+            if should_write:
+                # Write redacted content
+                with open(dest_file, 'w', encoding='utf-8') as f:
+                    f.write(redacted_content)
                 
+                if dest_file.exists():
+                     updated_count += 1
+                else:
+                     synced_count += 1
+
         except Exception as e:
-            print(f"Failed to process {src_file}: {e}")
+            print(f"Error processing {src_file.name}: {e}")
+
+    print(f"Synced {synced_count} new files, updated {updated_count} files, skipped {skipped_count} unchanged files")
+
+def update_readme():
+    """Update README with sync timestamp."""
+    readme_path = CHAT_LOGS_DEST / "README.md"
+    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+    content = f"""# Gemini CLI Raw Conversation Logs
+
+This directory contains redacted raw conversation logs from Gemini CLI sessions.
+
+**Last Sync:** {timestamp}
+
+## Format
+- Files are in JSON format.
+- Contains full session metadata, messages, thoughts, and tool calls.
+- All sensitive data is automatically redacted before syncing.
+
+## Redacted Information
+The sync script automatically redacts:
+- API keys and authentication tokens
+- Email addresses
+- Phone numbers
+- IP addresses
+- Private keys
+- Database connection strings
+- File paths containing usernames
+- Other PII and secrets
+
+## Syncing
+To sync the latest logs:
+```bash
+python scripts/sync_raw_logs.py
+```
+"""
+    with open(readme_path, 'w', encoding='utf-8') as f:
+        f.write(content)
 
 def main():
-    print("Starting Raw Log Sync...")
-    sync_antigravity_files()
-    sync_json_logs()
-    print("Sync complete.")
+    print("=" * 60)
+    print("Gemini CLI Raw Log Sync")
+    print("=" * 60)
+    print(f"Source Root: {GEMINI_TMP}")
+    print(f"Destination: {CHAT_LOGS_DEST}")
+    print()
+
+    sync_gemini_logs()
+    update_readme()
+
+    print()
+    print("=" * 60)
+    print("Sync complete!")
+    print("=" * 60)
 
 if __name__ == "__main__":
     main()
