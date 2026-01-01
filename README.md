@@ -8,14 +8,24 @@ A comprehensive archive and toolkit for **Gemini CLI** session history, transcri
   A single, chronologically ordered master transcript of all recorded sessions. Ideal for searching through entire conversation histories.
 
 - **`transcripts/`**
-  Individual Markdown files for each session, named by their unique Session ID.
+  Raw JSON logs synchronized from the local Gemini temporary directory. These are redacted versions of the original logs.
+
+- **`transcripts-markdown/`**
+  Individual Markdown files for each session, converted from the JSON transcripts.
   - Contains full conversation logs.
   - Includes tool calls, arguments, and outputs.
   - Metadata such as timestamps and user roles.
 
-- **`scripts/`** (Root directory scripts)
-  - `convert_sessions.py`: Parses raw JSON logs from the Gemini CLI temporary directory and converts them into readable Markdown.
-  - `combine_transcripts.py`: Aggregates all individual session logs into the master `FULL_TRANSCRIPT.md`.
+- **`antigravity-data/`**
+  Raw Protocol Buffer (`.pb`) files synced from the local Antigravity storage.
+
+- **`scripts/`**
+  - `convert_sessions.py`: Parses raw JSON logs from `transcripts/` (or tmp) and converts them into Markdown.
+  - `combine_transcripts.py`: Aggregates sessions into the master `FULL_TRANSCRIPT.md`.
+  - `sync_raw_logs.py`: Syncs and redacts logs from the local filesystem to this repository.
+
+- **`docs/`**
+  - `SECURITY.md`: Security policies and redaction details.
 
 ## 🚀 Usage
 
