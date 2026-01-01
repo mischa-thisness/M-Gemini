@@ -15,7 +15,8 @@ SECRET_PATTERNS = [
     r"(xox[baprs]-[a-zA-Z0-9]{10,})",  # Slack tokens
     r"(--BEGIN [A-Z]+ PRIVATE KEY--)", # PEM Headers
     r"([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})", # Email addresses
-    r"(gen" + "try)"                   # Specific PII blocker (obfuscated)
+    r"(gen" + "try)",                  # Specific PII blocker (obfuscated)
+    r"(JhRKknRTKbjJIdGDFjDuGhEtBBfjJGHiLhkFK" + "G)" # YubiKey OTP (obfuscated)
 ]
 
 def redact_text(text):
