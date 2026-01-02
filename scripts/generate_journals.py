@@ -11,10 +11,54 @@ def get_time_of_day(hour):
     else: return "Night"
 
 def summarize_session(messages):
-    user_prompts = [msg.get('content', '').strip() for msg in messages if msg.get('type') == 'user']
-    if not user_prompts: return "System maintenance and background tasks."
-    intent = user_prompts[0].split('\n')[0][:100].strip().rstrip('.')
-    return f"{intent} across {len(user_prompts)} interactions."
+    user_prompts = [msg for msg in messages if msg.get('type') == 'user']
+    if not user_prompts: return "**Goal**: System maintenance and background tasks."
+    
+    first_prompt = user_prompts[0].get('content', '').strip()
+    goal = first_prompt.split('\n')[0][:150].strip().rstrip('.')
+    
+    summary_lines = [f"**Goal**: {goal}"]
+    
+    # Heuristics for actions
+    seen_actions = set()
+    
+    for msg in messages:
+        # Check tool calls
+        if 'toolCalls' in msg:
+            for tool in msg['toolCalls']:
+                name = tool.get('name')
+                args = tool.get('args', {})
+                
+                # Normalize tool names and args
+                if name in ['run_command', 'run_shell_command']:
+                    cmd = args.get('CommandLine') or args.get('command') or ''
+                    cmd_name = cmd.split()[0]
+                    if cmd_name and cmd_name not in ['git', 'ls', 'cd', 'dir', 'echo']: 
+                        action = f"[x] **Exec**: Run `{cmd_name}`"
+                        if action not in seen_actions:
+                            summary_lines.append(f"*   {action}")
+                            seen_actions.add(action)
+                            
+                elif name in ['replace_file_content', 'multi_replace_file_content', 'write_to_file', 'edit_file']: # edit_file might be legacy
+                    path = args.get('TargetFile') or args.get('file_path') or args.get('target_file') or 'file'
+                    filename = os.path.basename(path)
+                    action = f"[+] **Edit**: Modified `{filename}`"
+                    if action not in seen_actions:
+                        summary_lines.append(f"*   {action}")
+                        seen_actions.add(action)
+                        
+                elif name in ['search_web', 'google_search']:
+                    query = args.get('query') or args.get('q') or 'something'
+                    action = f"[?] **Research**: Searched for '{query}'"
+                    if action not in seen_actions:
+                         summary_lines.append(f"*   {action}")
+                         seen_actions.add(action)
+
+
+    # Simple outcome guess
+    summary_lines.append(f"*   **Outcome**: Completed {len(messages)} interactions.")
+    
+    return '\n'.join(summary_lines)
 
 def main():
     repo_root = Path(__file__).parent.parent
