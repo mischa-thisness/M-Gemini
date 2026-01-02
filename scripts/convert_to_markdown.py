@@ -12,20 +12,48 @@ def format_timestamp(timestamp_str: str) -> str:
     except: return timestamp_str
 
 def format_user_message(msg: Dict[str, Any]) -> str:
-    return f"**You:** {msg.get('content', '')}\n\n"
+    content = msg.get('content', '').strip()
+    return f"👤: **{content}**\n\n"
+
+def format_tool_summary(tool: Dict[str, Any]) -> str:
+    name = tool.get('name')
+    args = tool.get('args', {})
+    
+    if name in ['run_command', 'run_shell_command']:
+        cmd = args.get('CommandLine') or args.get('command') or ''
+        return f"Ran `{cmd.split()[0]}`" if cmd else f"Ran command"
+    elif name in ['read_file', 'view_file', 'read_url_content']:
+        path = args.get('file_path') or args.get('AbsolutePath') or args.get('Url') or 'file'
+        return f"Read `{Path(path).name}`"
+    elif name in ['write_to_file', 'replace_file_content', 'multi_replace_file_content']:
+        path = args.get('TargetFile') or 'file'
+        return f"Edited `{Path(path).name}`"
+    elif name in ['search_web', 'google_search']:
+        q = args.get('query') or 'query'
+        return f"Searched `{q}`"
+    else:
+        return f"Called `{name}`"
 
 def format_gemini_message(msg: Dict[str, Any]) -> str:
     output = []
+    content = msg.get('content', '').strip()
+    if content:
+        output.append(f"🤖: {content}\n")
+    
+    # Thoughts
     thoughts = msg.get('thoughts', [])
-    if thoughts:
-        output.append("<details><summary>thought</summary>\n")
-        for t in thoughts: output.append(f"- **{t.get('subject', 'Thought')}**: {t.get('description', '')}\n")
-        output.append("</details>\n")
+    for t in thoughts:
+        desc = t.get('description', '')
+        summary = t.get('subject') or (desc[:50] + "...")
+        output.append(f"- <details><summary>🧠 {summary}</summary>{desc}</details>")
+        
+    # Tools
     for tool in msg.get('toolCalls', []):
-        output.append(f"**Tool Call:** `{tool.get('name')}`")
-        output.append(f"```json\n{json.dumps(tool.get('args', {}), indent=2)}\n```")
-        output.append(f"> {tool.get('resultDisplay', 'Result received.')}\n")
-    if msg.get('content'): output.append(f"**Gemini:** {msg.get('content')}\n")
+        summary = format_tool_summary(tool)
+        details = json.dumps(tool.get('args', {}), indent=2)
+        result = tool.get('resultDisplay') or tool.get('result') or 'Done'
+        output.append(f"- <details><summary>🛠️ {summary}</summary>\n\n  **Input**:\n  ```json\n{details}\n  ```\n  **Output**:\n  > {str(result)[:500]}\n  </details>")
+
     return '\n'.join(output) + '\n\n'
 
 def convert_json_to_markdown(json_path: Path, output_dir: Path) -> Dict[str, Any]:
