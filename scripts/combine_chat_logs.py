@@ -7,7 +7,7 @@ from pathlib import Path
 
 # Configuration
 REPO_ROOT = Path(__file__).parent.parent
-SOURCE_DIR = REPO_ROOT / "chat_logs"
+SOURCE_DIR = REPO_ROOT / "chat_logs_raw"
 OUTPUT_FILE = REPO_ROOT / "FULL_CHAT_LOG.md"
 
 # Comprehensive secret and PII patterns (Matched with sync_raw_logs.py)
