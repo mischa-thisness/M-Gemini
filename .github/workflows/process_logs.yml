@@ -22,7 +22,13 @@ jobs:
         with:
           python-version: '3.10'
 
+      - name: Install dependencies
+        run: pip install google-generativeai anthropic
+
       - name: Process All Logs
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: python scripts/process_logs.py
 
       - name: Commit changes

@@ -13,7 +13,7 @@ from typing import Dict, List, Any, Tuple
 # ==========================================
 
 class SiliconPoet:
-    """Generates technical, witty poems based on execution stats."""
+    """Generates technical, witty poems based on execution stats or LLM API."""
     
     def __init__(self):
         self.themes = {
@@ -32,7 +32,52 @@ class SiliconPoet:
         counts = {k: sum(text.count(w) for w in words) for k, words in self.themes.items()}
         return max(counts, key=counts.get) if any(counts.values()) else 'general'
 
+    def generate_llm(self, text_content: str) -> str:
+        """Attempts to generate a poem using an LLM API."""
+        prompt = (
+            "You are a technical bard. Summarize the following software engineering session logs into a witty, technical poem. "
+            "Strictly follow this syllable structure:\n"
+            "Stanza 1: 3-5-7 syllables\n"
+            "Stanza 2: 5-7-7-5 syllables\n"
+            "Stanza 3: 7-5-3 syllables\n\n"
+            "Use puns if they fit. Be concise. Output ONLY the poem lines prefixed with '> *'.\n\n"
+            f"Session Content Preview: {text_content[:4000]}..." 
+        )
+
+        # Try Google Gemini
+        if "GEMINI_API_KEY" in os.environ:
+            try:
+                import google.generativeai as genai
+                genai.configure(api_key=os.environ["GEMINI_API_KEY"])
+                model = genai.GenerativeModel("gemini-1.5-flash")
+                response = model.generate_content(prompt)
+                return response.text.strip()
+            except Exception as e:
+                print(f"Gemini API generation failed: {e}")
+
+        # Try Anthropic Claude
+        if "ANTHROPIC_API_KEY" in os.environ:
+            try:
+                import anthropic
+                client = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
+                message = client.messages.create(
+                    model="claude-3-haiku-20240307",
+                    max_tokens=300,
+                    messages=[{"role": "user", "content": prompt}]
+                )
+                return message.content[0].text.strip()
+            except Exception as e:
+                print(f"Anthropic API generation failed: {e}")
+
+        return None
+
     def generate(self, text_content: str) -> str:
+        # Try LLM first
+        llm_poem = self.generate_llm(text_content)
+        if llm_poem:
+            return llm_poem
+
+        # Fallback to procedural
         theme = self.get_stats(text_content)
         
         # 3-5-7
