@@ -1,0 +1,42 @@
+name: Convert Logs to Markdown
+
+on:
+  push:
+    paths:
+      - 'chat_logs/**'        # Raw JSON logs
+      - 'antigravity-data/**'   # Antigravity logs
+    branches:
+      - master
+      - main
+  workflow_dispatch:
+
+jobs:
+  convert-and-publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Run Conversion Scripts
+        run: |
+          # Convert Gemini CLI JSON sessions to Markdown
+          python3 scripts/convert_sessions.py
+          
+          # Combine into Full Transcript
+          python3 scripts/combine_chat_logs.py
+          
+          # (Optional) Add logic here if we want to process Antigravity MD files further
+
+      - name: Commit and Push changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "🤖 Auto-convert chat logs to Markdown"
+          file_pattern: 'chat_logs-markdown/*.md FULL_TRANSCRIPT.md'
