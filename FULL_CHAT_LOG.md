@@ -1,6 +1,6 @@
 # Full Gemini Chat History
 
-Generated on: 2026-01-10 16:31:27
+Generated on: 2026-01-10 23:32:22
 Ordered chronologically.
 
 # 809f21a5-9153-422a-89cd-d4bc4da2bec7
@@ -586,7 +586,7 @@ Do you want me to proceed?
 > 🧠 **Processing Completed Output**
 > I've successfully written and appended the outputs from `tasklist` and `get-service` to the specified file. I can now proceed to the next stage, which is to read the file containing the collected process and service information as per the user's instructions.
 
-> 🛠️ **Read `processes_and_services.txt`**
+> 🛠️ **Read `C:\Users\Mischa\processes_and_services.txt`**
 > -> *[{'functionResponse': {'id': 'read_file-1763758952953-62ac84ea101948', 'name': 'read_file', 'response': {'output': '\r\nImage Name                     PID Session Name        Session#    Mem Usage\r\n...*
 
 🤖: I've written `tasklist` and `get-service` outputs to `C:\Users\Mischa\processes_and_services.txt`. Now reading the file.
@@ -612,7 +612,7 @@ Do you want me to proceed?
 > 🧠 **Reflecting on the Command**
 > Given the straightforward command and the prior display of the file, I'm leaning heavily towards a simple re-display of the text. Alternative interpretations, like launching an application, seem less probable within this text-based interaction, especially given the history. Therefore, I will respond with the file's contents once more.
 
-> 🛠️ **Read `processes_and_services.txt`**
+> 🛠️ **Read `C:\Users\Mischa\processes_and_services.txt`**
 > -> *[{'functionResponse': {'id': 'read_file-1763759084767-d8acf1868b6288', 'name': 'read_file', 'response': {'output': '\r\nImage Name                     PID Session Name        Session#    Mem Usage\r\n...*
 
 🤖: I have already displayed the contents of `processes_and_services.txt`. I will display it again. Please clarify if you intended a different action for "open."
@@ -771,7 +771,7 @@ Do you want me to proceed?
 > 🧠 **Analyzing File Headers**
 > My initial attempts to unpack the downloaded file failed. Now, I'm shifting focus to analyze the file's beginning. I aim to determine its true format, suspecting it might not be the expected ZIP archive. I'm preparing to read the file's header to confirm its identity and diagnose the download issue from MajorGeeks.
 
-> 🛠️ **Read `throttlestop.zip`**
+> 🛠️ **Read `C:\Users\Mischa\.gemini\tmp\c2d2cd48efcbba4c2bc221e72bcce69434e9ae8cd4d927badfe83e3426b39c95\throttlestop.zip`**
 > -> *Skipped binary file: .gemini/tmp/c2d2cd48efcbba4c2bc221e72bcce69434e9ae8cd4d927badfe83e3426b39c95/throttlestop.zip*
 
 🤖: `Expand-Archive` failed. The downloaded file might not be a valid zip. I'll check its contents to verify.
@@ -2664,7 +2664,7 @@ The change will take effect the next time you reboot your computer.
 > ` (Get-Command gemini).Source `
 > -> *C:\Users\Mischa\AppData\Roaming\npm\gemini.ps1*
 
-> 🛠️ **Read `gemini.ps1`**
+> 🛠️ **Read `C:\Users\Mischa\AppData\Local\Microsoft\WindowsApps\gemini.ps1`**
 > -> *File not found: C:\Users\Mischa\AppData\Local\Microsoft\WindowsApps\gemini.ps1*
 
 > 🛠️ **Called `list_directory`**
@@ -2682,7 +2682,7 @@ The change will take effect the next time you reboot your computer.
 > 🧠 **Examining the Script's Path**
 > I'm now zeroing in on the npm package's actual location! After reading the `gemini.ps1` script at `C:\Users\Mischa\AppData\Roaming\npm\gemini.ps1`, I'm confident I know where to find the main package files. My current plan involves searching for the associated `.ico` icon and fine-tuning the shortcut's command-line arguments to launch `gemini` in an administrator context.
 
-> 🛠️ **Read `gemini.ps1`**
+> 🛠️ **Read `C:\Users\Mischa\AppData\Roaming\npm\gemini.ps1`**
 > -> *[{'functionResponse': {'id': 'read_file-1766665679561-99f78401367588', 'name': 'read_file', 'response': {'output': '#!/usr/bin/env pwsh\n$basedir=Split-Path $MyInvocation.MyCommand.Definition -Parent\...*
 
 > 🛠️ **Called `list_directory`**
@@ -5100,2035 +5100,1020 @@ copy C:\Users\Mischa\.gemini\tmp\5c9f9ba23881259d970eeba21abc81edc4e22aac1e92e90
 --- Content from referenced files ---
 Content from @config/systemprofile/AppData/Local/EpicGamesLauncher/Intermediate/Config/CoalescedSourceConfigs/PortalRegions.ini:
 [SectionsToSave]
-
 bCanSaveAllSections=false
-
 Section=CurrentIniVersion
 
-
-
 [RegionDoesRequirePermission]
-
 GameDev=true
-
 CI=true
-
 Stage=true
-
 LocalHost=true
 
-
-
 [Portal.Origin]
-
 Protocol=https
-
-
 
 [Portal.Origin Prod]
-
 BearerTokenName=EPIC_BEARER_TOKEN
-
 InternalOrigin=ue-launcher-website-prod.ol.epicgames.com/
-
 NextInternalOrigin=store-launcher.epicgames.com/
-
 RegisterOrigin=www.epicgames.com
 
-
-
 [Portal.Origin Stage]
-
 BearerTokenName=EPIC_BEARER_TOKEN_STAGE
-
 InternalOrigin=ue-launcher-website-stage.ol.epicgames.net/
-
 NextInternalOrigin=epicgames-stage.ol.epicgames.net/
-
 RegisterOrigin=epicgames-stage.ol.epicgames.net
 
-
-
 [Portal.Origin GameDev]
-
 BearerTokenName=EPIC_BEARER_TOKEN_GD
-
 InternalOrigin=ue-launcher-website-gamedev.ol.epicgames.net/
-
 NextInternalOrigin=epicgames-gamedev.ol.epicgames.net/
-
 RegisterOrigin=epicgames-gamedev.ol.epicgames.net
-
-
 
 [Portal.Origin CI]
-
 BearerTokenName=EPIC_BEARER_TOKEN_CI
-
 InternalOrigin=ue-launcher-website-ci.ol.epicgames.net/
-
 NextInternalOrigin=epicgames-ci.ol.epicgames.net/
-
 RegisterOrigin=epicgames-ci.ol.epicgames.net
 
-
-
 [Portal.Origin Localhost]
-
 BearerTokenName=EPIC_BEARER_TOKEN_GD
-
 InternalOrigin=ue-launcher-website-gamedev.ol.epicgames.net/
-
 NextInternalOrigin=app.epicgames-gamedev.ol.epicgames.net/
-
 RegisterOrigin=epicgames-gamedev.ol.epicgames.net
 
-
-
 [Portal.OnlineSubsystemMcp.BaseServiceMcp]
-
 ServiceName=launcher
-
 AppName=launcher
-
 Protocol=https
-
 RetryBackoffBase=2.0
-
 RetryBackoffExponentBias=1.0
-
 RetryBackoffJitterMinCoefficient=0.5
-
 RetryBackoffJitterMaxCoefficient=1.0
-
 RetryBackoffMaxSeconds=60.0
-
 GlobalChatChannel=FortniteDevTesting
-
 ServicePermissions=(Name="Client",Id="34a02cf8f4414e29b15921876da36f9a",Key="5a71e767c4e24e119beb54574321ee77")
-
-
 
 [Portal.OnlineSubsystemMcp.BaseServiceMcp Prod]
-
 Domain=launcher-public-service-prod06.ol.epicgames.com
-
 GlobalChatChannel=Fortnite
-
 ServicePermissions=(Name="Client",Id="34a02cf8f4414e29b15921876da36f9a",Key="daafbccc737745039dffe53d94fc76cf")
-
-
 
 [Portal.OnlineSubsystemMcp.BaseServiceMcp Stage]
-
 Domain=launcher-public-service-stage.ol.epicgames.com
-
 GlobalChatChannel=Fortnite
-
 ServicePermissions=(Name="Client",Id="34a02cf8f4414e29b15921876da36f9a",Key="daafbccc737745039dffe53d94fc76cf")
-
-
 
 [Portal.OnlineSubsystemMcp.BaseServiceMcp GameDev]
-
 Domain=launcher-public-service-gamedev.aeee.dev.use1a.on.epicgames.com
 
-
-
 [Portal.OnlineSubsystemMcp.BaseServiceMcp LocalHost]
-
 Protocol=http
-
 Domain=127.0.0.1:8080
 
-
-
 [Portal.OnlineSubsystemMcp.BaseServiceMcp CI]
-
 Domain=launcher-public-service-ci.ol.epicgames.net
 
-
-
 [OnlineSubsystemMcp.EpicConnect]
-
 Uri="wss://connect.epicgames.dev"
-
 WebSocketConnectTimeoutSeconds=20
-
 WebSocketConnectIntervalSeconds=0
-
 WebSocketConnectIntervalSeconds=10
-
 StompConnectTimeoutSeconds=60
-
 MaxStompConnectTries=5
-
 ClientHeartBeatSeconds=35
-
 ReactivateConnectDelay=30
 
-
-
 [OnlineSubsystemMcp.EpicConnect Prod]
-
 Uri="wss://connect.epicgames.dev"
 
-
-
 [OnlineSubsystemMcp.EpicConnect Stage]
-
 Uri="wss://connect-gamedev.ol.epicgames.net"
-
-
 
 [OnlineSubsystemMcp.EpicConnect GameDev]
-
 Uri="wss://connect-gamedev.ol.epicgames.net"
-
-
 
 [OnlineSubsystemMcp.EpicConnect LocalHost]
-
 Uri="wss://connect-gamedev.ol.epicgames.net"
 
-
-
 [OnlineSubsystemMcp.EpicConnect CI]
-
 Uri="wss://connect-ci.ol.epicgames.net"
 
-
-
 [Portal.OnlineSubsystemMcp.OnlineIdentityMcp]
-
 ServiceName=account
-
 Protocol=https
-
-
 
 [Portal.OnlineSubsystemMcp.OnlineIdentityMcp Prod]
-
 Domain=account-public-service-prod03.ol.epicgames.com
-
 RedirectUrl=accounts.epicgames.com
-
 AltDomains=account-public-service-prod.ak.epicgames.com
-
-
 
 [Portal.OnlineSubsystemMcp.AccountServiceMcp prod]
-
 Domain=account-public-service-prod03.ol.epicgames.com
-
 AltDomains=account-public-service-prod.ak.epicgames.com
-
-
 
 [Portal.OnlineSubsystemMcp.OnlineIdentityMcp Stage]
-
 Domain=account-public-service-stage.ol.epicgames.com
-
 RedirectUrl=accounts.epicgames-stage.ol.epicgames.com
-
-
 
 [Portal.OnlineSubsystemMcp.OnlineIdentityMcp GameDev]
-
 Domain=account-public-service-common-gamedev.ol.epicgames.net
-
 RedirectUrl=accounts.epicgames-gamedev.ol.epicgames.net
-
-
 
 [Portal.OnlineSubsystemMcp.OnlineIdentityMcp LocalHost]
-
 Domain=account-public-service-common-gamedev.ol.epicgames.net
-
 RedirectUrl=accounts.epicgames-gamedev.ol.epicgames.net
-
-
 
 [Portal.OnlineSubsystemMcp.OnlineIdentityMcp CI]
-
 Domain=account-public-service-common-ci.ol.epicgames.net
-
 RedirectUrl=accounts.epicgames-ci.ol.epicgames.net
-
-
 
 [Portal.OnlineSubsystemMcp.OnlineAccountMappingMcp]
-
 ServiceName=account
-
 Protocol=https
-
-
 
 [Portal.OnlineSubsystemMcp.OnlineAccountMappingMcp Prod]
-
 Domain=account-public-service-prod03.ol.epicgames.com
-
 RedirectUrl=accounts.epicgames.com
-
-
 
 [Portal.OnlineSubsystemMcp.OnlineAccountMappingMcp Stage]
-
 Domain=account-public-service-stage.ol.epicgames.com
-
 RedirectUrl=accounts.epicgames-stage.ol.epicgames.com
-
-
 
 [Portal.OnlineSubsystemMcp.OnlineAccountMappingMcp GameDev]
-
 Domain=account-public-service-common-gamedev.ol.epicgames.net
-
 RedirectUrl=accounts.epicgames-gamedev.ol.epicgames.net
-
-
 
 [Portal.OnlineSubsystemMcp.OnlineAccountMappingMcp LocalHost]
-
 Domain=account-public-service-common-gamedev.ol.epicgames.net
-
 RedirectUrl=accounts.epicgames-gamedev.ol.epicgames.net
-
-
 
 [Portal.OnlineSubsystemMcp.OnlineAccountMappingMcp CI]
-
 Domain=account-public-service-common-ci.ol.epicgames.net
-
 RedirectUrl=accounts.epicgames-ci.ol.epicgames.net
-
-
 
 [Portal.OnlineSubsystemMcp.OnlineUsersMcp]
-
 ServiceName=account
-
 Protocol=https
-
-
 
 [Portal.OnlineSubsystemMcp.OnlineUsersMcp Prod]
-
 Domain=account-public-service-prod03.ol.epicgames.com
-
 RedirectUrl=accounts.epicgames.com
-
 AltDomains=account-public-service-prod.ak.epicgames.com
 
-
-
 [Portal.OnlineSubsystemMcp.OnlineUsersMcp Stage]
-
 Domain=account-public-service-stage.ol.epicgames.com
-
 RedirectUrl=accounts.epicgames-stage.ol.epicgames.com
-
-
 
 [Portal.OnlineSubsystemMcp.OnlineUsersMcp GameDev]
-
 Domain=account-public-service-common-gamedev.ol.epicgames.net
-
 RedirectUrl=accounts.epicgames-gamedev.ol.epicgames.net
-
-
 
 [Portal.OnlineSubsystemMcp.OnlineUsersMcp LocalHost]
-
 Domain=account-public-service-common-gamedev.ol.epicgames.net
-
 RedirectUrl=accounts.epicgames-gamedev.ol.epicgames.net
-
-
 
 [Portal.OnlineSubsystemMcp.OnlineUsersMcp CI]
-
 Domain=account-public-service-common-ci.ol.epicgames.net
-
 RedirectUrl=accounts.epicgames-ci.ol.epicgames.net
-
-
 
 [Portal.OnlineSubsystemMcp.OnlineCatalogServiceMcp]
-
 PreferredAuthType=User
-
 ServiceName=catalog
-
 Protocol=https
-
-
 
 [Portal.OnlineSubsystemMcp.OnlineCatalogServiceMcp Prod]
-
 Domain=catalog-public-service-prod06.ol.epicgames.com
-
 AltDomains=catalog-public-service-prod.ak.epicgames.com
 
-
-
 [Portal.OnlineSubsystemMcp.OnlineCatalogServiceMcp Stage]
-
 Domain=catalogv2-public-service-stage.ol.epicgames.com
-
-
 
 [Portal.OnlineSubsystemMcp.OnlineCatalogServiceMcp GameDev]
-
 Domain=catalogv2-public-service-gamedev.ol.epicgames.net
-
-
 
 [Portal.OnlineSubsystemMcp.OnlineCatalogServiceMcp LocalHost]
-
 Domain=catalogv2-public-service-gamedev.ol.epicgames.net
-
-
 
 [Portal.OnlineSubsystemMcp.OnlineCatalogServiceMcp CI]
-
 Domain=catalogv2-public-service-ci.ol.epicgames.net
-
-
 
 [Portal.OnlineSubsystemMcp.OnlineLibraryServiceMcp]
-
 ServiceName=library
-
 Protocol=https
-
-
 
 [Portal.OnlineSubsystemMcp.OnlineLibraryServiceMcp Prod]
-
 Domain=library-service.live.use1a.on.epicgames.com
 
-
-
 [Portal.OnlineSubsystemMcp.OnlineLibraryServiceMcp Stage]
-
 Domain=library-service-stage.dev.use1a.on.epicgames.net
 
-
-
 [Portal.OnlineSubsystemMcp.OnlineLibraryServiceMcp GameDev]
-
 Domain=library-service-gamedev.aeee.dev.use1a.on.epicgames.com
-
-
 
 [Portal.OnlineSubsystemMcp.OnlineLibraryServiceMcp LocalHost]
-
 Domain=library-service-gamedev.aeee.dev.use1a.on.epicgames.com
 
-
-
 [Portal.OnlineSubsystemMcp.OnlineLibraryServiceMcp CI]
-
 Domain=library-service-ci.aeee.dev.use1a.on.epicgames.com
 
-
-
 [Portal.OnlineSubsystemMcp.OnlineDataStorageServiceMcp]
-
 ServiceName=
-
 Protocol=https
-
-
 
 [Portal.OnlineSubsystemMcp.OnlineDataStorageServiceMcp Prod]
-
 Domain=datastorage-public-service-liveegs.live.use1a.on.epicgames.com
 
-
-
 [Portal.OnlineSubsystemMcp.OnlineDataStorageServiceMcp Stage]
-
 Domain=datastorage-public-service-stage.ol.epicgames.com
 
-
-
 [Portal.OnlineSubsystemMcp.OnlineDataStorageServiceMcp GameDev]
-
 Domain=datastorage-public-service-gamedev.ol.epicgames.net
-
-
 
 [Portal.OnlineSubsystemMcp.OnlineDataStorageServiceMcp LocalHost]
-
 Domain=datastorage-public-service-gamedev.ol.epicgames.net
 
-
-
 [Portal.OnlineSubsystemMcp.OnlineDataStorageServiceMcp CI]
-
 Domain=datastorage-public-service-ci.ol.epicgames.net
 
-
-
 [Portal.OnlineSubsystemMcp.OnlineImageServiceMcp]
-
 ServiceName=imageservice
-
 Protocol=http
-
-
 
 [Portal.OnlineSubsystemMcp.OnlineImageServiceMcp Prod]
-
 Domain=cdn1.unrealengine.com
-
-
 
 [Portal.OnlineSubsystemMcp.OnlineImageServiceMcp Stage]
-
 Domain=launcher-resources.s3.amazonaws.com
-
-
 
 [Portal.OnlineSubsystemMcp.OnlineImageServiceMcp GameDev]
-
 Domain=launcher-resources.s3.amazonaws.com
-
-
 
 [Portal.OnlineSubsystemMcp.OnlineImageServiceMcp LocalHost]
-
 Domain=launcher-resources.s3.amazonaws.com
-
-
 
 [Portal.OnlineSubsystemMcp.OnlineImageServiceMcp CI]
-
 Domain=launcher-resources.s3.amazonaws.com
-
-
 
 [Portal.OnlineSubsystemMcp.OnlineEulaServiceMcp]
-
 ServiceName=eulatracking
-
 Protocol=https
-
-
 
 [Portal.OnlineSubsystemMcp.OnlineEulaServiceMcp Prod]
-
 Domain=eulatracking-public-service-prod06.ol.epicgames.com
-
-
 
 [Portal.OnlineSubsystemMcp.OnlineEulaServiceMcp Stage]
-
 Domain=eulatracking-public-service-stage.ol.epicgames.com
-
-
 
 [Portal.OnlineSubsystemMcp.OnlineEulaServiceMcp GameDev]
-
 Domain=eulatracking-public-service-gamedev.ol.epicgames.net
-
-
 
 [Portal.OnlineSubsystemMcp.OnlineEulaServiceMcp LocalHost]
-
 Domain=eulatracking-public-service-gamedev.ol.epicgames.net
-
-
 
 [Portal.OnlineSubsystemMcp.OnlineEulaServiceMcp CI]
-
 Domain=eulatracking-public-service-ci.ol.epicgames.net
-
-
 
 [Portal.OnlineSubsystemMcp.OnlineArtifactDeliveryServiceMcp]
-
 ServiceName=artifact-delivery
-
 Protocol=https
-
-
 
 [Portal.OnlineSubsystemMcp.OnlineArtifactDeliveryServiceMcp GameDev]
-
 Domain=artifact-delivery-public-service-gamedev.aeee.dev.use1a.on.epicgames.com
 
-
-
 [Portal.OnlineSubsystemMcp.OnlineArtifactDeliveryServiceMcp Prod]
-
 Domain=artifact-delivery-service-public-prod.ol.epicgames.com
-
 AltDomains=artifact-delivery-public-service-prod.beee.live.use1a.on.epicgames.com
 
-
-
 [Portal.OnlineSubsystemMcp.OnlineFABMcp]
-
 ServiceName=
-
 Protocol=https
-
-
 
 [Portal.OnlineSubsystemMcp.OnlineFABMcp GameDev]
-
 Domain=fab.cceb.dev.use1a.on.epicgames.com
 
-
-
 [Portal.OnlineSubsystemMcp.OnlineFABMcp Prod]
-
 Domain=www.fab.com
 
-
-
 [Portal.OnlineSubsystemMcp.OnlineFABMcp CI]
-
 Domain=fab.ci.cceb.dev.use1a.on.epicgames.com
 
-
-
 [Portal.OnlineSubsystemMcp.OnlineEntitlementsMcp]
-
 ServiceName=entitlement
-
 Protocol=https
-
-
 
 [Portal.OnlineSubsystemMcp.OnlineEntitlementsMcp Prod]
-
 Domain=entitlement-public-service-prod08.ol.epicgames.com
-
 AltDomains=entitlement-public-service-prod.ak.epicgames.com
 
-
-
 [Portal.OnlineSubsystemMcp.OnlineEntitlementsMcp Stage]
-
 Domain=entitlement-public-service-stage.ol.epicgames.com
-
-
 
 [Portal.OnlineSubsystemMcp.OnlineEntitlementsMcp GameDev]
-
 Domain=entitlement-public-service-gamedev.ol.epicgames.net
-
-
 
 [Portal.OnlineSubsystemMcp.OnlineEntitlementsMcp LocalHost]
-
 Domain=entitlement-public-service-gamedev.ol.epicgames.net
-
-
 
 [Portal.OnlineSubsystemMcp.OnlineEntitlementsMcp CI]
-
 Domain=entitlement-public-service-ci.ol.epicgames.net
-
-
 
 [Portal.OnlineSubsystemMcp.OnlineOrderServiceMcp]
-
 ServiceName=orderprocessor
-
 Protocol=https
-
-
 
 [Portal.OnlineSubsystemMcp.OnlineOrderServiceMcp Prod]
-
 Domain=orderprocessor-public-service-ecomprod01.ol.epicgames.com
-
-
 
 [Portal.OnlineSubsystemMcp.OnlineOrderServiceMcp Stage]
-
 Domain=orderprocessor-public-service-stage.ol.epicgames.com
-
-
 
 [Portal.OnlineSubsystemMcp.OnlineOrderServiceMcp GameDev]
-
 Domain=orderprocessor-public-service-gamedev.ol.epicgames.net
-
-
 
 [Portal.OnlineSubsystemMcp.OnlineOrderServiceMcp LocalHost]
-
 Domain=orderprocessor-public-service-gamedev.ol.epicgames.net
-
-
 
 [Portal.OnlineSubsystemMcp.OnlineOrderServiceMcp CI]
-
 Domain=orderprocessor-public-service-ci.ol.epicgames.net
-
-
 
 [Portal.OnlineSubsystemMcp.OnlineFriendsMcp]
-
 ServiceName=friends
-
 Protocol=https
-
-
 
 [Portal.OnlineSubsystemMcp.OnlineFriendsMcp Prod]
-
 Domain=friends-public-service-prod06.ol.epicgames.com
-
 AltDomains=friends-public-service-prod.ak.epicgames.com
 
-
-
 [Portal.OnlineSubsystemMcp.OnlineFriendsMcp Stage]
-
 Domain=friends-public-service-stage.ol.epicgames.com
-
-
 
 [Portal.OnlineSubsystemMcp.OnlineFriendsMcp GameDev]
-
 Domain=friends-public-service-gamedev.ol.epicgames.net
-
-
 
 [Portal.OnlineSubsystemMcp.OnlineFriendsMcp LocalHost]
-
 Domain=friends-public-service-gamedev.ol.epicgames.net
-
-
 
 [Portal.OnlineSubsystemMcp.OnlineFriendsMcp CI]
-
 Domain=friends-public-service-ci.ol.epicgames.net
-
-
 
 [Portal.OnlineSubsystemMcp.OnlinePresenceMcp]
-
 ServiceName=presence
-
 Protocol=https
-
-
 
 [Portal.OnlineSubsystemMcp.OnlinePresenceMcp Prod]
-
 Domain=presence-public-service-prod.ol.epicgames.com
-
-
 
 [Portal.OnlineSubsystemMcp.OnlinePresenceMcp Stage]
-
 Domain=presence-public-service-stage.ol.epicgames.com
-
-
 
 [Portal.OnlineSubsystemMcp.OnlinePresenceMcp GameDev]
-
 Domain=presence-public-service-gamedev.ol.epicgames.net
-
-
 
 [Portal.OnlineSubsystemMcp.OnlinePresenceMcp LocalHost]
-
 Domain=presence-public-service-gamedev.ol.epicgames.net
-
-
 
 [Portal.OnlineSubsystemMcp.OnlinePresenceMcp CI]
-
 Domain=presence-public-service-ci.ol.epicgames.net
-
-
 
 [Portal.OnlineSubsystemMcp.OnlinePersonaMcp]
-
 ServiceName=persona
-
 Protocol=https
-
-
 
 [Portal.OnlineSubsystemMcp.OnlinePersonaMcp Prod]
-
 Domain=persona-public-service-prod06.ol.epicgames.com
-
-
 
 [Portal.OnlineSubsystemMcp.OnlinePersonaMcp Stage]
-
 Domain=persona-public-service-stage.ol.epicgames.com
-
-
 
 [Portal.OnlineSubsystemMcp.OnlinePersonaMcp GameDev]
-
 Domain=persona-public-service-gamedev.ol.epicgames.net
-
-
 
 [Portal.OnlineSubsystemMcp.OnlinePersonaMcp LocalHost]
-
 Domain=persona-public-service-gamedev.ol.epicgames.net
-
-
 
 [Portal.OnlineSubsystemMcp.OnlinePersonaMcp CI]
-
 Domain=persona-public-service-ci.ol.epicgames.net
-
-
 
 [Portal.OnlineSubsystemMcp.OnlineServiceAvailabilityMcp]
-
 ServiceName=lightswitch
-
 Protocol=https
-
-
 
 [Portal.OnlineSubsystemMcp.OnlineServiceAvailabilityMcp Prod]
-
 Domain=lightswitch-public-service-prod06.ol.epicgames.com
-
-
 
 [Portal.OnlineSubsystemMcp.OnlineServiceAvailabilityMcp Stage]
-
 Domain=lightswitch-public-service-stage.ol.epicgames.com
-
-
 
 [Portal.OnlineSubsystemMcp.OnlineServiceAvailabilityMcp GameDev]
-
 Domain=lightswitch-public-service-gamedev.ol.epicgames.net
-
-
 
 [Portal.OnlineSubsystemMcp.OnlineServiceAvailabilityMcp LocalHost]
-
 Domain=lightswitch-public-service-gamedev.ol.epicgames.net
-
-
 
 [Portal.OnlineSubsystemMcp.OnlineServiceAvailabilityMcp CI]
-
 Domain=lightswitch-public-service-ci.ol.epicgames.net
-
-
 
 [Portal.OnlineSubsystemMcp.OnlineAccessMcp]
-
 ServiceName=lightswitch
-
 Protocol=https
-
-
 
 [Portal.OnlineSubsystemMcp.OnlineAccessMcp Prod]
-
 Domain=lightswitch-public-service-prod06.ol.epicgames.com
-
-
 
 [Portal.OnlineSubsystemMcp.OnlineAccessMcp Stage]
-
 Domain=lightswitch-public-service-stage.ol.epicgames.com
-
-
 
 [Portal.OnlineSubsystemMcp.OnlineAccessMcp GameDev]
-
 Domain=lightswitch-public-service-gamedev.ol.epicgames.net
-
-
 
 [Portal.OnlineSubsystemMcp.OnlineAccessMcp LocalHost]
-
 Domain=lightswitch-public-service-gamedev.ol.epicgames.net
-
-
 
 [Portal.OnlineSubsystemMcp.OnlineAccessMcp CI]
-
 Domain=lightswitch-public-service-ci.ol.epicgames.net
-
-
 
 [Portal.OnlineSubsystemMcp.OnlineWaitingRoomMcp]
-
 ServiceName=waitingroom
-
 Protocol=https
-
-
 
 [Portal.OnlineSubsystemMcp.OnlineWaitingRoomMcp Prod]
-
 Domain=launcherwaitingroom-public-service-prod06.ol.epicgames.com
-
 AltDomains=launcherwaitingroom-public-service-prod.ak.epicgames.com
 
-
-
 [Portal.OnlineSubsystemMcp.OnlineWaitingRoomMcp Stage]
-
 Domain=waitingroom-public-service-stage.ol.epicgames.net
-
-
 
 [Portal.OnlineSubsystemMcp.OnlineWaitingRoomMcp GameDev]
-
 Domain=waitingroom-public-service-gamedev.ol.epicgames.net
-
-
 
 [Portal.OnlineSubsystemMcp.OnlineWaitingRoomMcp LocalHost]
-
 Domain=waitingroom-public-service-gamedev.ol.epicgames.net
-
-
 
 [Portal.OnlineSubsystemMcp.OnlineWaitingRoomMcp CI]
-
 Domain=waitingroom-public-service-ci.ol.epicgames.net
-
-
 
 [Portal.OnlineSubsystemMcp.OnlineWaitingRoomMcp.Fortnite]
-
 ServiceName=waitingroom
-
 Protocol=https
-
-
 
 [Portal.OnlineSubsystemMcp.OnlineWaitingRoomMcp.Fortnite Prod]
-
 Domain=fortnitewaitingroom-public-service-prod.ol.epicgames.com
-
 AltDomains=fortnitewaitingroom-public-service-prod.ak.epicgames.com
 
-
-
 [Portal.OnlineSubsystemMcp.OnlineWaitingRoomMcp.Fortnite Stage]
-
 Domain=waitingroom-public-service-stage.ol.epicgames.net
-
-
 
 [Portal.OnlineSubsystemMcp.OnlineWaitingRoomMcp.Fortnite GameDev]
-
 Domain=waitingroom-public-service-gamedev.ol.epicgames.net
-
-
 
 [Portal.OnlineSubsystemMcp.OnlineWaitingRoomMcp.Fortnite LocalHost]
-
 Domain=waitingroom-public-service-gamedev.ol.epicgames.net
-
-
 
 [Portal.OnlineSubsystemMcp.OnlineWaitingRoomMcp.Fortnite CI]
-
 Domain=waitingroom-public-service-ci.ol.epicgames.net
-
-
 
 [Portal.OnlineSubsystemMcp.OnlineWaitingRoomMcp.Orion]
-
 ServiceName=waitingroom
-
 Protocol=https
-
-
 
 [Portal.OnlineSubsystemMcp.OnlineWaitingRoomMcp.Orion Prod]
-
 Domain=orionwaitingroom-public-service-prod06.ol.epicgames.com
 
-
-
 [Portal.OnlineSubsystemMcp.OnlineWaitingRoomMcp.Orion Stage]
-
 Domain=waitingroom-public-service-stage.ol.epicgames.net
-
-
 
 [Portal.OnlineSubsystemMcp.OnlineWaitingRoomMcp.Orion GameDev]
-
 Domain=waitingroom-public-service-gamedev.ol.epicgames.net
-
-
 
 [Portal.OnlineSubsystemMcp.OnlineWaitingRoomMcp.Orion LocalHost]
-
 Domain=waitingroom-public-service-gamedev.ol.epicgames.net
-
-
 
 [Portal.OnlineSubsystemMcp.OnlineWaitingRoomMcp.Orion CI]
-
 Domain=waitingroom-public-service-ci.ol.epicgames.net
-
-
 
 [Portal.OnlineSubsystemMcp.StompServiceMcp]
-
 ServiceName=stomp
-
 Protocol=wss
-
-
 
 [Portal.OnlineSubsystemMcp.StompServiceMcp Prod]
-
 Domain=notifications-service-prod06.ol.epicgames.com:443
-
-
 
 [Portal.OnlineSubsystemMcp.StompServiceMcp Stage]
-
 Domain=notifications-service-stage.ol.epicgames.net:443
-
-
 
 [Portal.OnlineSubsystemMcp.StompServiceMcp GameDev]
-
 Domain=notifications-service-gamedev.ol.epicgames.net:443
-
-
 
 [Portal.OnlineSubsystemMcp.StompServiceMcp LocalHost]
-
 Domain=notifications-service-gamedev.ol.epicgames.net:443
-
-
 
 [Portal.OnlineSubsystemMcp.StompServiceMcp CI]
-
 Domain=notifications-service-ci.ol.epicgames.net:443
-
-
 
 [Portal.OnlineSubsystemMcp.OnlinePriceEngineServiceMcp]
-
 ServiceName=priceengine
-
 Protocol=https
-
-
 
 [Portal.OnlineSubsystemMcp.OnlinePriceEngineServiceMcp Prod]
-
 Domain=priceengine-public-service-ecomprod01.ol.epicgames.com
-
 AltDomains=priceengine-public-service-prod.ak.epicgames.com
 
-
-
 [Portal.OnlineSubsystemMcp.OnlinePriceEngineServiceMcp Stage]
-
 Domain=priceengine-public-service-stage.ol.epicgames.com
-
-
 
 [Portal.OnlineSubsystemMcp.OnlinePriceEngineServiceMcp GameDev]
-
 Domain=priceengine-public-service-gamedev.ol.epicgames.net
-
-
 
 [Portal.OnlineSubsystemMcp.OnlinePriceEngineServiceMcp LocalHost]
-
 Domain=priceengine-public-service-gamedev.ol.epicgames.net
-
-
 
 [Portal.OnlineSubsystemMcp.OnlinePriceEngineServiceMcp CI]
-
 Domain=priceengine-public-service-ci.ol.epicgames.net
-
-
 
 [Portal.OnlineSubsystemMcp.CodeRedemptionServiceMcp]
-
 ServiceName=coderedemption
-
 Protocol=https
-
-
 
 [Portal.OnlineSubsystemMcp.CodeRedemptionServiceMcp Prod]
-
 Domain=coderedemption-public-service-prod.ol.epicgames.com
-
 AltDomains=coderedemption-public-service-prod.ak.epicgames.com
 
-
-
 [Portal.OnlineSubsystemMcp.CodeRedemptionServiceMcp Stage]
-
 Domain=coderedemption-public-service-stage.ol.epicgames.com
 
-
-
 [Portal.OnlineSubsystemMcp.CodeRedemptionServiceMcp GameDev]
-
 Domain=coderedemption-public-service-gamedev.ol.epicgames.net
-
-
 
 [Portal.OnlineSubsystemMcp.CodeRedemptionServiceMcp LocalHost]
-
 Domain=coderedemption-public-service-gamedev.ol.epicgames.net
 
-
-
 [Portal.OnlineSubsystemMcp.CodeRedemptionServiceMcp CI]
-
 Domain=coderedemption-public-service-ci.ol.epicgames.net
 
-
-
 [Portal.OnlineSubsystemMcp.OnlineFulfillmentServiceMcp]
-
 ServiceName=fulfillment
-
 Protocol=https
-
-
 
 [Portal.OnlineSubsystemMcp.OnlineFulfillmentServiceMcp Prod]
-
 Domain=fulfillment-public-service-prod06.ol.epicgames.com
-
 AltDomains=fulfillment-public-service-prod.ak.epicgames.com
 
-
-
 [Portal.OnlineSubsystemMcp.OnlineFulfillmentServiceMcp Stage]
-
 Domain=fulfillment-public-service-stage.ol.epicgames.com
 
-
-
 [Portal.OnlineSubsystemMcp.OnlineFulfillmentServiceMcp GameDev]
-
 Domain=fulfillment-public-service-gamedev.ol.epicgames.net
-
-
 
 [Portal.OnlineSubsystemMcp.OnlineFulfillmentServiceMcp LocalHost]
-
 Domain=fulfillment-public-service-gamedev.ol.epicgames.net
 
-
-
 [Portal.OnlineSubsystemMcp.OnlineFulfillmentServiceMcp CI]
-
 Domain=fulfillment-public-service-ci.ol.epicgames.net
 
-
-
 [Portal.OnlineSubsystemMcp.OnlineConnectionStatusMcp]
-
 Protocol=http
-
 Domain=www.google.com
-
 ServiceName=status
-
-
 
 [Portal.Analytics]
-
 AnalyticsEndpoint=datarouter.ol.epicgames.com
-
 AltDomains=datarouter-prod.ak.epicgames.com
 
-
-
 [Portal.Analytics Prod]
-
 EnvDesignation=
 
-
-
 [Portal.Analytics Stage]
-
 EnvDesignation=_STAGE
 
-
-
 [Portal.Analytics GameDev]
-
 EnvDesignation=_GD
-
-
 
 [Portal.Analytics LocalHost]
-
 EnvDesignation=_GD
 
-
-
 [Portal.Analytics CI]
-
 EnvDesignation=_CI
 
-
-
 [Portal.OnlineSubsystemMcp.OnlineEcommerceIntegrationMcp]
-
 ServiceName=ecommerceintegration
-
 Protocol=https
-
-
 
 [Portal.OnlineSubsystemMcp.OnlineEcommerceIntegrationMcp Prod]
-
 Domain=ecommerceintegration-public-service-ecomprod02.ol.epicgames.com
 
-
-
 [Portal.OnlineSubsystemMcp.OnlineEcommerceIntegrationMcp Stage]
-
 Domain=ecommerceintegration-public-service-stage.ol.epicgames.com
 
-
-
 [Portal.OnlineSubsystemMcp.OnlineEcommerceIntegrationMcp GameDev]
-
 Domain=ecommerceintegration-public-service-gamedev.ol.epicgames.net
-
-
 
 [Portal.OnlineSubsystemMcp.OnlineEcommerceIntegrationMcp LocalHost]
-
 Domain=ecommerceintegration-public-service-gamedev.ol.epicgames.net
 
-
-
 [Portal.OnlineSubsystemMcp.OnlineEcommerceIntegrationMcp CI]
-
 Domain=ecommerceintegration-public-service-ci.ol.epicgames.net
 
-
-
 [Portal.OnlineSubsystemMcp.OnlineArtifactServiceMcp]
-
 ServiceName=artifact-service
-
 Protocol=https
-
-
 
 [Portal.OnlineSubsystemMcp.OnlineArtifactServiceMcp Prod]
-
 Domain=artifact-public-service-prod.ol.epicgames.com
 
-
-
 [Portal.OnlineSubsystemMcp.OnlineArtifactServiceMcp Stage]
-
 Domain=artifact-public-service-stage.ol.epicgames.com
 
-
-
 [Portal.OnlineSubsystemMcp.OnlineArtifactServiceMcp GameDev]
-
 Domain=artifact-public-service-gamedev.ol.epicgames.net
-
-
 
 [Portal.OnlineSubsystemMcp.OnlineArtifactServiceMcp CI]
-
 Domain=artifact-public-service-ci.ol.epicgames.net
 
-
-
 [Portal.OnlineSubsystemMcp.OnlineArtifactServiceMcp LocalHost]
-
 Domain=artifact-public-service-gamedev.ol.epicgames.net
 
-
-
 [UT.OnlineSubsystemMcp.BaseServiceMcp]
-
 ServiceName=ut
-
 Protocol=https
-
 ServicePermissions=(Name="Client",Id="34a02cf8f4414e29b15921876da36f9a",Key="5a71e767c4e24e119beb54574321ee77")
 
-
-
 [UT.OnlineSubsystemMcp.BaseServiceMcp Prod]
-
 Domain=ut-public-service-prod10.ol.epicgames.com
-
 ServicePermissions=(Name="Client",Id="34a02cf8f4414e29b15921876da36f9a",Key="daafbccc737745039dffe53d94fc76cf")
-
-
 
 [UT.OnlineSubsystemMcp.BaseServiceMcp Stage]
-
 Domain=ut-public-service-stage.ol.epicgames.com
-
 ServicePermissions=(Name="Client",Id="34a02cf8f4414e29b15921876da36f9a",Key="daafbccc737745039dffe53d94fc76cf")
 
-
-
 [UT.OnlineSubsystemMcp.BaseServiceMcp GameDev]
-
 Domain=ut-public-service-gamedev.ol.epicgames.net
-
-
 
 [UT.OnlineSubsystemMcp.BaseServiceMcp LocalHost]
-
 Domain=ut-public-service-gamedev.ol.epicgames.net
 
-
-
 [UT.OnlineSubsystemMcp.BaseServiceMcp CI]
-
 Domain=ut-public-service-ci.ol.epicgames.net
 
-
-
 [UT.OnlineSubsystemMcp.OnlineIdentityMcp]
-
 ServiceName=account
-
 Protocol=https
-
-
 
 [UT.OnlineSubsystemMcp.OnlineIdentityMcp Prod]
-
 Domain=account-public-service-prod03.ol.epicgames.com
-
 RedirectUrl=accounts.epicgames.com
-
-
 
 [UT.OnlineSubsystemMcp.OnlineIdentityMcp Stage]
-
 Domain=account-public-service-stage.ol.epicgames.com
-
 RedirectUrl=accounts.epicgames-stage.ol.epicgames.com
-
-
 
 [UT.OnlineSubsystemMcp.OnlineIdentityMcp GameDev]
-
 Domain=account-public-service-common-gamedev.ol.epicgames.net
-
 RedirectUrl=accounts.epicgames-gamedev.ol.epicgames.net
-
-
 
 [UT.OnlineSubsystemMcp.OnlineIdentityMcp LocalHost]
-
 Domain=account-public-service-common-gamedev.ol.epicgames.net
-
 RedirectUrl=accounts.epicgames-gamedev.ol.epicgames.net
-
-
 
 [UT.OnlineSubsystemMcp.OnlineIdentityMcp CI]
-
 Domain=account-public-service-common-ci.ol.epicgames.net
-
 RedirectUrl=accounts.epicgames-ci.ol.epicgames.net
-
-
 
 [UT.OnlineSubsystemMcp.OnlineAccountMappingMcp]
-
 ServiceName=account
-
 Protocol=https
-
-
 
 [UT.OnlineSubsystemMcp.OnlineAccountMappingMcp Prod]
-
 Domain=account-public-service-prod03.ol.epicgames.com
-
 RedirectUrl=accounts.epicgames.com
-
-
 
 [UT.OnlineSubsystemMcp.OnlineAccountMappingMcp Stage]
-
 Domain=account-public-service-stage.ol.epicgames.com
-
 RedirectUrl=accounts.epicgames-stage.ol.epicgames.com
-
-
 
 [UT.OnlineSubsystemMcp.OnlineAccountMappingMcp GameDev]
-
 Domain=account-public-service-common-gamedev.ol.epicgames.net
-
 RedirectUrl=accounts.epicgames-gamedev.ol.epicgames.net
-
-
 
 [UT.OnlineSubsystemMcp.OnlineAccountMappingMcp LocalHost]
-
 Domain=account-public-service-common-gamedev.ol.epicgames.net
-
 RedirectUrl=accounts.epicgames-gamedev.ol.epicgames.net
-
-
 
 [UT.OnlineSubsystemMcp.OnlineAccountMappingMcp CI]
-
 Domain=account-public-service-common-ci.ol.epicgames.net
-
 RedirectUrl=accounts.epicgames-ci.ol.epicgames.net
-
-
 
 [UT.OnlineSubsystemMcp.OnlineUsersMcp]
-
 ServiceName=account
-
 Protocol=https
-
-
 
 [UT.OnlineSubsystemMcp.OnlineUsersMcp Prod]
-
 Domain=account-public-service-prod03.ol.epicgames.com
-
 RedirectUrl=accounts.epicgames.com
 
-
-
 [UT.OnlineSubsystemMcp.OnlineUsersMcp Stage]
-
 Domain=account-public-service-stage.ol.epicgames.com
-
 RedirectUrl=accounts.epicgames-stage.ol.epicgames.com
 
-
-
 [UT.OnlineSubsystemMcp.OnlineUsersMcp GameDev]
-
 Domain=account-public-service-common-gamedev.ol.epicgames.net
-
 RedirectUrl=accounts.epicgames-gamedev.ol.epicgames.net
-
-
 
 [UT.OnlineSubsystemMcp.OnlineUsersMcp LocalHost]
-
 Domain=account-public-service-common-gamedev.ol.epicgames.net
-
 RedirectUrl=accounts.epicgames-gamedev.ol.epicgames.net
 
-
-
 [UT.OnlineSubsystemMcp.OnlineUsersMcp CI]
-
 Domain=account-public-service-common-ci.ol.epicgames.net
-
 RedirectUrl=accounts.epicgames-ci.ol.epicgames.net
 
-
-
 [UT.OnlineSubsystemMcp.OnlineCatalogServiceMcp]
-
 ServiceName=catalog
-
 Protocol=https
-
-
 
 [UT.OnlineSubsystemMcp.OnlineCatalogServiceMcp Prod]
-
 Domain=catalog-public-service-prod06.ol.epicgames.com
 
-
-
 [UT.OnlineSubsystemMcp.OnlineCatalogServiceMcp Stage]
-
 Domain=catalogv2-public-service-stage.ol.epicgames.com
 
-
-
 [UT.OnlineSubsystemMcp.OnlineCatalogServiceMcp GameDev]
-
 Domain=catalogv2-public-service-gamedev.ol.epicgames.net
-
-
 
 [UT.OnlineSubsystemMcp.OnlineCatalogServiceMcp LocalHost]
-
 Domain=catalogv2-public-service-gamedev.ol.epicgames.net
 
-
-
 [UT.OnlineSubsystemMcp.OnlineCatalogServiceMcp CI]
-
 Domain=catalogv2-public-service-ci.ol.epicgames.net
 
-
-
 [UT.OnlineSubsystemMcp.OnlineImageServiceMcp]
-
 ServiceName=imageservice
-
 Protocol=http
-
-
 
 [UT.OnlineSubsystemMcp.OnlineImageServiceMcp Prod]
-
 Domain=cdn1.unrealengine.com
 
-
-
 [UT.OnlineSubsystemMcp.OnlineImageServiceMcp Stage]
-
 Domain=launcher-resources.s3.amazonaws.com
-
-
 
 [UT.OnlineSubsystemMcp.OnlineImageServiceMcp GameDev]
-
 Domain=launcher-resources.s3.amazonaws.com
-
-
 
 [UT.OnlineSubsystemMcp.OnlineImageServiceMcp LocalHost]
-
 Domain=launcher-resources.s3.amazonaws.com
-
-
 
 [UT.OnlineSubsystemMcp.OnlineImageServiceMcp CI]
-
 Domain=launcher-resources.s3.amazonaws.com
 
-
-
 [UT.OnlineSubsystemMcp.OnlineEulaServiceMcp]
-
 ServiceName=eulatracking
-
 Protocol=https
-
-
 
 [UT.OnlineSubsystemMcp.OnlineEulaServiceMcp Prod]
-
 Domain=eulatracking-public-service-prod06.ol.epicgames.com
-
 AltDomains=eulatracking-public-service-prod.ak.epicgames.com
 
-
-
 [UT.OnlineSubsystemMcp.OnlineEulaServiceMcp Stage]
-
 Domain=eulatracking-public-service-stage.ol.epicgames.com
 
-
-
 [UT.OnlineSubsystemMcp.OnlineEulaServiceMcp GameDev]
-
 Domain=eulatracking-public-service-gamedev.ol.epicgames.net
-
-
 
 [UT.OnlineSubsystemMcp.OnlineEulaServiceMcp LocalHost]
-
 Domain=eulatracking-public-service-gamedev.ol.epicgames.net
 
-
-
 [UT.OnlineSubsystemMcp.OnlineEulaServiceMcp CI]
-
 Domain=eulatracking-public-service-ci.ol.epicgames.net
 
-
-
 [UT.OnlineSubsystemMcp.OnlineEntitlementsMcp]
-
 ServiceName=entitlement
-
 Protocol=https
-
-
 
 [UT.OnlineSubsystemMcp.OnlineEntitlementsMcp Prod]
-
 Domain=entitlement-public-service-prod08.ol.epicgames.com
 
-
-
 [UT.OnlineSubsystemMcp.OnlineEntitlementsMcp Stage]
-
 Domain=entitlement-public-service-stage.ol.epicgames.com
 
-
-
 [UT.OnlineSubsystemMcp.OnlineEntitlementsMcp GameDev]
-
 Domain=entitlement-public-service-gamedev.ol.epicgames.net
-
-
 
 [UT.OnlineSubsystemMcp.OnlineEntitlementsMcp LocalHost]
-
 Domain=entitlement-public-service-gamedev.ol.epicgames.net
 
-
-
 [UT.OnlineSubsystemMcp.OnlineEntitlementsMcp CI]
-
 Domain=entitlement-public-service-ci.ol.epicgames.net
 
-
-
 [UT.OnlineSubsystemMcp.OnlineOrderServiceMcp]
-
 ServiceName=orderprocessor
-
 Protocol=https
-
-
 
 [UT.OnlineSubsystemMcp.OnlineOrderServiceMcp Prod]
-
 Domain=orderprocessor-public-service-ecomprod01.ol.epicgames.com
-
 AltDomains=orderprocessor-public-service-prod.ak.epicgames.com
 
-
-
 [UT.OnlineSubsystemMcp.OnlineOrderServiceMcp Stage]
-
 Domain=orderprocessor-public-service-stage.ol.epicgames.com
 
-
-
 [UT.OnlineSubsystemMcp.OnlineOrderServiceMcp GameDev]
-
 Domain=orderprocessor-public-service-gamedev.ol.epicgames.net
-
-
 
 [UT.OnlineSubsystemMcp.OnlineOrderServiceMcp LocalHost]
-
 Domain=orderprocessor-public-service-gamedev.ol.epicgames.net
 
-
-
 [UT.OnlineSubsystemMcp.OnlineOrderServiceMcp CI]
-
 Domain=orderprocessor-public-service-ci.ol.epicgames.net
 
-
-
 [UT.OnlineSubsystemMcp.OnlineFriendsMcp]
-
 ServiceName=friends
-
 Protocol=https
-
-
 
 [UT.OnlineSubsystemMcp.OnlineFriendsMcp Prod]
-
 Domain=friends-public-service-prod06.ol.epicgames.com
 
-
-
 [UT.OnlineSubsystemMcp.OnlineFriendsMcp Stage]
-
 Domain=friends-public-service-stage.ol.epicgames.com
 
-
-
 [UT.OnlineSubsystemMcp.OnlineFriendsMcp GameDev]
-
 Domain=friends-public-service-gamedev.ol.epicgames.net
-
-
 
 [UT.OnlineSubsystemMcp.OnlineFriendsMcp LocalHost]
-
 Domain=friends-public-service-gamedev.ol.epicgames.net
 
-
-
 [UT.OnlineSubsystemMcp.OnlineFriendsMcp CI]
-
 Domain=friends-public-service-ci.ol.epicgames.net
 
-
-
 [UT.OnlineSubsystemMcp.OnlinePresenceMcp]
-
 ServiceName=presence
-
 Protocol=https
-
-
 
 [UT.OnlineSubsystemMcp.OnlinePresenceMcp Prod]
-
 Domain=presence-public-service-prod.ol.epicgames.com
 
-
-
 [UT.OnlineSubsystemMcp.OnlinePresenceMcp Stage]
-
 Domain=presence-public-service-stage.ol.epicgames.com
 
-
-
 [UT.OnlineSubsystemMcp.OnlinePresenceMcp GameDev]
-
 Domain=presence-public-service-gamedev.ol.epicgames.net
-
-
 
 [UT.OnlineSubsystemMcp.OnlinePresenceMcp LocalHost]
-
 Domain=presence-public-service-gamedev.ol.epicgames.net
 
-
-
 [UT.OnlineSubsystemMcp.OnlinePresenceMcp CI]
-
 Domain=presence-public-service-ci.ol.epicgames.net
 
-
-
 [UT.OnlineSubsystemMcp.OnlinePersonaMcp]
-
 ServiceName=persona
-
 Protocol=https
-
-
 
 [UT.OnlineSubsystemMcp.OnlinePersonaMcp Prod]
-
 Domain=persona-public-service-prod06.ol.epicgames.com
 
-
-
 [UT.OnlineSubsystemMcp.OnlinePersonaMcp Stage]
-
 Domain=persona-public-service-stage.ol.epicgames.com
 
-
-
 [UT.OnlineSubsystemMcp.OnlinePersonaMcp GameDev]
-
 Domain=persona-public-service-gamedev.ol.epicgames.net
-
-
 
 [UT.OnlineSubsystemMcp.OnlinePersonaMcp LocalHost]
-
 Domain=persona-public-service-gamedev.ol.epicgames.net
 
-
-
 [UT.OnlineSubsystemMcp.OnlinePersonaMcp CI]
-
 Domain=persona-public-service-ci.ol.epicgames.net
 
-
-
 [UT.OnlineSubsystemMcp.OnlineServiceAvailabilityMcp]
-
 ServiceName=lightswitch
-
 Protocol=https
-
-
 
 [UT.OnlineSubsystemMcp.OnlineServiceAvailabilityMcp Prod]
-
 Domain=lightswitch-public-service-prod06.ol.epicgames.com
-
 AltDomains=lightswitch-public-service-prod.ak.epicgames.com
-
-
 
 [UT.OnlineSubsystemMcp.OnlineServiceAvailabilityMcp Stage]
-
 Domain=lightswitch-public-service-stage.ol.epicgames.com
-
-
 
 [UT.OnlineSubsystemMcp.OnlineServiceAvailabilityMcp GameDev]
-
 Domain=lightswitch-public-service-gamedev.ol.epicgames.net
-
-
 
 [UT.OnlineSubsystemMcp.OnlineServiceAvailabilityMcp LocalHost]
-
 Domain=lightswitch-public-service-gamedev.ol.epicgames.net
-
-
 
 [UT.OnlineSubsystemMcp.OnlineServiceAvailabilityMcp CI]
-
 Domain=lightswitch-public-service-ci.ol.epicgames.net
-
-
 
 [UT.OnlineSubsystemMcp.OnlineAccessMcp]
-
 ServiceName=lightswitch
-
 Protocol=https
-
-
 
 [UT.OnlineSubsystemMcp.OnlineAccessMcp Prod]
-
 Domain=lightswitch-public-service-prod06.ol.epicgames.com
-
 AltDomains=lightswitch-public-service-prod.ak.epicgames.com
 
-
-
 [UT.OnlineSubsystemMcp.OnlineAccessMcp Stage]
-
 Domain=lightswitch-public-service-stage.ol.epicgames.com
 
-
-
 [UT.OnlineSubsystemMcp.OnlineAccessMcp GameDev]
-
 Domain=lightswitch-public-service-gamedev.ol.epicgames.net
-
-
 
 [UT.OnlineSubsystemMcp.OnlineAccessMcp LocalHost]
-
 Domain=lightswitch-public-service-gamedev.ol.epicgames.net
 
-
-
 [UT.OnlineSubsystemMcp.OnlineAccessMcp CI]
-
 Domain=lightswitch-public-service-ci.ol.epicgames.net
 
-
-
 [UT.OnlineSubsystemMcp.OnlineWaitingRoomMcp]
-
 ServiceName=waitingroom
-
 Protocol=https
-
-
 
 [UT.OnlineSubsystemMcp.OnlineWaitingRoomMcp Prod]
-
 Domain=launcherwaitingroom-public-service-prod06.ol.epicgames.com
 
-
-
 [UT.OnlineSubsystemMcp.OnlineWaitingRoomMcp Stage]
-
 Domain=waitingroom-public-service-stage.ol.epicgames.net
 
-
-
 [UT.OnlineSubsystemMcp.OnlineWaitingRoomMcp GameDev]
-
 Domain=waitingroom-public-service-gamedev.ol.epicgames.net
-
-
 
 [UT.OnlineSubsystemMcp.OnlineWaitingRoomMcp LocalHost]
-
 Domain=waitingroom-public-service-gamedev.ol.epicgames.net
 
-
-
 [UT.OnlineSubsystemMcp.OnlineWaitingRoomMcp CI]
-
 Domain=waitingroom-public-service-ci.ol.epicgames.net
 
-
-
 [UT.OnlineSubsystemMcp.StompServiceMcp]
-
 ServiceName=stomp
-
 Protocol=wss
 
-
-
 [UT.OnlineSubsystemMcp.StompServiceMcp Prod]
-
 Domain=notifications-service-prod06.ol.epicgames.com:443
 
-
-
 [UT.OnlineSubsystemMcp.StompServiceMcp Stage]
-
 Domain=notifications-service-stage.ol.epicgames.net:443
 
-
-
 [UT.OnlineSubsystemMcp.StompServiceMcp GameDev]
-
 Domain=notifications-service-gamedev.ol.epicgames.net:443
-
-
 
 [UT.OnlineSubsystemMcp.StompServiceMcp LocalHost]
-
 Domain=notifications-service-gamedev.ol.epicgames.net:443
 
-
-
 [UT.OnlineSubsystemMcp.StompServiceMcp CI]
-
 Domain=notifications-service-ci.ol.epicgames.net:443
 
-
-
 [UT.OnlineSubsystemMcp.OnlinePriceEngineServiceMcp]
-
 ServiceName=priceengine
-
 Protocol=https
-
-
 
 [UT.OnlineSubsystemMcp.OnlinePriceEngineServiceMcp Prod]
-
 Domain=priceengine-public-service-ecomprod01.ol.epicgames.com
 
-
-
 [UT.OnlineSubsystemMcp.OnlinePriceEngineServiceMcp Stage]
-
 Domain=priceengine-public-service-stage.ol.epicgames.com
 
-
-
 [UT.OnlineSubsystemMcp.OnlinePriceEngineServiceMcp GameDev]
-
 Domain=priceengine-public-service-gamedev.ol.epicgames.net
-
-
 
 [UT.OnlineSubsystemMcp.OnlinePriceEngineServiceMcp LocalHost]
-
 Domain=priceengine-public-service-gamedev.ol.epicgames.net
 
-
-
 [UT.OnlineSubsystemMcp.OnlinePriceEngineServiceMcp CI]
-
 Domain=priceengine-public-service-ci.ol.epicgames.net
 
-
-
 [UT.OnlineSubsystemMcp.OnlineConnectionStatusMcp]
-
 Protocol=http
-
 Domain=www.google.com
-
 ServiceName=status
 
-
-
 [Uploader.UI]
-
 WebPageUrl="https://bpt.dev.epicgames.com/"
-
-
 
 [Uploader.UI Prod]
-
 WebPageUrl="https://bpt.dev.epicgames.com/"
 
-
-
 [Uploader.UI GameDev]
-
 WebPageUrl="https://bpt.epicgames-gamedev.ol.epicgames.net/"
 
-
-
 [Fab.Plugins GameDev]
-
 DownloadUrl="https://cdn.quixel.com/fab/manifest/gamedev/plugins_v1.json"
 
-
-
 [Fab.Plugins Prod]
-
 DownloadUrl="https://cdn.quixel.com/fab/manifest/prod/plugins_v1.json"
 
-
-
 [Fab.Plugins CI]
-
 DownloadUrl="https://cdn.quixel.com/fab/manifest/ci/plugins_v1.json"
 
-
-
 [Portal.OnlineSubsystemMcp.OnlineEpicOnlineServicesHelperServiceMcp]
-
 Domain=localhost:'port
-
 Protocol=http
-
 ServiceName=
-
-
 
 [Portal.OnlineSubsystemMcp.OnlineExternalSessionSyncMcp]
-
 ServiceName=
-
 Protocol=https
 
-
-
 [Portal.OnlineSubsystemMcp.OnlineExternalSessionSyncMcp Prod]
-
 Domain=e3s-prod.social.live.on.epicgames.com
 
-
-
 [Portal.OnlineSubsystemMcp.OnlineExternalSessionSyncMcp GameDev]
-
 Domain=e3s-gamedev.social.dev.on.epicgames.com
 --- End of content ---**
 
@@ -7559,7 +6544,7 @@ Could you please provide the full path to the **M-Gemini** repository?
 > 🧠 **Defining Project Scope**
 > I'm now zeroing in on defining the project's scope, aiming to grasp its central objective.  My attention is on the `README.md` file, hoping it clarifies the core purpose. I'm prioritizing understanding what the project intends to achieve.
 
-> 🛠️ **Read `README.md`**
+> 🛠️ **Read `C:\Users\Mischa\Documents\M-Gemini\README.md`**
 > -> *File path must be within one of the workspace directories: C:\Windows\system32 or within the project temp directory: C:\Users\Mischa\.gemini\tmp\5c9f9ba23881259d970eeba21abc81edc4e22aac1e92e9009b45392...*
 
 🤖: I will read the `README.md` file to understand the project's purpose and structure.
@@ -9510,7 +8495,7 @@ However, you can restart the Gemini CLI from the `C:\Users\Mischa\Documents\M-Ge
 > 🧠 **Exploring Execution Paths**
 > I've got a grasp on the probable execution chain: the user clicks the shortcut, which calls `gemini.cmd`, which in turn launches `node`, and then the Gemini CLI. The window closing behavior is linked to the CLI's exit status. I'm focusing on two key user requests: changing the working directory and keeping the window open. Editing the shortcut seems ideal, but if that fails, I'll attempt a workaround by modifying `gemini.cmd` or `gemini.ps1`.
 
-> 🛠️ **Read `gemini.cmd`**
+> 🛠️ **Read `C:\Users\Mischa\AppData\Roaming\npm\gemini.cmd`**
 > -> *[{'functionResponse': {'id': 'read_file-1767318570418-b17a7913e5b7b8', 'name': 'read_file', 'response': {'output': '@ECHO off\r\nGOTO start\r\n:find_dp0\r\nSET dp0=%~dp0\r\nEXIT /b\r\n:start\r\nSETLOC...*
 
 🤖: I will read the content of the `gemini.cmd` file to understand how it launches the application.
@@ -9622,7 +8607,7 @@ Due to current system security restrictions preventing me from modifying Start M
 🤖: I will update the `fix_shortcut.ps1` script to set the working directory for the shortcuts to `C:\Users\Mischa\Documents\M-Gemini` and then notify you once it's ready for manual execution.
 
 
-> 🛠️ **Read `fix_shortcut.ps1`**
+> 🛠️ **Read `C:\Users\Mischa\Documents\M-Claude\fix_shortcut.ps1`**
 > -> *[{'functionResponse': {'id': 'read_file-1767318786539-3edd5e41443e3', 'name': 'read_file', 'response': {'output': '$shortcuts = @(\n    "$env:APPDATA\\Microsoft\\Windows\\Start Menu\\Programs\\Gemini ...*
 
 🤖: I will read the content of `fix_shortcut.ps1` to accurately identify the section that needs to be updated.
@@ -10176,7 +9161,7 @@ ProTip! Create custom filters to quickly access your most important notification
 > 🧠 **Analyzing "Fix This"**
 > My focus has shifted.  I'm now on a mission to "fix this," the user's rather vague prompt about the error list.  For `M-Claude`, if I can see the errors, I will try to fix them. For `M-Gemini`, my plan is to first verify the remote repository using the `.git/config` file. Afterward, I'll recommend a `git pull` operation is the likely fix.  I'm also looking at the workflows in `M-Claude` for insights.
 
-> 🛠️ **Read `config`**
+> 🛠️ **Read `C:\Users\Mischa\Documents\M-Gemini\.git\config`**
 > -> *[{'functionResponse': {'id': 'read_file-1767323860041-e76f28625e2f28', 'name': 'read_file', 'response': {'output': '[core]\n\trepositoryformatversion = 0\n\tfilemode = false\n\tbare = false\n\tlogallr...*
 
 > 🛠️ **Called `list_directory`**
@@ -10191,7 +9176,7 @@ ProTip! Create custom filters to quickly access your most important notification
 > 🧠 **Diagnosing the workflow error**
 > I've determined the workflow failure stemmed from a missing `.github` folder in `M-Gemini`. I'll advise the user to run a `git pull` command to rectify this. Now, I'm analyzing the `generate-markdown.yml` workflow in `M-Claude` to find potential issues within the configuration.
 
-> 🛠️ **Read `generate-markdown.yml`**
+> 🛠️ **Read `C:\Users\Mischa\Documents\M-Claude\.github\workflows\generate-markdown.yml`**
 > -> *[{'functionResponse': {'id': 'read_file-1767323868587-907ec5636d39a', 'name': 'read_file', 'response': {'output': 'name: Transform Raw Chat Logs to Human-Readable Markdown\r\n\r\non:\r\n  push:\r\n   ...*
 
 🤖: I will read the content of the `generate-markdown.yml` workflow file in the `M-Claude` repository to analyze the configuration and identify the cause of the reported failure.
@@ -10215,7 +9200,7 @@ ProTip! Create custom filters to quickly access your most important notification
 > 🧠 **Scrutinizing the Import**
 > I'm now reading the Python script to see what it's importing. My suspicion is that this is where any potential problems will surface. Checking for non-standard library dependencies is a priority to ensure smooth execution, and I'll keep the focus on what needs to be installed, since the workflow is not set up that way yet.
 
-> 🛠️ **Read `convert_to_markdown.py`**
+> 🛠️ **Read `C:\Users\Mischa\Documents\M-Claude\scripts\convert_to_markdown.py`**
 > -> *[{'functionResponse': {'id': 'read_file-1767323879027-fb28baca363e8', 'name': 'read_file', 'response': {'output': '#!/usr/bin/env python3\n"""\nConvert Claude Code JSONL transcripts to a single chrono...*
 
 🤖: I will read the content of the `convert_to_markdown.py` script to identify any external dependencies that might be causing the workflow to fail due to missing installation steps.
@@ -10230,7 +9215,7 @@ ProTip! Create custom filters to quickly access your most important notification
 > 🧠 **Diagnosing Push Failures**
 > I'm now honing in on the specific causes of failure. While the workflow ran, I suspect the `git push` command might have failed due to a protected branch on `M-Claude`. It could also be that the workflow is creating a file, which is then blocked by a rule. Regarding `M-Gemini`, I've confirmed that the workflow files are indeed missing from the local repository, which would have prevented the editing. I'll include a `git pull` command to remedy this. I should check the .gitignore to see what files are being excluded.
 
-> 🛠️ **Read `.gitignore`**
+> 🛠️ **Read `C:\Users\Mischa\Documents\M-Claude\.gitignore`**
 > -> *[{'functionResponse': {'id': 'read_file-1767323887076-f68ca71e9e29b8', 'name': 'read_file', 'response': {'output': '# Sensitive data\r\n*.env\r\n.credentials.json\r\n*secret*\r\n*password*\r\n*token*\...*
 
 🤖: I will read the `.gitignore` file in `M-Claude` to check if `CHAT_LOGS` or `.jsonl` files are ignored, which could affect the workflow's behavior.
@@ -10452,7 +9437,7 @@ The user wants to know 'whoami'. I am unable to run 'run_shell_command' as it re
 > 🧠 **Assessing Alternative Paths**
 > I'm now focusing on `read_file` to inspect `scripts/sync_raw_logs.py`.  My goal is to understand its logic, though I doubt I can fully replicate its redaction and cross-directory syncing with the available tools. I'm hoping to glean some insights to guide my next moves.
 
-> 🛠️ **Read `sync_raw_logs.py`**
+> 🛠️ **Read `scripts\sync_raw_logs.py`**
 > -> *[{'functionResponse': {'id': 'read_file-1767324509079-f83f097c554e4', 'name': 'read_file', 'response': {'output': '#!/usr/bin/env python3\nimport os\nimport shutil\nimport json\nimport re\nfrom pathli...*
 
 🤖: I will read the 'scripts/sync_raw_logs.py' script to understand its synchronization logic.
@@ -10480,7 +9465,7 @@ The user wants to know 'whoami'. I am unable to run 'run_shell_command' as it re
 > 🧠 **Analyzing Git Integration**
 > Okay, I'm thinking about the utility of `read_file` on the .git/config. I'm hoping to use this config file to extract the remote URL.  I realize this doesn't directly solve the 'pull' command issue, but it's a step toward understanding the git environment.
 
-> 🛠️ **Read `config`**
+> 🛠️ **Read `.git\config`**
 > -> *File path 'C:\Users\Mischa\Documents\M-Gemini\.git\config' is ignored by configured ignore patterns.*
 
 🤖: I will read the '.git/config' file to identify the remote repository URL.
@@ -10552,7 +9537,7 @@ The user wants to know 'whoami'. I am unable to run 'run_shell_command' as it re
 > 🧠 **Examining Git Status**
 > I'm now shifting gears, focusing on the system's Git status. I realized the chat log scripts aren't executable. I plan to use the `read_file` function on `.git/HEAD` to determine the current branch name, giving me more context.
 
-> 🛠️ **Read `HEAD`**
+> 🛠️ **Read `.git\HEAD`**
 > -> *File path 'C:\Users\Mischa\Documents\M-Gemini\.git\HEAD' is ignored by configured ignore patterns.*
 
 🤖: I will read the '.git/HEAD' file to determine the current branch.
@@ -10735,7 +9720,7 @@ Please pull the latest changes from the remote repository for the M-Gemini proje
 > 🧠 **Assessing Read Operations**
 > My current focus is on verifying `read_file`'s functionality. I'm keen to test this with the `.gitconfig` file, as it's definitely present. I want to confirm that the file reading method is working independently of the command execution issue.
 
-> 🛠️ **Read `.gitconfig`**
+> 🛠️ **Read `C:\Users\Mischa\.gitconfig`**
 > -> *[{'functionResponse': {'id': 'read_file-1767325454843-5d058c08394e9', 'name': 'read_file', 'response': {'output': '[credential "https://github.com"]\n\thelper = \n\thelper = !\'C:\\\\Program Files\\\\...*
 
 🤖: I will read the `.gitconfig` file to see if it contains any user information.
@@ -10790,7 +9775,7 @@ However, I found **HardeningKitty** logs in your current directory, which assess
 > 🧠 **Analyzing Possible Terminology**
 > I've hit a roadblock. "Fail" is a dead end. I'm now exploring HardeningKitty's likely terminology - perhaps "False", "Audit Failed," "Non-Compliant," or a status column. I'll read the file's initial sections to understand the layout and identify relevant terms.
 
-> 🛠️ **Read `hardeningkitty_log_legion_finding_list_0x6d69636b_machine-20260101-182859.log`**
+> 🛠️ **Read `C:\Users\Mischa\hardeningkitty_log_legion_finding_list_0x6d69636b_machine-20260101-182859.log`**
 > -> *Read lines 1-50 of 432 from hardeningkitty_log_legion_finding_list_0x6d69636b_machine-20260101-182859.log*
 
 🤖: I will read the first 50 lines of the HardeningKitty log to understand its format and how it reports issues.
@@ -10917,7 +9902,7 @@ If you need me to investigate something specific (like the file structure or spe
 > 🧠 **Analyzing Configuration Sources**
 > I'm now diving deeper into the configuration files. My immediate plan is to examine `settings.json` and `GEMINI.md` located in the `.gemini` directory. I'll be searching for keywords such as "shell", "terminal", "safe", and "allow" to identify potential causes. I'll also compare the current `settings.json` with its original version. Furthermore, I've noted the existence of `.antigravity` and `.lmstudio` directories, though my initial focus remains on the primary Gemini CLI configuration. This "Command rejected" error seems specific, and since the tool *is* listed, it implies a more nuanced issue than a simple global disable.
 
-> 🛠️ **Read `settings.json`**
+> 🛠️ **Read `C:\Users\Mischa\.gemini\settings.json`**
 > -> *[{'functionResponse': {'id': 'read_file-1767341284762-c363f346447f68', 'name': 'read_file', 'response': {'output': '{\n  "ide": {\n    "hasSeenNudge": true,\n    "enabled": true\n  },\n  "security": {...*
 
 🤖: I will check the configuration files to see if there are any settings related to shell access or safety restrictions. I'll start by reading `.gemini/settings.json` and `.gemini/GEMINI.md`.
@@ -10929,7 +9914,7 @@ If you need me to investigate something specific (like the file structure or spe
 > 🧠 **Exploring `GEMINI.md`**
 > I've shifted my focus to `GEMINI.md`, hoping for insights into shell restrictions. I'm trying to see if there's any relevant information. This might offer clarity on why the error occurs despite an assumed disable. I'm exploring whether the issue lies within the shell's implementation instead of a blanket disable mechanism.
 
-> 🛠️ **Read `GEMINI.md`**
+> 🛠️ **Read `C:\Users\Mischa\.gemini\GEMINI.md`**
 > -> *[{'functionResponse': {'id': 'read_file-1767341290523-d9e0604e62b4d', 'name': 'read_file', 'response': {'output': ''}}}]*
 
 🤖: I will read `.gemini/GEMINI.md` to see if there is any documentation regarding shell command restrictions or troubleshooting.
@@ -10938,7 +9923,7 @@ If you need me to investigate something specific (like the file structure or spe
 > 🧠 **Inspecting Empty Files**
 > I'm currently investigating the lack of content in `GEMINI.md`. My focus has shifted to examining the original settings file, `.gemini/settings.json.orig`, to determine if any default configurations might explain the empty state of `GEMINI.md`. I want to understand if there's an inherited configuration at play.
 
-> 🛠️ **Read `settings.json.orig`**
+> 🛠️ **Read `C:\Users\Mischa\.gemini\settings.json.orig`**
 > -> *[{'functionResponse': {'id': 'read_file-1767341294024-95c59fec94d0b8', 'name': 'read_file', 'response': {'output': '{\n  "security": {\n    "auth": {\n      "selectedType": "gemini-api-key"\n    },\n ...*
 
 🤖: I will read `.gemini/settings.json.orig` to compare it with the current settings.
@@ -10950,7 +9935,7 @@ If you need me to investigate something specific (like the file structure or spe
 > 🧠 **Isolating the Root Cause**
 > I'm now investigating potential discrepancies between Windows and Linux environments, focusing on parsing differences within PowerShell. The tool's rejection of a command that should be "safe" suggests a parsing issue. I'm checking if the tool, specifically running on `win32`, is expecting a different input format. The `.antigravity` engine might be where to look, especially in the `argv.json` config file. I need to determine if a hidden setting or client bug is causing validation to fail.
 
-> 🛠️ **Read `argv.json`**
+> 🛠️ **Read `C:\Users\Mischa\.antigravity\argv.json`**
 > -> *[{'functionResponse': {'id': 'read_file-1767341299777-3ec744abf8e688', 'name': 'read_file', 'response': {'output': '// This configuration file allows you to pass permanent command line arguments to VS...*
 
 🤖: I will check `C:\Users\Mischa\.antigravity\argv.json` to see if there are any command-line arguments or configurations that might be affecting the shell tool.
@@ -10962,7 +9947,7 @@ If you need me to investigate something specific (like the file structure or spe
 > 🧠 **Exploring Trust Settings**
 > I've stumbled upon the `trustedFolders.json` file now. The error made me think about trust settings, and it looks like a client-side filter might be the culprit. I am wondering if the folder is trusted. My current directory is my user directory, and if it's not trusted, that would explain the error. Settings indicate that folder trust is enabled.
 
-> 🛠️ **Read `trustedFolders.json`**
+> 🛠️ **Read `C:\Users\Mischa\.gemini\trustedFolders.json`**
 > -> *[{'functionResponse': {'id': 'read_file-1767341306905-1ae2edfa0029d8', 'name': 'read_file', 'response': {'output': '{\n  "C:\\\\Users\\\\Mischa": "TRUST_FOLDER",\n  "D:.": "TRUST_FOLDER",\n  "E:.": "T...*
 
 🤖: I will check `C:\Users\Mischa\.gemini\trustedFolders.json` to see if the current directory is trusted, as this might be preventing shell commands from executing.
@@ -10980,7 +9965,7 @@ If you need me to investigate something specific (like the file structure or spe
 🤖: I will check the logs in `C:\Users\Mischa\.foundry\logs` to see if there are any error messages or details about why the shell commands are being rejected.
 
 
-> 🛠️ **Read `settings.json`**
+> 🛠️ **Read `C:\Users\Mischa\.claude\settings.json`**
 > -> *[{'functionResponse': {'id': 'read_file-1767341315295-627edd4ec1ca08', 'name': 'read_file', 'response': {'output': '{\n  "permissions": {\n    "defaultMode": "acceptEdits"\n  },\n  "alwaysThinkingEnab...*
 
 🤖: The logs are old (December 2025). Today is Jan 1, 2026.
@@ -10988,7 +9973,7 @@ If you need me to investigate something specific (like the file structure or spe
 Let's check `C:\Users\Mischa\.claude\settings.json`. Maybe there is a shared setting.
 
 
-> 🛠️ **Read `create_gemini_shortcut.ps1`**
+> 🛠️ **Read `C:\Users\Mischa\create_gemini_shortcut.ps1`**
 > -> *[{'functionResponse': {'id': 'read_file-1767341321366-a6e5da3398d4d8', 'name': 'read_file', 'response': {'output': '$TargetFile = "C:\\Users\\Mischa\\AppData\\Roaming\\npm\\gemini.cmd"\n$ShortcutFile ...*
 
 🤖: That doesn't help.
@@ -11021,7 +10006,7 @@ I will try adding `"unsafeShell": true` or similar? No, guessing is bad.
 Let's look at the `create_gemini_shortcut.ps1` file. Maybe it sets up the environment in a specific way.
 
 
-> 🛠️ **Read `mcp.json`**
+> 🛠️ **Read `C:\Users\Mischa\.lmstudio\mcp.json`**
 > -> *[{'functionResponse': {'id': 'read_file-1767341326310-ec559f0c31a3a8', 'name': 'read_file', 'response': {'output': '{\n  "mcpServers": {}\n}'}}}]*
 
 🤖: It points to `C:\Users\Mischa\AppData\Roaming\npm\gemini.cmd`. This confirms it's a Node.js based CLI installed via npm.
@@ -11084,7 +10069,7 @@ I have `google_web_search`. I should use it.
 I will search for the error message.
 
 
-> 🛠️ **Read `remediate_hardening.ps1`**
+> 🛠️ **Read `C:\Users\Mischa\remediate_hardening.ps1`**
 > -> *[{'functionResponse': {'id': 'read_file-1767341355858-d51e8f2c9b8fa8', 'name': 'read_file', 'response': {'output': '# remediate_hardening.ps1\r\n# Applies Tier 1 and Tier 2 Hardening Measures\r\n# Run...*
 
 🤖: The search results indicate two likely causes for "Command rejected because it could not be parsed safely":
@@ -11175,7 +10160,7 @@ I will tell the user to run `remediate_hardening.ps1` in a separate PowerShell w
 But I should check the content of `remediate_hardening.ps1` first to see if it addresses PowerShell Language Mode.
 
 
-> 🛠️ **Read `remediate_tier3_v2.ps1`**
+> 🛠️ **Read `C:\Users\Mischa\remediate_tier3_v2.ps1`**
 > -> *[{'functionResponse': {'id': 'read_file-1767341361162-6c7368e8a444d', 'name': 'read_file', 'response': {'output': '# remediate_tier3_v2.ps1\r\n# Forces ASR Rules to BLOCK MODE (1)\r\n# Uses Set-MpPref...*
 
 🤖: This script *applies* hardening (Tier 1 & Tier 2), it doesn't "remediate" (remove) it in the sense of "fixing the problem caused by hardening", but rather "fixes the machine by making it secure". The filename "remediate_hardening.ps1" is slightly ambiguous, but the content clearly *enables* security features.
@@ -11397,7 +10382,7 @@ Would you like me to read `sync_raw_logs.py` to check its contents?
 > 🧠 **Exploring Potential Solutions**
 > I'm currently investigating how to address the issue with `run_shell_command`. I attempted using `glob` to locate the `gh` executable but then remembered its known path from my `.gitconfig`. Now, I'm focusing on `.gemini\settings.json`, hoping it contains insights into tool configuration.
 
-> 🛠️ **Read `settings.json`**
+> 🛠️ **Read `.gemini\settings.json`**
 > -> *[{'functionResponse': {'id': 'read_file-1767340575358-b30b8492d265b', 'name': 'read_file', 'response': {'output': '{\n  "ide": {\n    "hasSeenNudge": true,\n    "enabled": true\n  },\n  "security": {\...*
 
 🤖: I will read the `.gemini\settings.json` file to check for any configurations or restrictions related to tool usage.
@@ -11443,7 +10428,7 @@ Would you like me to read `sync_raw_logs.py` to check its contents?
 > 🧠 **Accessing the Configuration**
 > I'm currently focused on the `trustedFolders.json` file. It's the primary source of configuration, and I'm diving in to see what kind of structured data it holds. Understanding the structure and contents is key to further processing.
 
-> 🛠️ **Read `trustedFolders.json`**
+> 🛠️ **Read `.gemini\trustedFolders.json`**
 > -> *[{'functionResponse': {'id': 'read_file-1767340586750-eae2d6c13ca3a8', 'name': 'read_file', 'response': {'output': '{\n  "C:\\\\Users\\\\Mischa": "TRUST_FOLDER",\n  "D:.": "TRUST_FOLDER",\n  "E:.": "T...*
 
 🤖: I will read the `trustedFolders.json` file to see which directories are currently trusted by the system.
@@ -11532,7 +10517,7 @@ Would you like me to read `sync_raw_logs.py` to check its contents?
 > 🧠 **Exploring Configuration Details**
 > Okay, I've got a new lead. I found a file called `.claude\settings.json`. I'm going to dig through that now. Hopefully, it has some clues about how the system handles commands, which could give me the missing piece of the puzzle.
 
-> 🛠️ **Read `settings.json`**
+> 🛠️ **Read `.claude\settings.json`**
 > -> *[{'functionResponse': {'id': 'read_file-1767340610928-939e231fe62b4', 'name': 'read_file', 'response': {'output': '{\n  "permissions": {\n    "defaultMode": "acceptEdits"\n  },\n  "alwaysThinkingEnabl...*
 
 🤖: I will read the `.claude\settings.json` file to see if there are any configurations that might explain the restrictions on running shell commands.
@@ -11541,7 +10526,7 @@ Would you like me to read `sync_raw_logs.py` to check its contents?
 > 🧠 **Examining potential avenues**
 > I'm currently trying to understand the configuration of this local setup. I've found a file, `mcp.json`, within the `.lmstudio` directory. My aim is to determine if this file indicates the presence of an MCP server or any related command-execution infrastructure.
 
-> 🛠️ **Read `mcp.json`**
+> 🛠️ **Read `.lmstudio\mcp.json`**
 > -> *[{'functionResponse': {'id': 'read_file-1767340613061-dac001d064486', 'name': 'read_file', 'response': {'output': '{\n  "mcpServers": {}\n}'}}}]*
 
 🤖: I will read the `.lmstudio\mcp.json` file to see if there are any MCP servers configured that might provide an alternative way to execute commands.
