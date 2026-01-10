@@ -1,16 +1,14 @@
 # Security Policy
 
-## Reporting a Vulnerability
+## Protocol
 
-Please do not report security vulnerabilities through public GitHub issues.
+*   **Private Reporting Only**: Do not disclose vulnerabilities via public issues.
+*   **No Secrets**: Repository enforces strict exclusion of:
+    *   Unredacted `.json`/`.pb` session files.
+    *   Environment files (`.env`).
+    *   Cryptographic keys/certificates.
 
-If you believe you have found a security vulnerability in this project, please report it privately.
+## Enforcement
 
-## Data Safety
-
-This repository is designed to store processed logs.
-- **Do not commit** original `.pb` or unredacted `.json` session files.
-- **Do not commit** `.env` files or certificates.
-- The `sync_raw_logs.py` script automatically redacts sensitive data during synchronization.
-- The `convert_to_markdown.py` script generates readable versions of the logs.
-- Manual review is always recommended before pushing new chat logs.
+*   **Redaction**: `scripts/sync_raw_logs.py` applies regex masks to PII (Email, Phone, IP) and Secrets (API Keys, Private Keys) during ingestion.
+*   **Verification**: Manual audit recommended prior to push.
