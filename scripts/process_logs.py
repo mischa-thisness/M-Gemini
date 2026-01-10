@@ -2,10 +2,97 @@
 import json
 import os
 import re
+import random
 from pathlib import Path
 from datetime import datetime
 from collections import defaultdict
-from typing import Dict, List, Any
+from typing import Dict, List, Any, Tuple
+
+# ==========================================
+# PART 0: The Silicon Poet (Procedural Generation)
+# ==========================================
+
+class SiliconPoet:
+    """Generates technical, witty poems based on execution stats."""
+    
+    def __init__(self):
+        self.themes = {
+            'code': ['refactor', 'function', 'class', 'import', 'python', 'script'],
+            'shell': ['sudo', 'grep', 'ls', 'cd', 'install', 'apt', 'pacman'],
+            'io': ['read', 'write', 'file', 'json', 'markdown', 'log'],
+            'web': ['search', 'http', 'url', 'fetch', 'google']
+        }
+        
+    def _count_syllables(self, phrase: str) -> int:
+        # distinct heuristic for pre-calculated phrases, not a real counter
+        return 0 
+
+    def get_stats(self, text: str) -> str:
+        text = text.lower()
+        counts = {k: sum(text.count(w) for w in words) for k, words in self.themes.items()}
+        return max(counts, key=counts.get) if any(counts.values()) else 'general'
+
+    def generate(self, text_content: str) -> str:
+        theme = self.get_stats(text_content)
+        
+        # 3-5-7
+        stanza1 = [
+            # 3
+            ["Code compiles", "Git checks out", "Prompt sent in", "Logs stream fast", "Bits flip now"],
+            # 5
+            ["Logic finds its path", "Functions start to run", "Shell commands execute", "Python parses text", "Data flows downstream"],
+            # 7
+            ["System state is fully synced", "Architecture stands robust", "Binary is truth defined", "Errors caught before the crash", "Output matches the design"]
+        ]
+
+        # 5-7-7-5
+        stanza2 = [
+            # 5
+            ["Tokens spent wisely", "Context window clear", "Memory works hard", "Syntax holds the line", "Variables are set"],
+            # 7
+            ["Collaborating effectively", "Refactoring the legacy", "Optimizing for the speed", "Redacting all the secrets", "Building future artifacts"],
+            # 7
+            ["The agent plans the next move", "User guides the final step", "Silicon and carbon bond", "Terminal reports success", "Automation leads the way"],
+            # 5
+            ["Commit hash is signed", "Pipeline turns to green", "Process exits clean", "Virtual handshake", "Logic gates are closed"]
+        ]
+
+        # 7-5-3
+        stanza3 = [
+            # 7
+            ["Documentation is truth", "Archival process complete", "Knowledge base is updated", "System secure and ready", "History is written down"],
+            # 5
+            ["Task is marked as done", "Waiting for input", "Sleep mode engages", "Daemon goes quiet", "Buffers flushed to disk"],
+            # 3
+            ["End of line", "Exit zero", "Root access", "Job complete", "Prompt awaits"]
+        ]
+
+        # Witty overrides based on theme
+        if theme == 'shell':
+            stanza1[0].append("Bash commands")
+            stanza1[1].append("Sudo runs the root")
+        elif theme == 'io':
+            stanza1[1].append("Files are read and written")
+            stanza2[3].append("Disk usage increase")
+        
+        p1 = [random.choice(s) for s in stanza1]
+        p2 = [random.choice(s) for s in stanza2]
+        p3 = [random.choice(s) for s in stanza3]
+
+        return f"""
+> *{p1[0]}*
+> *{p1[1]}*
+> *{p1[2]}*
+>
+> *{p2[0]}*
+> *{p2[1]}*
+> *{p2[2]}*
+> *{p2[3]}*
+>
+> *{p3[0]}*
+> *{p3[1]}*
+> *{p3[2]}*
+"""
 
 # ==========================================
 # PART 1: Convert JSON to Markdown
@@ -114,6 +201,8 @@ def run_journal_generation(project_root: Path):
     chat_logs_dir = project_root / "Archives"
     journals_dir = project_root / "journals"
     journals_dir.mkdir(parents=True, exist_ok=True)
+    
+    poet = SiliconPoet()
 
     daily_files = defaultdict(list)
     for md_file in chat_logs_dir.glob("session-*.md"):
@@ -126,19 +215,34 @@ def run_journal_generation(project_root: Path):
 
     for date_str, files in daily_files.items():
         files.sort(key=lambda x: x.name)
-        full_day_content = f"# Journal - {date_str}\n\n"
+        
+        # Aggregate content for the poet
+        day_text_buffer = ""
+        session_contents = []
+        
         for md_path in files:
             try:
                 with open(md_path, 'r', encoding='utf-8') as f:
                     content = f.read()
-                    full_day_content += f"{content.strip()}\n\n---\n\n"
+                    day_text_buffer += content
+                    session_contents.append(content)
             except Exception as e:
                 print(f"Error reading {md_path}: {e}")
+        
+        # Generate the poem
+        poem = poet.generate(day_text_buffer)
+        
+        full_day_content = f"# Journal - {date_str}\n\n"
+        full_day_content += "### 🤖 Daily Collaboration Summary\n"
+        full_day_content += poem + "\n\n---\n\n"
+        
+        for content in session_contents:
+            full_day_content += f"{content.strip()}\n\n---\n\n"
 
         with open(journals_dir / f"{date_str}.md", 'w', encoding='utf-8') as f:
             f.write(full_day_content)
         
-    print(f"Generated {len(daily_files)} daily journals.")
+    print(f"Generated {len(daily_files)} daily journals with poems.")
 
 
 # ==========================================
