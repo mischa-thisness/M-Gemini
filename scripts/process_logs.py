@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 import json
 import os
 import re
@@ -9,12 +9,12 @@ from collections import defaultdict
 from typing import Dict, List, Any, Tuple
 
 # ==========================================
-# PART 0: The Silicon Poet (Procedural Generation)
+# PART 0: The Journal Agent (LLM Summarization)
 # ==========================================
 
-class SiliconPoet:
-    """Generates technical, witty poems based on execution stats or LLM API."""
-    
+class JournalAgent:
+    """Generates concise, technical summaries based on execution stats or LLM API."""
+
     def __init__(self):
         self.themes = {
             'code': ['refactor', 'function', 'class', 'import', 'python', 'script'],
@@ -22,26 +22,27 @@ class SiliconPoet:
             'io': ['read', 'write', 'file', 'json', 'markdown', 'log'],
             'web': ['search', 'http', 'url', 'fetch', 'google']
         }
-        
-    def _count_syllables(self, phrase: str) -> int:
-        # distinct heuristic for pre-calculated phrases, not a real counter
-        return 0 
 
     def get_stats(self, text: str) -> str:
         text = text.lower()
-        counts = {k: sum(text.count(w) for w in words) for k, words in self.themes.items()}
+        counts = {k: sum(text.count(w) for w in words) for k, words in self.themes.items()}      
         return max(counts, key=counts.get) if any(counts.values()) else 'general'
 
     def generate_llm(self, text_content: str) -> str:
-        """Attempts to generate a poem using an LLM API."""
+        """Attempts to generate a technical summary using an LLM API."""
         prompt = (
-            "You are a technical bard. Summarize the following software engineering session logs into a witty, technical poem. "
-            "Strictly follow this syllable structure:\n"
-            "Stanza 1: 3-5-7 syllables\n"
-            "Stanza 2: 5-7-7-5 syllables\n"
-            "Stanza 3: 7-5-3 syllables\n\n"
-            "Use puns if they fit. Be concise. Output ONLY the poem lines prefixed with '> *'.\n\n"
-            f"Session Content Preview: {text_content[:4000]}..." 
+            "You are an expert technical writer. Summarize the following software engineering session logs into a concise, high-level technical journal entry. "
+            "Focus strictly on:\n"
+            "1. Key architectural decisions made.\n"
+            "2. Critical bugs identified or fixed.\n"
+            "3. New features or scripts implemented.\n"
+            "4. Specific tools and libraries utilized.\n\n"
+            "Style Guidelines:\n"
+            "- Be concise and direct.\n"
+            "- Use bullet points.\n"
+            "- Avoid flowery language or filler.\n"
+            "- If the content is empty or irrelevant, state 'No significant engineering activity recorded.'\n\n"
+            f"Session Content Preview: {text_content[:6000]}..."
         )
 
         # Try Google Gemini
@@ -62,7 +63,7 @@ class SiliconPoet:
                 client = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
                 message = client.messages.create(
                     model="claude-3-haiku-20240307",
-                    max_tokens=300,
+                    max_tokens=500,
                     messages=[{"role": "user", "content": prompt}]
                 )
                 return message.content[0].text.strip()
@@ -73,71 +74,13 @@ class SiliconPoet:
 
     def generate(self, text_content: str) -> str:
         # Try LLM first
-        llm_poem = self.generate_llm(text_content)
-        if llm_poem:
-            return llm_poem
+        summary = self.generate_llm(text_content)
+        if summary:
+            return summary
 
-        # Fallback to procedural
+        # Fallback to simple procedural summary
         theme = self.get_stats(text_content)
-        
-        # 3-5-7
-        stanza1 = [
-            # 3
-            ["Code compiles", "Git checks out", "Prompt sent in", "Logs stream fast", "Bits flip now"],
-            # 5
-            ["Logic finds its path", "Functions start to run", "Shell commands execute", "Python parses text", "Data flows downstream"],
-            # 7
-            ["System state is fully synced", "Architecture stands robust", "Binary is truth defined", "Errors caught before the crash", "Output matches the design"]
-        ]
-
-        # 5-7-7-5
-        stanza2 = [
-            # 5
-            ["Tokens spent wisely", "Context window clear", "Memory works hard", "Syntax holds the line", "Variables are set"],
-            # 7
-            ["Collaborating effectively", "Refactoring the legacy", "Optimizing for the speed", "Redacting all the secrets", "Building future artifacts"],
-            # 7
-            ["The agent plans the next move", "User guides the final step", "Silicon and carbon bond", "Terminal reports success", "Automation leads the way"],
-            # 5
-            ["Commit hash is signed", "Pipeline turns to green", "Process exits clean", "Virtual handshake", "Logic gates are closed"]
-        ]
-
-        # 7-5-3
-        stanza3 = [
-            # 7
-            ["Documentation is truth", "Archival process complete", "Knowledge base is updated", "System secure and ready", "History is written down"],
-            # 5
-            ["Task is marked as done", "Waiting for input", "Sleep mode engages", "Daemon goes quiet", "Buffers flushed to disk"],
-            # 3
-            ["End of line", "Exit zero", "Root access", "Job complete", "Prompt awaits"]
-        ]
-
-        # Witty overrides based on theme
-        if theme == 'shell':
-            stanza1[0].append("Bash commands")
-            stanza1[1].append("Sudo runs the root")
-        elif theme == 'io':
-            stanza1[1].append("Files are read and written")
-            stanza2[3].append("Disk usage increase")
-        
-        p1 = [random.choice(s) for s in stanza1]
-        p2 = [random.choice(s) for s in stanza2]
-        p3 = [random.choice(s) for s in stanza3]
-
-        return f"""
-> *{p1[0]}*
-> *{p1[1]}*
-> *{p1[2]}*
->
-> *{p2[0]}*
-> *{p2[1]}*
-> *{p2[2]}*
-> *{p2[3]}*
->
-> *{p3[0]}*
-> *{p3[1]}*
-> *{p3[2]}*
-"""
+        return f"**Automated Summary (Fallback):**\n- Processed logs focused on *{theme}* operations.\n- Detailed analysis unavailable (LLM API key missing or failed)."
 
 # ==========================================
 # PART 1: Convert JSON to Markdown
@@ -156,14 +99,14 @@ def format_user_message(msg: Dict[str, Any]) -> str:
 def format_tool_summary(tool: Dict[str, Any]) -> str:
     name = tool.get('name')
     args = tool.get('args', {})
-    
+
     if name in ['run_command', 'run_shell_command']:
         cmd = args.get('CommandLine') or args.get('command') or ''
         return f"Ran `{cmd.split()[0]}`" if cmd else f"Ran command"
     elif name in ['read_file', 'view_file', 'read_url_content']:
-        path = args.get('file_path') or args.get('AbsolutePath') or args.get('Url') or 'file'
+        path = args.get('file_path') or args.get('AbsolutePath') or args.get('Url') or 'file'    
         return f"Read `{Path(path).name}`"
-    elif name in ['write_to_file', 'replace_file_content', 'multi_replace_file_content']:
+    elif name in ['write_to_file', 'replace_file_content', 'multi_replace_file_content']:        
         path = args.get('TargetFile') or 'file'
         return f"Edited `{Path(path).name}`"
     elif name in ['search_web', 'google_search']:
@@ -174,32 +117,32 @@ def format_tool_summary(tool: Dict[str, Any]) -> str:
 
 def format_gemini_message(msg: Dict[str, Any]) -> str:
     output = []
-    
+
     # Thoughts
     thoughts = msg.get('thoughts', [])
     for t in thoughts:
         desc = t.get('description', '')
         summary = t.get('subject') or (desc[:50] + "...")
         output.append(f"> 🧠 **{summary}**\n> {desc}\n")
-        
+
     # Tools
     for tool in msg.get('toolCalls', []):
         summary = format_tool_summary(tool)
         output.append(f"> 🛠️ **{summary}**")
-        
+
         args = tool.get('args', {})
         cmd = args.get('CommandLine') or args.get('command')
         if cmd:
             output.append(f"> ` {cmd} `")
-        
+
         result = tool.get('resultDisplay') or tool.get('result') or 'Done'
         result_str = str(result).strip()
         if result_str:
             preview = result_str[:200].replace('\n', ' ') + ('...' if len(result_str) > 200 else '')
             output.append(f"> -> *{preview}*")
-        
-        output.append("") 
-        
+
+        output.append("")
+
     content = msg.get('content', '').strip()
     if content:
         output.append(f"🤖: {content}\n")
@@ -213,16 +156,16 @@ def convert_json_to_markdown(json_path: Path, output_dir: Path) -> Dict[str, Any
     session_id, timestamp, messages = data.get('sessionId', json_path.stem), data.get('startTime', ''), data.get('messages', [])
     source = data.get("source", "unknown")
     if not messages: return None
-    
+
     md_lines = [f"# {session_id}\n\n"]
     u_cnt = sum(1 for m in messages if m.get('type') == 'user')
     g_cnt = sum(1 for m in messages if m.get('type') == 'gemini')
     md_lines.append(f"*{format_timestamp(timestamp)} | {u_cnt} prompts, {g_cnt} responses | Source: **{source}***\n\n---\n\n")
-    
+
     for m in messages:
         if m.get('type') == 'user': md_lines.append(format_user_message(m))
         elif m.get('type') == 'gemini': md_lines.append(format_gemini_message(m))
-        
+
     output_path = output_dir / (json_path.stem + '.md')
     with open(output_path, 'w', encoding='utf-8') as f: f.write(''.join(md_lines))
     return {'session_id': session_id}
@@ -246,8 +189,8 @@ def run_journal_generation(project_root: Path):
     chat_logs_dir = project_root / "Archives"
     journals_dir = project_root / "journals"
     journals_dir.mkdir(parents=True, exist_ok=True)
-    
-    poet = SiliconPoet()
+
+    agent = JournalAgent()
 
     daily_files = defaultdict(list)
     for md_file in chat_logs_dir.glob("session-*.md"):
@@ -260,11 +203,11 @@ def run_journal_generation(project_root: Path):
 
     for date_str, files in daily_files.items():
         files.sort(key=lambda x: x.name)
-        
-        # Aggregate content for the poet
+
+        # Aggregate content for the agent
         day_text_buffer = ""
         session_contents = []
-        
+
         for md_path in files:
             try:
                 with open(md_path, 'r', encoding='utf-8') as f:
@@ -273,21 +216,21 @@ def run_journal_generation(project_root: Path):
                     session_contents.append(content)
             except Exception as e:
                 print(f"Error reading {md_path}: {e}")
-        
-        # Generate the poem
-        poem = poet.generate(day_text_buffer)
-        
+
+        # Generate the summary
+        summary = agent.generate(day_text_buffer)
+
         full_day_content = f"# Journal - {date_str}\n\n"
         full_day_content += "### 🤖 Daily Collaboration Summary\n"
-        full_day_content += poem + "\n\n---\n\n"
-        
+        full_day_content += summary + "\n\n---\n\n"
+
         for content in session_contents:
             full_day_content += f"{content.strip()}\n\n---\n\n"
 
         with open(journals_dir / f"{date_str}.md", 'w', encoding='utf-8') as f:
             f.write(full_day_content)
-        
-    print(f"Generated {len(daily_files)} daily journals with poems.")
+
+    print(f"Generated {len(daily_files)} daily journals with summaries.")
 
 
 # ==========================================
@@ -305,11 +248,11 @@ def run_log_combination(project_root: Path):
 
     md_files = sorted(source_dir.glob("session-*.md"))
     print(f"Found {len(md_files)} session logs.")
-    
+
     full_log_content = "# Full Gemini Chat History\n\n"
-    full_log_content += f"Generated on: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n"
+    full_log_content += f"Generated on: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n"        
     full_log_content += "Ordered chronologically.\n\n"
-    
+
     for md_path in md_files:
         try:
             with open(md_path, 'r', encoding='utf-8') as f:
@@ -317,10 +260,10 @@ def run_log_combination(project_root: Path):
                 full_log_content += content.strip() + "\n\n<br>\n<br>\n\n"
         except Exception as e:
             print(f"Error reading {md_path}: {e}")
-        
+
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write(full_log_content)
-        
+
     print(f"Successfully wrote full chat log to {output_file}")
 
 
@@ -330,13 +273,13 @@ def run_log_combination(project_root: Path):
 
 def main():
     project_root = Path(__file__).parent.parent
-    
+
     # 1. Convert JSON -> Markdown
     run_conversion(project_root)
-    
+
     # 2. Generate Journals (Daily Aggregations)
     run_journal_generation(project_root)
-    
+
     # 3. Combine All Logs (Master Record)
     run_log_combination(project_root)
 
