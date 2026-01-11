@@ -52,17 +52,30 @@ mkdir -p /etc/blocky
 cat > /etc/blocky/config.yml <<EOF
 upstream:
   default:
-    - 1.1.1.1
-    - 8.8.8.8
-    - 9.9.9.9
+    - 1.1.1.2 # Cloudflare Security
+    - 9.9.9.9 # Quad9 Security
 
 blocking:
+  refreshPeriod: 4h
+  downloadTimeout: 5m
+  processingConcurrency: 4
+  
   blackLists:
-    ads:
-      - https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
+    hagezi_pro_plus:
+      - https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/pro.plus.txt
+    security_tif:
+      - https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/tif.medium.txt
+    malware_urlhaus:
+      - https://urlhaus.abuse.ch/downloads/hostfile/
+    phishing_army:
+      - https://phishing.army/download/phishing_army_blocklist_extended.txt
+
   clientGroupsBlock:
     default:
-      - ads
+      - hagezi_pro_plus
+      - security_tif
+      - malware_urlhaus
+      - phishing_army
 
 port: 5353
 httpPort: 4000
