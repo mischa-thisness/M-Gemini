@@ -59,12 +59,21 @@ bootstrapDns:
   - 1.1.1.1
   - 8.8.8.8
 
+ports:
+  dns: 5353
+  http: 4000
+
+queryLog:
+  type: console
+
 blocking:
-  refreshPeriod: 4h
-  downloadTimeout: 5m
-  processingConcurrency: 4
+  loading:
+    refreshPeriod: 4h
+    downloads:
+      timeout: 5m
+    concurrency: 4
   
-  blackLists:
+  denylists:
     # --- Max Security & Privacy ---
     
     # 1. Hagezi Ultimate (Aggressive General + Trackers + 1Hosts + Telemetry)
@@ -92,8 +101,6 @@ blocking:
       - malware_urlhaus
       - phishing_army
 
-port: 5353
-httpPort: 4000
 logLevel: info
 EOF
 
