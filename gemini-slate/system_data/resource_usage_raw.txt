@@ -1,0 +1,956 @@
+--- TOP PROCESSES ---
+Mem: 392740K used, 515736K free, 6060K shrd, 8208K buff, 48416K cached
+CPU:   2% usr   0% sys   0% nic  97% idle   0% io   0% irq   0% sirq
+Load average: 0.01 0.02 0.00 2/175 4890
+  PID  PPID USER     STAT   VSZ %VSZ CPU %CPU COMMAND
+16149 14591 root     S    28020   3%   1   0% nginx: worker process
+16150 14591 root     S    27796   3%   3   0% nginx: worker process
+16148 14591 root     S    27256   3%   1   0% nginx: worker process
+16154 14591 root     S    26788   3%   0   0% nginx: worker process
+14591     1 root     S    20440   2%   0   0% nginx: master process /usr/sbin/nginx -c /etc/nginx/nginx.conf -g daemon off;
+14450     1 root     S<   18180   2%   1   0% /usr/bin/gl_screen -c /tmp/gl_screen/config
+ 6982     1 root     S    12588   1%   1   0% hostapd -g /var/run/hostapd/global -B -P /var/run/hostapd-global.pid -f tmp/hostapd.txt
+20307     1 root     S    12544   1%   0   0% /usr/bin/lua /usr/bin/gl_clients_update
+ 6980     1 root     S    11620   1%   3   0% wpa_supplicant -g /var/run/wpa_supplicantglobal -B -P /var/run/wpa_supplicant-global.pid
+17003     1 root     S     8248   1%   1   0% /usr/bin/sms_manager
+ 2587     1 root     S     7932   1%   3   0% /usr/sbin/uhttpd -f -h /www -r GL-BE3600 -x /cgi-bin -u /ubus -t 60 -T 30 -k 20 -A 1 -n 3 -N 100 -p 0.0.0.0:8080 -p [::]:8080 -C /etc/uhttpd.crt -K /etc/uhttpd.key -s 0.0.0.0:8443 -s [::]:8443
+  443     1 root     S     6324   1%   2   0% /sbin/rngd -f -r /dev/hwrng
+ 1006     1 root     S     5892   1%   2   0% eco /usr/sbin/gl-ngx-session
+ 4056     1 root     S     5024   1%   1   0% /usr/bin/eco /usr/sbin/gl-repeater
+21153 20856 dnsmasq  S     4872   1%   1   0% /usr/sbin/dnsmasq -C /var/etc/dnsmasq.conf.cfg01411c -k -x /var/run/dnsmasq/dnsmasq.cfg01411c.pid
+21170 21153 root     S     4860   1%   1   0% /usr/sbin/dnsmasq -C /var/etc/dnsmasq.conf.cfg01411c -k -x /var/run/dnsmasq/dnsmasq.cfg01411c.pid
+  567     1 root     S     4056   0%   3   0% /usr/bin/cnssdaemon -s
+ 3442     1 root     S     3924   0%   0   0% /sbin/rpcd -s /var/run/ubus/ubus.sock -t 30
+20147     1 root     S     3652   0%   2   0% /usr/bin/eco /usr/bin/alarm_event_report
+ 3980     1 root     S     2984   0%   2   0% /usr/bin/lua /usr/sbin/qca-wifi-configurator
+20856     1 root     S     2776   0%   0   0% {dnsmasq} /sbin/ujail -t 5 -n dnsmasq -u -l -r /bin/ubus -r /etc/TZ -r /etc/dnsmasq.conf -r /etc/ethers -r /etc/group -r /etc/hosts -r /etc/passwd -w /tmp/dhcp.leases -r /tmp/dnsmasq.d -r /tmp/hosts -r /tmp/resolv.conf.d -r /usr/bin/jshn -r /usr/lib/dnsmasq/dhcp-script.sh -r /usr/share/dnsmasq/dhcpbogushostname.conf -r /usr/share/dnsmasq/rfc6761.conf -r /usr/share/dnsmasq/trust-anchors.conf -r /us
+19768     1 root     S     2776   0%   0   0% {ntpd} /sbin/ujail -t 5 -n ntpd -U ntp -G ntp -C /etc/capabilities/ntpd.json -c -u -r /bin/ubus -r /usr/bin/env -r /usr/bin/jshn -r /usr/sbin/ntpd-hotplug -r /usr/share/libubox/jshn.sh -- /usr/sbin/ntpd -n -N -S /usr/sbin/ntpd-hotplug -p 0.openwrt.pool.ntp.org -p 1.openwrt.pool.ntp.org -p 2.openwrt.pool.ntp.org -p 3.openwrt.pool.ntp.org
+12749     1 nobody   S     2504   0%   1   0% avahi-daemon: running [GL-BE3600.local]
+ 6362     1 root     S     2180   0%   0   0% /sbin/netifd
+    1     0 root     S     1984   0%   0   0% /sbin/procd
+12451     1 root     S     1976   0%   0   0% /usr/bin/dbus-daemon --system --nofork
+ 1079     1 root     S     1852   0%   0   0% /usr/sbin/acfg_tool -e -s -t 192.168.1.2
+ 4890  4889 root     R     1492   0%   3   0% top -b -n 1
+11876     1 root     S     1460   0%   1   0% /usr/sbin/crond -f -c /tmp/gl_crontabs -l 10
+ 4834 11876 root     S     1460   0%   1   0% /bin/ash -c sleep 40; /usr/bin/modem_sim_status_check.sh
+ 4889  4888 root     S     1460   0%   2   0% ash -c  echo "--- TOP PROCESSES ---" top -b -n 1 echo "--- STORAGE DUMP ---" du -k -d 3 /overlay echo "--- PACKAGE SIZES ---" grep -H "Size:" /usr/lib/opkg/info/*.control 
+19776 19768 ntp      S     1452   0%   3   0% /usr/sbin/ntpd -n -N -S /usr/sbin/ntpd-hotplug -p 0.openwrt.pool.ntp.org -p 1.openwrt.pool.ntp.org -p 2.openwrt.pool.ntp.org -p 3.openwrt.pool.ntp.org
+ 4838  4834 root     S     1452   0%   3   0% sleep 40
+ 7980  6362 root     S     1452   0%   2   0% udhcpc -p /var/run/udhcpc-eth0.pid -s /lib/netifd/dhcp.script -f -t 0 -i eth0 -x hostname:GL-BE3600 -C -R -O 212
+ 3325     1 logd     S     1408   0%   1   0% /sbin/logd -S 128
+  374     1 ubus     S     1404   0%   0   0% /sbin/ubusd
+ 4888  5137 root     S     1380   0%   0   0% /usr/sbin/dropbear -F -P /var/run/dropbear.main.pid -p 22 -K 300 -T 3 -W 262144 -2 9
+ 5137     1 root     S     1356   0%   3   0% /usr/sbin/dropbear -F -P /var/run/dropbear.main.pid -p 22 -K 300 -T 3 -W 262144
+19806     1 root     S<    1260   0%   0   0% /usr/sbin/thermald
+  936     1 root     S     1200   0%   0   0% /usr/bin/fcgiwrap -c 4 -s unix:/var/run/fcgiwrap.socket
+  972   936 root     S     1200   0%   0   0% /usr/bin/fcgiwrap -c 4 -s unix:/var/run/fcgiwrap.socket
+  969   936 root     S     1200   0%   1   0% /usr/bin/fcgiwrap -c 4 -s unix:/var/run/fcgiwrap.socket
+  971   936 root     S     1200   0%   0   0% /usr/bin/fcgiwrap -c 4 -s unix:/var/run/fcgiwrap.socket
+  970   936 root     S     1200   0%   1   0% /usr/bin/fcgiwrap -c 4 -s unix:/var/run/fcgiwrap.socket
+  496     1 root     S     1076   0%   0   0% /sbin/urngd
+ 6082     1 root     S     1072   0%   1   0% /usr/bin/carrier-monitor
+20376     1 root     S      928   0%   2   0% /usr/bin/gl_fan -T /sys/devices/virtual/thermal/thermal_zone0/temp -D 1000 -t 75
+ 3215     1 root     S      920   0%   2   0% /usr/bin/breakpad/breakpad_reporter
+  379     1 root     S      920   0%   1   0% /sbin/askfirst /usr/libexec/login.sh
+   26     2 root     IW       0   0%   3   0% [kworker/3:0-eve]
+ 5425     2 root     SW<      0   0%   0   0% [scheduler_threa]
+   10     2 root     IW       0   0%   1   0% [rcu_preempt]
+    9     2 root     SW       0   0%   0   0% [ksoftirqd/0]
+   30     2 root     IW       0   0%   0   0% [kworker/0:1-eve]
+ 2682     2 root     IW       0   0%   3   0% [kworker/u8:1-wm]
+  144     2 root     IW<      0   0%   0   0% [kworker/0:1H-ev]
+   17     2 root     IW<      0   0%   1   0% [kworker/1:0H-ev]
+   27     2 root     IW<      0   0%   3   0% [kworker/3:0H-ev]
+   22     2 root     IW<      0   0%   2   0% [kworker/2:0H-ev]
+   15     2 root     SW       0   0%   1   0% [ksoftirqd/1]
+   78     2 root     IW       0   0%   1   0% [kworker/1:1-eve]
+   20     2 root     SW       0   0%   2   0% [ksoftirqd/2]
+ 6892     2 root     SW       0   0%   1   0% [ECM_wifi_event]
+   25     2 root     SW       0   0%   3   0% [ksoftirqd/3]
+  286     2 root     IW       0   0%   2   0% [kworker/2:2-rcu]
+ 4455     2 root     IW       0   0%   1   0% [kworker/u8:0-ec]
+  135     2 root     IW       0   0%   2   0% [kworker/2:1-mm_]
+  158     2 root     IW       0   0%   0   0% [kworker/0:2-eve]
+ 1754     2 root     IW       0   0%   3   0% [kworker/3:3-eve]
+  145     2 root     SW       0   0%   0   0% [spi0]
+   14     2 root     SW       0   0%   1   0% [migration/1]
+   11     2 root     SW       0   0%   0   0% [migration/0]
+   19     2 root     SW       0   0%   2   0% [migration/2]
+   24     2 root     SW       0   0%   3   0% [migration/3]
+  152     2 root     SW       0   0%   3   0% [ubi_bgt0d]
+ 4830 11876 root     Z        0   0%   0   0% [modem_sim_statu]
+ 4804     2 root     IW       0   0%   2   0% [kworker/u8:3-wm]
+  604     2 root     SW       0   0%   2   0% [kworker/u8:2+WC]
+  148     2 root     IW       0   0%   1   0% [kworker/1:2-rcu]
+  139     2 root     SW       0   0%   0   0% [hwrng]
+    2     0 root     SW       0   0%   0   0% [kthreadd]
+ 4721     2 root     SW       0   0%   1   0% [wlan_logging_th]
+ 1833     2 root     IW<      0   0%   1   0% [WCNSS_DCI]
+ 1834     2 root     IW<      0   0%   2   0% [WCNSS_DCI_CMD]
+ 1835     2 root     IW<      0   0%   1   0% [DIAG_RPMSG_DIAG]
+ 1836     2 root     IW<      0   0%   2   0% [DIAG_RPMSG_DIAG]
+ 1837     2 root     IW<      0   0%   1   0% [DIAG_RPMSG_DIAG]
+ 1838     2 root     IW<      0   0%   2   0% [DIAG_RPMSG_DIAG]
+ 1839     2 root     IW<      0   0%   1   0% [DIAG_RPMSG_DIAG]
+ 1840     2 root     IW<      0   0%   2   0% [DIAG_RPMSG_DIAG]
+ 1841     2 root     IW<      0   0%   1   0% [DIAG_RPMSG_DIAG]
+ 1830     2 root     IW<      0   0%   2   0% [WCNSS_CNTL]
+ 1843     2 root     IW<      0   0%   1   0% [DIAG_RPMSG_DIAG]
+ 1844     2 root     IW<      0   0%   1   0% [DIAG_RPMSG_DIAG]
+ 1845     2 root     IW<      0   0%   2   0% [DIAG_RPMSG_APPS]
+ 1846     2 root     IW<      0   0%   1   0% [DIAG_RPMSG_APPS]
+ 1847     2 root     IW<      0   0%   2   0% [DIAG_RPMSG_DIAG]
+ 1848     2 root     IW<      0   0%   1   0% [DIAG_RPMSG_DIAG]
+ 1849     2 root     IW<      0   0%   2   0% [DIAG_RPMSG_DIAG]
+ 1850     2 root     IW<      0   0%   1   0% [DIAG_RPMSG_DIAG]
+ 1851     2 root     IW<      0   0%   2   0% [DIAG_RPMSG_DIAG]
+ 1852     2 root     IW<      0   0%   1   0% [DIAG_RPMSG_DIAG]
+ 1853     2 root     IW<      0   0%   2   0% [DIAG_RPMSG_DIAG]
+ 1854     2 root     IW<      0   0%   1   0% [DIAG_RPMSG_DIAG]
+ 1855     2 root     IW<      0   0%   2   0% [diag_mhi_MDM]
+ 1856     2 root     IW<      0   0%   1   0% [DIAG_USB_diag_m]
+ 1857     2 root     IW<      0   0%   2   0% [diag_mhi_MDM_DC]
+ 1828     2 root     IW<      0   0%   2   0% [diag_cntl_wq]
+ 1827     2 root     IW<      0   0%   1   0% [DIAG_USB_diag]
+ 1829     2 root     IW<      0   0%   1   0% [diag_dci_wq]
+ 1831     2 root     IW<      0   0%   1   0% [WCNSS_DATA]
+ 1751     2 root     IW<      0   0%   1   0% [cfg80211]
+ 1825     2 root     IW<      0   0%   1   0% [diag_real_time_]
+  980     2 root     IW<      0   0%   0   0% [kworker/0:2H]
+ 1166     2 root     IW<      0   0%   1   0% [bond0]
+ 1826     2 root     IW<      0   0%   2   0% [diag_wq]
+ 1832     2 root     IW<      0   0%   2   0% [WCNSS_CMD]
+ 1842     2 root     IW<      0   0%   2   0% [DIAG_RPMSG_DIAG]
+ 1858     2 root     IW<      0   0%   1   0% [diag_dci_MDM_DC]
+  500     2 root     IW<      0   0%   3   0% [kworker/3:2H-kb]
+  166     2 root     IW<      0   0%   3   0% [uas]
+  160     2 root     SW       0   0%   2   0% [irq/115-soc:gpi]
+  159     2 root     SW       0   0%   2   0% [irq/114-soc:gpi]
+  161     2 root     IW<      0   0%   2   0% [ata_sff]
+  151     2 root     IW<      0   0%   3   0% [dsa_ordered]
+  150     2 root     IW<      0   0%   2   0% [ipv6_addrconf]
+  143     2 root     IW<      0   0%   2   0% [nvme-delete-wq]
+  149     2 root     SW       0   0%   0   0% [irq/94-q6v5 wdo]
+  289     2 root     SW       0   0%   1   0% [ubifs_bgt0_3]
+  138     2 root     SW       0   0%   0   0% [irq/93-smp2p]
+  134     2 root     SW       0   0%   2   0% [kswapd0]
+  137     2 root     IW<      0   0%   0   0% [kthrotld]
+   76     2 root     IW<      0   0%   1   0% [kworker/u9:0]
+   75     2 root     IW<      0   0%   3   0% [blkcg_punt_bio]
+   77     2 root     SW       0   0%   2   0% [watchdogd]
+   46     2 root     IW<      0   0%   1   0% [cryptd]
+   32     2 root     IW<      0   0%   2   0% [writeback]
+   31     2 root     SW       0   0%   2   0% [oom_reaper]
+   33     2 root     SW       0   0%   3   0% [kcompactd0]
+   74     2 root     IW<      0   0%   2   0% [kblockd]
+  141     2 root     IW<      0   0%   0   0% [nvme-wq]
+   28     2 root     IW<      0   0%   1   0% [netns]
+   23     2 root     SW       0   0%   3   0% [cpuhp/3]
+   29     2 root     SW       0   0%   2   0% [rcu_tasks_kthre]
+   13     2 root     SW       0   0%   1   0% [cpuhp/1]
+   18     2 root     SW       0   0%   2   0% [cpuhp/2]
+    4     2 root     IW<      0   0%   0   0% [rcu_par_gp]
+    3     2 root     IW<      0   0%   0   0% [rcu_gp]
+    8     2 root     IW<      0   0%   0   0% [mm_percpu_wq]
+   12     2 root     SW       0   0%   0   0% [cpuhp/0]
+  142     2 root     IW<      0   0%   3   0% [nvme-reset-wq]
+ 1859     2 root     IW<      0   0%   2   0% [diag_mhi_MDM_2]
+ 9027     2 root     IW<      0   0%   2   0% [mld0]
+ 9088     2 root     IW<      0   0%   3   0% [mld1]
+ 6907     2 root     IW<      0   0%   0   0% [ecm_sfe_ipv6_wo]
+ 6894     2 root     IW<      0   0%   2   0% [ecm_sfe_ipv4_wo]
+ 6893     2 root     IW<      0   0%   1   0% [ecm_ppe_ipv4_wo]
+ 6906     2 root     IW<      0   0%   0   0% [ecm_ppe_ipv6_wo]
+ 7043     2 root     SW       0   0%   3   0% [qrtr_rx]
+ 2126     2 root     SW       0   0%   2   0% [irq/149-cst816x]
+ 1939     2 root     IW<      0   0%   1   0% [ppe_qdisc_stats]
+ 1861     2 root     IW<      0   0%   2   0% [diag_mhi_MDM_DC]
+ 1860     2 root     IW<      0   0%   1   0% [DIAG_USB_diag_m]
+ 1862     2 root     IW<      0   0%   1   0% [diag_dci_MDM_DC]
+ 1949     2 root     IW<      0   0%   1   0% [wq_rtm_newneigh]
+25124     2 root     IW<      0   0%   1   0% [kworker/1:1H]
+25125     2 root     IW<      0   0%   2   0% [kworker/2:1H]
+
+--- STORAGE DUMP ---
+0	/overlay/work/work
+0	/overlay/work
+0	/overlay/upper/bin
+132	/overlay/upper/cfg/default
+132	/overlay/upper/cfg
+12	/overlay/upper/etc/oui-tertf
+12	/overlay/upper/etc/oui
+4	/overlay/upper/etc/ssl
+4	/overlay/upper/etc/opkg
+0	/overlay/upper/etc/rc.d
+4	/overlay/upper/etc/sysstat
+4	/overlay/upper/etc/init.d
+36	/overlay/upper/etc/openvpn
+16	/overlay/upper/etc/dropbear
+0	/overlay/upper/etc/hotplug.d
+0	/overlay/upper/etc/luci-uploads
+8	/overlay/upper/etc/gl_crontabs
+0	/overlay/upper/etc/gl_slot_switch_event
+40	/overlay/upper/etc/nginx
+420	/overlay/upper/etc/samba
+8	/overlay/upper/etc/sysctl.d
+220	/overlay/upper/etc/dnscrypt-proxy2
+0	/overlay/upper/etc/gl_screen
+0	/overlay/upper/etc/uci-defaults
+432	/overlay/upper/etc/config
+0	/overlay/upper/etc/lockdown
+1268	/overlay/upper/etc
+68	/overlay/upper/ini/internal
+76	/overlay/upper/ini
+12	/overlay/upper/lib/wifi
+8	/overlay/upper/lib/upgrade
+172	/overlay/upper/lib/firmware
+192	/overlay/upper/lib
+68	/overlay/upper/usr/bin
+2284	/overlay/upper/usr/lib
+8	/overlay/upper/usr/libexec
+0	/overlay/upper/usr/uwsgi_temp
+212	/overlay/upper/usr/share
+2572	/overlay/upper/usr
+1232	/overlay/upper/www/luci-static
+4	/overlay/upper/www/cgi-bin
+1240	/overlay/upper/www
+4	/overlay/upper/sbin
+4	/overlay/upper/root/.local
+4	/overlay/upper/root/.ssh
+0	/overlay/upper/root/.cloudflared
+8	/overlay/upper/root/.config
+4	/overlay/upper/root/.cache
+20	/overlay/upper/root
+0	/overlay/upper/vendor/firmware
+0	/overlay/upper/vendor
+5504	/overlay/upper
+5504	/overlay
+--- PACKAGE SIZES ---
+/usr/lib/opkg/info/6rd.control:Installed-Size: 3322
+/usr/lib/opkg/info/adguardhome-conntrack.control:Installed-Size: 10558842
+/usr/lib/opkg/info/alsa-lib.control:Installed-Size: 430524
+/usr/lib/opkg/info/alsa-ucm-conf.control:Installed-Size: 60290
+/usr/lib/opkg/info/alsa-utils.control:Installed-Size: 156658
+/usr/lib/opkg/info/alsa.control:Installed-Size: 1016
+/usr/lib/opkg/info/athdiag.control:Installed-Size: 4473
+/usr/lib/opkg/info/athtestcmd-lith.control:Installed-Size: 89665
+/usr/lib/opkg/info/attr.control:Installed-Size: 15477
+/usr/lib/opkg/info/avahi-dbus-daemon.control:Installed-Size: 41448
+/usr/lib/opkg/info/aw-s2s.control:Installed-Size: 14535
+/usr/lib/opkg/info/base-files.control:Installed-Size: 58996
+/usr/lib/opkg/info/bind-dig.control:Installed-Size: 54365
+/usr/lib/opkg/info/bind-libs.control:Installed-Size: 1223455
+/usr/lib/opkg/info/blkid.control:Installed-Size: 52412
+/usr/lib/opkg/info/breakpad-wrapper.control:Installed-Size: 59105
+/usr/lib/opkg/info/breakpad.control:Installed-Size: 14091
+/usr/lib/opkg/info/bridge.control:Installed-Size: 11470
+/usr/lib/opkg/info/busybox.control:Installed-Size: 296735
+/usr/lib/opkg/info/ca-bundle.control:Installed-Size: 123477
+/usr/lib/opkg/info/ca-certificates.control:Installed-Size: 133841
+/usr/lib/opkg/info/cgi-io.control:Installed-Size: 10165
+/usr/lib/opkg/info/chat.control:Installed-Size: 10159
+/usr/lib/opkg/info/cnssdiag.control:Installed-Size: 65490
+/usr/lib/opkg/info/comgt-ncm.control:Installed-Size: 2888
+/usr/lib/opkg/info/comgt.control:Installed-Size: 22454
+/usr/lib/opkg/info/conntrack.control:Installed-Size: 29621
+/usr/lib/opkg/info/coreutils-timeout.control:Installed-Size: 28950
+/usr/lib/opkg/info/coreutils.control:Installed-Size: 96
+/usr/lib/opkg/info/curl.control:Installed-Size: 71644
+/usr/lib/opkg/info/dashboard.control:Installed-Size: 4240
+/usr/lib/opkg/info/dbus.control:Installed-Size: 126874
+/usr/lib/opkg/info/dhcpdiscover.control:Installed-Size: 8250
+/usr/lib/opkg/info/dnscrypt-proxy2.control:Installed-Size: 4484717
+/usr/lib/opkg/info/dnsmasq-full.control:Installed-Size: 206940
+/usr/lib/opkg/info/dosfstools.control:Installed-Size: 79108
+/usr/lib/opkg/info/dropbear.control:Installed-Size: 127896
+/usr/lib/opkg/info/ds-lite.control:Installed-Size: 1090
+/usr/lib/opkg/info/e2fsprogs.control:Installed-Size: 205674
+/usr/lib/opkg/info/ethtool.control:Installed-Size: 46160
+/usr/lib/opkg/info/f2fs-tools.control:Installed-Size: 5936
+/usr/lib/opkg/info/f2fsck.control:Installed-Size: 96192
+/usr/lib/opkg/info/fcgi.control:Installed-Size: 23911
+/usr/lib/opkg/info/file.control:Installed-Size: 8359
+/usr/lib/opkg/info/firewall4.control:Installed-Size: 28796
+/usr/lib/opkg/info/flock.control:Installed-Size: 12274
+/usr/lib/opkg/info/fstools.control:Installed-Size: 21538
+/usr/lib/opkg/info/ftm.control:Installed-Size: 16003
+/usr/lib/opkg/info/fwtool.control:Installed-Size: 4540
+/usr/lib/opkg/info/getdns.control:Installed-Size: 196478
+/usr/lib/opkg/info/getrandom.control:Installed-Size: 1806
+/usr/lib/opkg/info/gl-line-graph.control:Installed-Size: 333637
+/usr/lib/opkg/info/gl-oui-rpc.control:Installed-Size: 88247
+/usr/lib/opkg/info/gl-sdk4-acl.control:Installed-Size: 2709
+/usr/lib/opkg/info/gl-sdk4-adguardhome.control:Installed-Size: 4815
+/usr/lib/opkg/info/gl-sdk4-arp-scan.control:Installed-Size: 808297
+/usr/lib/opkg/info/gl-sdk4-base-files.control:Installed-Size: 29085
+/usr/lib/opkg/info/gl-sdk4-cable.control:Installed-Size: 20734
+/usr/lib/opkg/info/gl-sdk4-carrier-monitor.control:Installed-Size: 2879
+/usr/lib/opkg/info/gl-sdk4-clients.control:Installed-Size: 16124
+/usr/lib/opkg/info/gl-sdk4-cloud.control:Installed-Size: 103639
+/usr/lib/opkg/info/gl-sdk4-ddns.control:Installed-Size: 32020
+/usr/lib/opkg/info/gl-sdk4-dns.control:Installed-Size: 11523
+/usr/lib/opkg/info/gl-sdk4-edgerouter.control:Installed-Size: 4704
+/usr/lib/opkg/info/gl-sdk4-firewall.control:Installed-Size: 10485
+/usr/lib/opkg/info/gl-sdk4-fullconenat.control:Installed-Size: 807
+/usr/lib/opkg/info/gl-sdk4-guest.control:Installed-Size: 679
+/usr/lib/opkg/info/gl-sdk4-igmp.control:Installed-Size: 2559
+/usr/lib/opkg/info/gl-sdk4-ipv6.control:Installed-Size: 26795
+/usr/lib/opkg/info/gl-sdk4-keepcfg.control:Installed-Size: 3821
+/usr/lib/opkg/info/gl-sdk4-lan.control:Installed-Size: 15468
+/usr/lib/opkg/info/gl-sdk4-local-access.control:Installed-Size: 4034
+/usr/lib/opkg/info/gl-sdk4-log.control:Installed-Size: 4624
+/usr/lib/opkg/info/gl-sdk4-logread.control:Installed-Size: 14591
+/usr/lib/opkg/info/gl-sdk4-lua-utils.control:Installed-Size: 11081
+/usr/lib/opkg/info/gl-sdk4-luci.control:Installed-Size: 593951
+/usr/lib/opkg/info/gl-sdk4-modem.control:Installed-Size: 681145
+/usr/lib/opkg/info/gl-sdk4-mpifd.control:Installed-Size: 7567
+/usr/lib/opkg/info/gl-sdk4-nas-exfat.control:Installed-Size: 33602
+/usr/lib/opkg/info/gl-sdk4-nas-utils.control:Installed-Size: 406145
+/usr/lib/opkg/info/gl-sdk4-nas-web.control:Installed-Size: 54609
+/usr/lib/opkg/info/gl-sdk4-netmode.control:Installed-Size: 9627
+/usr/lib/opkg/info/gl-sdk4-network-diag.control:Installed-Size: 1507
+/usr/lib/opkg/info/gl-sdk4-network.control:Installed-Size: 6694
+/usr/lib/opkg/info/gl-sdk4-ovpn-client.control:Installed-Size: 38444
+/usr/lib/opkg/info/gl-sdk4-ovpn-server.control:Installed-Size: 23250
+/usr/lib/opkg/info/gl-sdk4-p2p-daemon.control:Installed-Size: 1320933
+/usr/lib/opkg/info/gl-sdk4-plugins.control:Installed-Size: 13870
+/usr/lib/opkg/info/gl-sdk4-portal.control:Installed-Size: 1255
+/usr/lib/opkg/info/gl-sdk4-qos.control:Installed-Size: 7649
+/usr/lib/opkg/info/gl-sdk4-qsdk-wifi.control:Installed-Size: 18478
+/usr/lib/opkg/info/gl-sdk4-repeater-v2.control:Installed-Size: 40426
+/usr/lib/opkg/info/gl-sdk4-rtty.control:Installed-Size: 2412
+/usr/lib/opkg/info/gl-sdk4-s2s.control:Installed-Size: 19696
+/usr/lib/opkg/info/gl-sdk4-screen.control:Installed-Size: 2601940
+/usr/lib/opkg/info/gl-sdk4-sip_alg.control:Installed-Size: 950
+/usr/lib/opkg/info/gl-sdk4-sms-forward.control:Installed-Size: 3519
+/usr/lib/opkg/info/gl-sdk4-switch-button.control:Installed-Size: 5318
+/usr/lib/opkg/info/gl-sdk4-system.control:Installed-Size: 13645
+/usr/lib/opkg/info/gl-sdk4-tailscale.control:Installed-Size: 6318
+/usr/lib/opkg/info/gl-sdk4-tethering.control:Installed-Size: 5789
+/usr/lib/opkg/info/gl-sdk4-timer.control:Installed-Size: 8245
+/usr/lib/opkg/info/gl-sdk4-tor.control:Installed-Size: 5329
+/usr/lib/opkg/info/gl-sdk4-uci.control:Installed-Size: 5314
+/usr/lib/opkg/info/gl-sdk4-ui-adguardhome.control:Installed-Size: 14034
+/usr/lib/opkg/info/gl-sdk4-ui-advanced.control:Installed-Size: 17362
+/usr/lib/opkg/info/gl-sdk4-ui-astrowarp.control:Installed-Size: 46237
+/usr/lib/opkg/info/gl-sdk4-ui-bridge.control:Installed-Size: 26206
+/usr/lib/opkg/info/gl-sdk4-ui-btnsettings.control:Installed-Size: 17351
+/usr/lib/opkg/info/gl-sdk4-ui-clients.control:Installed-Size: 38431
+/usr/lib/opkg/info/gl-sdk4-ui-cloud.control:Installed-Size: 24671
+/usr/lib/opkg/info/gl-sdk4-ui-core.control:Installed-Size: 769614
+/usr/lib/opkg/info/gl-sdk4-ui-display.control:Installed-Size: 333414
+/usr/lib/opkg/info/gl-sdk4-ui-dnsview.control:Installed-Size: 30454
+/usr/lib/opkg/info/gl-sdk4-ui-dynamicdns.control:Installed-Size: 21584
+/usr/lib/opkg/info/gl-sdk4-ui-edgerouter.control:Installed-Size: 19847
+/usr/lib/opkg/info/gl-sdk4-ui-firewallview.control:Installed-Size: 25120
+/usr/lib/opkg/info/gl-sdk4-ui-guestip.control:Installed-Size: 17486
+/usr/lib/opkg/info/gl-sdk4-ui-home.control:Installed-Size: 74137
+/usr/lib/opkg/info/gl-sdk4-ui-igmp.control:Installed-Size: 9295
+/usr/lib/opkg/info/gl-sdk4-ui-internet.control:Installed-Size: 286307
+/usr/lib/opkg/info/gl-sdk4-ui-ipv6.control:Installed-Size: 18711
+/usr/lib/opkg/info/gl-sdk4-ui-lanip.control:Installed-Size: 28360
+/usr/lib/opkg/info/gl-sdk4-ui-login.control:Installed-Size: 16132
+/usr/lib/opkg/info/gl-sdk4-ui-logview.control:Installed-Size: 25681
+/usr/lib/opkg/info/gl-sdk4-ui-multiwan.control:Installed-Size: 29162
+/usr/lib/opkg/info/gl-sdk4-ui-nasview.control:Installed-Size: 35282
+/usr/lib/opkg/info/gl-sdk4-ui-netadvanced.control:Installed-Size: 9396
+/usr/lib/opkg/info/gl-sdk4-ui-netnat.control:Installed-Size: 15062
+/usr/lib/opkg/info/gl-sdk4-ui-netport.control:Installed-Size: 19300
+/usr/lib/opkg/info/gl-sdk4-ui-overview.control:Installed-Size: 24452
+/usr/lib/opkg/info/gl-sdk4-ui-ovpnclient.control:Installed-Size: 28398
+/usr/lib/opkg/info/gl-sdk4-ui-ovpnserver.control:Installed-Size: 26667
+/usr/lib/opkg/info/gl-sdk4-ui-parentalcontrol.control:Installed-Size: 99715
+/usr/lib/opkg/info/gl-sdk4-ui-plugins.control:Installed-Size: 22309
+/usr/lib/opkg/info/gl-sdk4-ui-process.control:Installed-Size: 10910
+/usr/lib/opkg/info/gl-sdk4-ui-reset.control:Installed-Size: 13527
+/usr/lib/opkg/info/gl-sdk4-ui-security.control:Installed-Size: 25717
+/usr/lib/opkg/info/gl-sdk4-ui-sms.control:Installed-Size: 26130
+/usr/lib/opkg/info/gl-sdk4-ui-tailscaleview.control:Installed-Size: 16438
+/usr/lib/opkg/info/gl-sdk4-ui-timedtask.control:Installed-Size: 19766
+/usr/lib/opkg/info/gl-sdk4-ui-timezone.control:Installed-Size: 13092
+/usr/lib/opkg/info/gl-sdk4-ui-torview.control:Installed-Size: 36061
+/usr/lib/opkg/info/gl-sdk4-ui-upgrade.control:Installed-Size: 26002
+/usr/lib/opkg/info/gl-sdk4-ui-vlan.control:Installed-Size: 2989
+/usr/lib/opkg/info/gl-sdk4-ui-vpndashboard.control:Installed-Size: 134633
+/usr/lib/opkg/info/gl-sdk4-ui-welcome.control:Installed-Size: 28166
+/usr/lib/opkg/info/gl-sdk4-ui-wgclient.control:Installed-Size: 34702
+/usr/lib/opkg/info/gl-sdk4-ui-wgserver.control:Installed-Size: 26581
+/usr/lib/opkg/info/gl-sdk4-ui-wireless.control:Installed-Size: 28593
+/usr/lib/opkg/info/gl-sdk4-ui-zerotierview.control:Installed-Size: 18109
+/usr/lib/opkg/info/gl-sdk4-upgrade.control:Installed-Size: 26161
+/usr/lib/opkg/info/gl-sdk4-utils.control:Installed-Size: 36985
+/usr/lib/opkg/info/gl-sdk4-vpn-client.control:Installed-Size: 54340
+/usr/lib/opkg/info/gl-sdk4-vpn-policy.control:Installed-Size: 2747
+/usr/lib/opkg/info/gl-sdk4-webdav.control:Installed-Size: 146121
+/usr/lib/opkg/info/gl-sdk4-wg-client.control:Installed-Size: 67433
+/usr/lib/opkg/info/gl-sdk4-wg-server.control:Installed-Size: 24885
+/usr/lib/opkg/info/gl-sdk4-wifi.control:Installed-Size: 40389
+/usr/lib/opkg/info/gl-sdk4-zerotier.control:Installed-Size: 3104
+/usr/lib/opkg/info/i2c-tools.control:Installed-Size: 36328
+/usr/lib/opkg/info/ip-bridge.control:Installed-Size: 39943
+/usr/lib/opkg/info/ip-full.control:Installed-Size: 251374
+/usr/lib/opkg/info/ip6tables-nft.control:Installed-Size: 247
+/usr/lib/opkg/info/iperf.control:Installed-Size: 101253
+/usr/lib/opkg/info/ipset.control:Installed-Size: 1656
+/usr/lib/opkg/info/iptables-mod-conntrack-extra.control:Installed-Size: 17144
+/usr/lib/opkg/info/iptables-mod-extra.control:Installed-Size: 13462
+/usr/lib/opkg/info/iptables-mod-filter.control:Installed-Size: 6545
+/usr/lib/opkg/info/iptables-mod-fullconenat.control:Installed-Size: 5444
+/usr/lib/opkg/info/iptables-mod-ipopt.control:Installed-Size: 28010
+/usr/lib/opkg/info/iptables-mod-ipsec.control:Installed-Size: 8066
+/usr/lib/opkg/info/iptables-mod-nat-extra.control:Installed-Size: 3519
+/usr/lib/opkg/info/iptables-mod-physdev.control:Installed-Size: 2141
+/usr/lib/opkg/info/iptables-mod-tproxy.control:Installed-Size: 2152
+/usr/lib/opkg/info/iptables-nft.control:Installed-Size: 241
+/usr/lib/opkg/info/iputils-tracepath.control:Installed-Size: 6713
+/usr/lib/opkg/info/isc-dhcp-relay-ipv6.control:Installed-Size: 1055112
+/usr/lib/opkg/info/iw.control:Installed-Size: 60611
+/usr/lib/opkg/info/iwinfo.control:Installed-Size: 7499
+/usr/lib/opkg/info/jansson4.control:Installed-Size: 25745
+/usr/lib/opkg/info/jshn.control:Installed-Size: 7223
+/usr/lib/opkg/info/jsonfilter.control:Installed-Size: 11213
+/usr/lib/opkg/info/kernel.control:Installed-Size: 95
+/usr/lib/opkg/info/kmod-arptables.control:Installed-Size: 15648
+/usr/lib/opkg/info/kmod-asn1-decoder.control:Installed-Size: 95
+/usr/lib/opkg/info/kmod-ata-ahci.control:Installed-Size: 7476
+/usr/lib/opkg/info/kmod-ata-core.control:Installed-Size: 103933
+/usr/lib/opkg/info/kmod-backlight-pwm.control:Installed-Size: 95
+/usr/lib/opkg/info/kmod-backlight.control:Installed-Size: 95
+/usr/lib/opkg/info/kmod-block2mtd.control:Installed-Size: 4283
+/usr/lib/opkg/info/kmod-bonding.control:Installed-Size: 69637
+/usr/lib/opkg/info/kmod-bootconfig.control:Installed-Size: 8388
+/usr/lib/opkg/info/kmod-br-netfilter.control:Installed-Size: 378
+/usr/lib/opkg/info/kmod-button-hotplug.control:Installed-Size: 3286
+/usr/lib/opkg/info/kmod-cfg80211-internal.control:Installed-Size: 157578
+/usr/lib/opkg/info/kmod-crypto-acompress.control:Installed-Size: 193
+/usr/lib/opkg/info/kmod-crypto-aead.control:Installed-Size: 228
+/usr/lib/opkg/info/kmod-crypto-arc4.control:Installed-Size: 184
+/usr/lib/opkg/info/kmod-crypto-authenc.control:Installed-Size: 193
+/usr/lib/opkg/info/kmod-crypto-cbc.control:Installed-Size: 182
+/usr/lib/opkg/info/kmod-crypto-chacha20poly1305.control:Installed-Size: 4106
+/usr/lib/opkg/info/kmod-crypto-crc32.control:Installed-Size: 1329
+/usr/lib/opkg/info/kmod-crypto-crc32c.control:Installed-Size: 238
+/usr/lib/opkg/info/kmod-crypto-ctr.control:Installed-Size: 182
+/usr/lib/opkg/info/kmod-crypto-deflate.control:Installed-Size: 187
+/usr/lib/opkg/info/kmod-crypto-des.control:Installed-Size: 191
+/usr/lib/opkg/info/kmod-crypto-ecb.control:Installed-Size: 183
+/usr/lib/opkg/info/kmod-crypto-echainiv.control:Installed-Size: 189
+/usr/lib/opkg/info/kmod-crypto-gcm.control:Installed-Size: 184
+/usr/lib/opkg/info/kmod-crypto-gf128.control:Installed-Size: 189
+/usr/lib/opkg/info/kmod-crypto-ghash.control:Installed-Size: 194
+/usr/lib/opkg/info/kmod-crypto-hash.control:Installed-Size: 234
+/usr/lib/opkg/info/kmod-crypto-hmac.control:Installed-Size: 185
+/usr/lib/opkg/info/kmod-crypto-lib-chacha20.control:Installed-Size: 5957
+/usr/lib/opkg/info/kmod-crypto-lib-chacha20poly1305.control:Installed-Size: 49056
+/usr/lib/opkg/info/kmod-crypto-lib-poly1305.control:Installed-Size: 4632
+/usr/lib/opkg/info/kmod-crypto-manager.control:Installed-Size: 235
+/usr/lib/opkg/info/kmod-crypto-md5.control:Installed-Size: 3442
+/usr/lib/opkg/info/kmod-crypto-null.control:Installed-Size: 188
+/usr/lib/opkg/info/kmod-crypto-rng.control:Installed-Size: 202
+/usr/lib/opkg/info/kmod-crypto-seqiv.control:Installed-Size: 186
+/usr/lib/opkg/info/kmod-crypto-sha1.control:Installed-Size: 192
+/usr/lib/opkg/info/kmod-crypto-sha512.control:Installed-Size: 194
+/usr/lib/opkg/info/kmod-crypto-user.control:Installed-Size: 21492
+/usr/lib/opkg/info/kmod-diag-char.control:Installed-Size: 138197
+/usr/lib/opkg/info/kmod-emesh-sp.control:Installed-Size: 13028
+/usr/lib/opkg/info/kmod-fb-sys-fops.control:Installed-Size: 189
+/usr/lib/opkg/info/kmod-fb-sys-ram.control:Installed-Size: 206
+/usr/lib/opkg/info/kmod-fb-tft-glinet-logo.control:Installed-Size: 95
+/usr/lib/opkg/info/kmod-fb-tft-st7789p3.control:Installed-Size: 95
+/usr/lib/opkg/info/kmod-fb-tft.control:Installed-Size: 95
+/usr/lib/opkg/info/kmod-fb.control:Installed-Size: 178
+/usr/lib/opkg/info/kmod-fs-configfs.control:Installed-Size: 184
+/usr/lib/opkg/info/kmod-fs-exfat.control:Installed-Size: 47777
+/usr/lib/opkg/info/kmod-fs-ext4.control:Installed-Size: 235
+/usr/lib/opkg/info/kmod-fs-f2fs.control:Installed-Size: 166811
+/usr/lib/opkg/info/kmod-fs-msdos.control:Installed-Size: 5209
+/usr/lib/opkg/info/kmod-fs-ntfs.control:Installed-Size: 46804
+/usr/lib/opkg/info/kmod-fs-vfat.control:Installed-Size: 47814
+/usr/lib/opkg/info/kmod-fuse.control:Installed-Size: 52933
+/usr/lib/opkg/info/kmod-gl-sdk4-black_white_list.control:Installed-Size: 10279
+/usr/lib/opkg/info/kmod-gl-sdk4-dns-mark.control:Installed-Size: 10773
+/usr/lib/opkg/info/kmod-gl-sdk4-fan.control:Installed-Size: 7523
+/usr/lib/opkg/info/kmod-gl-sdk4-hw-check.control:Installed-Size: 95
+/usr/lib/opkg/info/kmod-gl-sdk4-hw-info.control:Installed-Size: 6477
+/usr/lib/opkg/info/kmod-gl-sdk4-kmwan.control:Installed-Size: 31120
+/usr/lib/opkg/info/kmod-gl-sdk4-mpflow_statistics.control:Installed-Size: 7928
+/usr/lib/opkg/info/kmod-gl-sdk4-mtd-rw.control:Installed-Size: 2283
+/usr/lib/opkg/info/kmod-gl-sdk4-parental-control.control:Installed-Size: 45470
+/usr/lib/opkg/info/kmod-gl-sdk4-repeater.control:Installed-Size: 3361
+/usr/lib/opkg/info/kmod-gl-sdk4-tertf.control:Installed-Size: 13777
+/usr/lib/opkg/info/kmod-gpio-button-hotplug.control:Installed-Size: 6468
+/usr/lib/opkg/info/kmod-gre.control:Installed-Size: 13965
+/usr/lib/opkg/info/kmod-gre6.control:Installed-Size: 16123
+/usr/lib/opkg/info/kmod-hwmon-core.control:Installed-Size: 5858
+/usr/lib/opkg/info/kmod-hwmon-pwmfan.control:Installed-Size: 4026
+/usr/lib/opkg/info/kmod-i2c-algo-bit.control:Installed-Size: 3708
+/usr/lib/opkg/info/kmod-i2c-core.control:Installed-Size: 187
+/usr/lib/opkg/info/kmod-i2c-gpio.control:Installed-Size: 3013
+/usr/lib/opkg/info/kmod-ifb.control:Installed-Size: 3745
+/usr/lib/opkg/info/kmod-ikconfig.control:Installed-Size: 182
+/usr/lib/opkg/info/kmod-inet-diag.control:Installed-Size: 11970
+/usr/lib/opkg/info/kmod-input-core.control:Installed-Size: 95
+/usr/lib/opkg/info/kmod-input-evdev.control:Installed-Size: 13818
+/usr/lib/opkg/info/kmod-input-touchscreen-cst816d.control:Installed-Size: 4078
+/usr/lib/opkg/info/kmod-ip6-tunnel.control:Installed-Size: 18761
+/usr/lib/opkg/info/kmod-ip6tables.control:Installed-Size: 3661
+/usr/lib/opkg/info/kmod-ipsec.control:Installed-Size: 36568
+/usr/lib/opkg/info/kmod-ipsec4.control:Installed-Size: 13659
+/usr/lib/opkg/info/kmod-ipsec6.control:Installed-Size: 15325
+/usr/lib/opkg/info/kmod-ipt-conntrack-extra.control:Installed-Size: 11211
+/usr/lib/opkg/info/kmod-ipt-conntrack.control:Installed-Size: 5228
+/usr/lib/opkg/info/kmod-ipt-core.control:Installed-Size: 13808
+/usr/lib/opkg/info/kmod-ipt-extra.control:Installed-Size: 5951
+/usr/lib/opkg/info/kmod-ipt-filter.control:Installed-Size: 3011
+/usr/lib/opkg/info/kmod-ipt-fullconenat.control:Installed-Size: 9495
+/usr/lib/opkg/info/kmod-ipt-ipopt.control:Installed-Size: 7326
+/usr/lib/opkg/info/kmod-ipt-ipsec.control:Installed-Size: 3891
+/usr/lib/opkg/info/kmod-ipt-ipset.control:Installed-Size: 217451
+/usr/lib/opkg/info/kmod-ipt-nat-extra.control:Installed-Size: 2117
+/usr/lib/opkg/info/kmod-ipt-nat.control:Installed-Size: 4912
+/usr/lib/opkg/info/kmod-ipt-nat6.control:Installed-Size: 2889
+/usr/lib/opkg/info/kmod-ipt-nathelper-rtsp.control:Installed-Size: 11304
+/usr/lib/opkg/info/kmod-ipt-physdev.control:Installed-Size: 1749
+/usr/lib/opkg/info/kmod-ipt-raw.control:Installed-Size: 1858
+/usr/lib/opkg/info/kmod-ipt-raw6.control:Installed-Size: 1866
+/usr/lib/opkg/info/kmod-ipt-sctp.control:Installed-Size: 2507
+/usr/lib/opkg/info/kmod-ipt-tproxy.control:Installed-Size: 3465
+/usr/lib/opkg/info/kmod-iptunnel.control:Installed-Size: 10233
+/usr/lib/opkg/info/kmod-iptunnel4.control:Installed-Size: 2229
+/usr/lib/opkg/info/kmod-iptunnel6.control:Installed-Size: 2214
+/usr/lib/opkg/info/kmod-l2tp-eth.control:Installed-Size: 3589
+/usr/lib/opkg/info/kmod-l2tp-ip.control:Installed-Size: 11531
+/usr/lib/opkg/info/kmod-l2tp.control:Installed-Size: 17589
+/usr/lib/opkg/info/kmod-leds-gpio.control:Installed-Size: 3114
+/usr/lib/opkg/info/kmod-lib-crc-ccitt.control:Installed-Size: 2108
+/usr/lib/opkg/info/kmod-lib-crc16.control:Installed-Size: 224
+/usr/lib/opkg/info/kmod-lib-crc32c.control:Installed-Size: 1449
+/usr/lib/opkg/info/kmod-lib-textsearch.control:Installed-Size: 4040
+/usr/lib/opkg/info/kmod-lib-zlib-deflate.control:Installed-Size: 188
+/usr/lib/opkg/info/kmod-lib-zlib-inflate.control:Installed-Size: 190
+/usr/lib/opkg/info/kmod-macvlan.control:Installed-Size: 10466
+/usr/lib/opkg/info/kmod-mii.control:Installed-Size: 3687
+/usr/lib/opkg/info/kmod-mpls.control:Installed-Size: 18803
+/usr/lib/opkg/info/kmod-mppe.control:Installed-Size: 3821
+/usr/lib/opkg/info/kmod-mptcp.control:Installed-Size: 174
+/usr/lib/opkg/info/kmod-mtdoops.control:Installed-Size: 4236
+/usr/lib/opkg/info/kmod-nat46.control:Installed-Size: 21366
+/usr/lib/opkg/info/kmod-nf-conncount.control:Installed-Size: 5711
+/usr/lib/opkg/info/kmod-nf-conntrack-netlink.control:Installed-Size: 16068
+/usr/lib/opkg/info/kmod-nf-conntrack-sip.control:Installed-Size: 11807
+/usr/lib/opkg/info/kmod-nf-conntrack.control:Installed-Size: 64823
+/usr/lib/opkg/info/kmod-nf-conntrack6.control:Installed-Size: 95
+/usr/lib/opkg/info/kmod-nf-flow.control:Installed-Size: 9543
+/usr/lib/opkg/info/kmod-nf-ipt.control:Installed-Size: 30381
+/usr/lib/opkg/info/kmod-nf-ipt6.control:Installed-Size: 14422
+/usr/lib/opkg/info/kmod-nf-log.control:Installed-Size: 5993
+/usr/lib/opkg/info/kmod-nf-log6.control:Installed-Size: 3753
+/usr/lib/opkg/info/kmod-nf-nat-sip.control:Installed-Size: 5914
+/usr/lib/opkg/info/kmod-nf-nat.control:Installed-Size: 17287
+/usr/lib/opkg/info/kmod-nf-nat6.control:Installed-Size: 95
+/usr/lib/opkg/info/kmod-nf-nathelper-extra.control:Installed-Size: 44158
+/usr/lib/opkg/info/kmod-nf-nathelper.control:Installed-Size: 8067
+/usr/lib/opkg/info/kmod-nf-reject.control:Installed-Size: 2405
+/usr/lib/opkg/info/kmod-nf-reject6.control:Installed-Size: 3318
+/usr/lib/opkg/info/kmod-nf-socket.control:Installed-Size: 2907
+/usr/lib/opkg/info/kmod-nf-tproxy.control:Installed-Size: 3521
+/usr/lib/opkg/info/kmod-nfnetlink.control:Installed-Size: 4870
+/usr/lib/opkg/info/kmod-nft-compat.control:Installed-Size: 5185
+/usr/lib/opkg/info/kmod-nft-core.control:Installed-Size: 93030
+/usr/lib/opkg/info/kmod-nft-fib.control:Installed-Size: 5754
+/usr/lib/opkg/info/kmod-nft-nat.control:Installed-Size: 4832
+/usr/lib/opkg/info/kmod-nft-netdev.control:Installed-Size: 3498
+/usr/lib/opkg/info/kmod-nft-offload.control:Installed-Size: 3524
+/usr/lib/opkg/info/kmod-nft-socket.control:Installed-Size: 2010
+/usr/lib/opkg/info/kmod-nft-tproxy.control:Installed-Size: 2805
+/usr/lib/opkg/info/kmod-nls-base.control:Installed-Size: 3640
+/usr/lib/opkg/info/kmod-nls-cp437.control:Installed-Size: 2310
+/usr/lib/opkg/info/kmod-nls-iso8859-1.control:Installed-Size: 2003
+/usr/lib/opkg/info/kmod-nls-utf8.control:Installed-Size: 1363
+/usr/lib/opkg/info/kmod-nsh.control:Installed-Size: 2439
+/usr/lib/opkg/info/kmod-nss-udp-st-drv.control:Installed-Size: 9722
+/usr/lib/opkg/info/kmod-openvswitch.control:Installed-Size: 63221
+/usr/lib/opkg/info/kmod-ovpn-dco-v2.control:Installed-Size: 30767
+/usr/lib/opkg/info/kmod-ppp.control:Installed-Size: 32550
+/usr/lib/opkg/info/kmod-pppoe.control:Installed-Size: 9402
+/usr/lib/opkg/info/kmod-pppol2tp.control:Installed-Size: 12107
+/usr/lib/opkg/info/kmod-pppox.control:Installed-Size: 2600
+/usr/lib/opkg/info/kmod-pptp.control:Installed-Size: 7908
+/usr/lib/opkg/info/kmod-qca-cnss.control:Installed-Size: 154935
+/usr/lib/opkg/info/kmod-qca-mcs.control:Installed-Size: 29050
+/usr/lib/opkg/info/kmod-qca-nss-dp.control:Installed-Size: 78592
+/usr/lib/opkg/info/kmod-qca-nss-ecm-premium.control:Installed-Size: 550524
+/usr/lib/opkg/info/kmod-qca-nss-ecm-wifi-plugin.control:Installed-Size: 5344
+/usr/lib/opkg/info/kmod-qca-nss-eip-crypto.control:Installed-Size: 14538
+/usr/lib/opkg/info/kmod-qca-nss-eip-ipsec.control:Installed-Size: 24630
+/usr/lib/opkg/info/kmod-qca-nss-eip.control:Installed-Size: 37822
+/usr/lib/opkg/info/kmod-qca-nss-fls.control:Installed-Size: 16255
+/usr/lib/opkg/info/kmod-qca-nss-macsec.control:Installed-Size: 88082
+/usr/lib/opkg/info/kmod-qca-nss-nsm.control:Installed-Size: 6816
+/usr/lib/opkg/info/kmod-qca-nss-ppe-bridge-mgr.control:Installed-Size: 15285
+/usr/lib/opkg/info/kmod-qca-nss-ppe-ds.control:Installed-Size: 11127
+/usr/lib/opkg/info/kmod-qca-nss-ppe-gretap.control:Installed-Size: 6221
+/usr/lib/opkg/info/kmod-qca-nss-ppe-l2tp.control:Installed-Size: 9303
+/usr/lib/opkg/info/kmod-qca-nss-ppe-lag-mgr.control:Installed-Size: 4706
+/usr/lib/opkg/info/kmod-qca-nss-ppe-mapt.control:Installed-Size: 6111
+/usr/lib/opkg/info/kmod-qca-nss-ppe-mirror-test.control:Installed-Size: 7308
+/usr/lib/opkg/info/kmod-qca-nss-ppe-netlink.control:Installed-Size: 6423
+/usr/lib/opkg/info/kmod-qca-nss-ppe-pppoe-mgr.control:Installed-Size: 4436
+/usr/lib/opkg/info/kmod-qca-nss-ppe-qdisc.control:Installed-Size: 46614
+/usr/lib/opkg/info/kmod-qca-nss-ppe-rule.control:Installed-Size: 44179
+/usr/lib/opkg/info/kmod-qca-nss-ppe-tun.control:Installed-Size: 14702
+/usr/lib/opkg/info/kmod-qca-nss-ppe-tunipip6.control:Installed-Size: 5215
+/usr/lib/opkg/info/kmod-qca-nss-ppe-vlan-mgr.control:Installed-Size: 20650
+/usr/lib/opkg/info/kmod-qca-nss-ppe-vp.control:Installed-Size: 15603
+/usr/lib/opkg/info/kmod-qca-nss-ppe-vxlanmgr.control:Installed-Size: 16319
+/usr/lib/opkg/info/kmod-qca-nss-ppe.control:Installed-Size: 216647
+/usr/lib/opkg/info/kmod-qca-nss-sfe.control:Installed-Size: 113619
+/usr/lib/opkg/info/kmod-qca-ovsmgr.control:Installed-Size: 21641
+/usr/lib/opkg/info/kmod-qca-ssdk-nohnat.control:Installed-Size: 668512
+/usr/lib/opkg/info/kmod-qca-wifi-unified-profile.control:Installed-Size: 5907604
+/usr/lib/opkg/info/kmod-qca8k.control:Installed-Size: 8866
+/usr/lib/opkg/info/kmod-qpic_panel_ertft.control:Installed-Size: 96
+/usr/lib/opkg/info/kmod-rsrcmgr-netstandby-drv.control:Installed-Size: 12715
+/usr/lib/opkg/info/kmod-sched-act-ipt.control:Installed-Size: 4665
+/usr/lib/opkg/info/kmod-sched-act-police.control:Installed-Size: 4739
+/usr/lib/opkg/info/kmod-sched-cake.control:Installed-Size: 15047
+/usr/lib/opkg/info/kmod-sched-connmark.control:Installed-Size: 3675
+/usr/lib/opkg/info/kmod-sched-core.control:Installed-Size: 56820
+/usr/lib/opkg/info/kmod-sched-pie.control:Installed-Size: 4705
+/usr/lib/opkg/info/kmod-sched-prio.control:Installed-Size: 4960
+/usr/lib/opkg/info/kmod-sched-red.control:Installed-Size: 5774
+/usr/lib/opkg/info/kmod-sched.control:Installed-Size: 45963
+/usr/lib/opkg/info/kmod-scsi-core.control:Installed-Size: 82988
+/usr/lib/opkg/info/kmod-sit.control:Installed-Size: 15170
+/usr/lib/opkg/info/kmod-slhc.control:Installed-Size: 3736
+/usr/lib/opkg/info/kmod-sound-core.control:Installed-Size: 191710
+/usr/lib/opkg/info/kmod-spi-bitbang.control:Installed-Size: 2924
+/usr/lib/opkg/info/kmod-tun.control:Installed-Size: 26721
+/usr/lib/opkg/info/kmod-udptunnel4.control:Installed-Size: 2710
+/usr/lib/opkg/info/kmod-udptunnel6.control:Installed-Size: 1953
+/usr/lib/opkg/info/kmod-usb-acm.control:Installed-Size: 13385
+/usr/lib/opkg/info/kmod-usb-configfs.control:Installed-Size: 96
+/usr/lib/opkg/info/kmod-usb-core.control:Installed-Size: 129723
+/usr/lib/opkg/info/kmod-usb-dwc3-internal.control:Installed-Size: 37586
+/usr/lib/opkg/info/kmod-usb-dwc3-qcom-internal.control:Installed-Size: 5403
+/usr/lib/opkg/info/kmod-usb-f-diag.control:Installed-Size: 7283
+/usr/lib/opkg/info/kmod-usb-gadget.control:Installed-Size: 8058
+/usr/lib/opkg/info/kmod-usb-gdiag.control:Installed-Size: 2196
+/usr/lib/opkg/info/kmod-usb-lib-composite.control:Installed-Size: 23214
+/usr/lib/opkg/info/kmod-usb-net-cdc-ether.control:Installed-Size: 5327
+/usr/lib/opkg/info/kmod-usb-net-cdc-ncm.control:Installed-Size: 12731
+/usr/lib/opkg/info/kmod-usb-net-huawei-cdc-ncm.control:Installed-Size: 2111
+/usr/lib/opkg/info/kmod-usb-net-ipheth.control:Installed-Size: 4520
+/usr/lib/opkg/info/kmod-usb-net-qmi-wwan.control:Installed-Size: 9709
+/usr/lib/opkg/info/kmod-usb-net-rndis.control:Installed-Size: 5725
+/usr/lib/opkg/info/kmod-usb-net.control:Installed-Size: 17076
+/usr/lib/opkg/info/kmod-usb-phy-ipq5018.control:Installed-Size: 4973
+/usr/lib/opkg/info/kmod-usb-serial-option.control:Installed-Size: 7724
+/usr/lib/opkg/info/kmod-usb-serial-wwan.control:Installed-Size: 5957
+/usr/lib/opkg/info/kmod-usb-serial.control:Installed-Size: 17496
+/usr/lib/opkg/info/kmod-usb-storage-uas.control:Installed-Size: 9247
+/usr/lib/opkg/info/kmod-usb-storage.control:Installed-Size: 25914
+/usr/lib/opkg/info/kmod-usb-wdm.control:Installed-Size: 9559
+/usr/lib/opkg/info/kmod-usb-xhci-hcd.control:Installed-Size: 83915
+/usr/lib/opkg/info/kmod-usb3.control:Installed-Size: 7622
+/usr/lib/opkg/info/kmod-veth.control:Installed-Size: 8861
+/usr/lib/opkg/info/kmod-vxlan.control:Installed-Size: 28698
+/usr/lib/opkg/info/kmod-wifidog-ng.control:Installed-Size: 4770
+/usr/lib/opkg/info/kmod-wireguard.control:Installed-Size: 68893
+/usr/lib/opkg/info/libatomic1.control:Installed-Size: 8089
+/usr/lib/opkg/info/libattr.control:Installed-Size: 7013
+/usr/lib/opkg/info/libavahi-client.control:Installed-Size: 19516
+/usr/lib/opkg/info/libavahi-dbus-support.control:Installed-Size: 81257
+/usr/lib/opkg/info/libblkid1.control:Installed-Size: 118850
+/usr/lib/opkg/info/libblobmsg-json20230523.control:Installed-Size: 4434
+/usr/lib/opkg/info/libbpf1.control:Installed-Size: 146085
+/usr/lib/opkg/info/libbz2-1.0.control:Installed-Size: 26580
+/usr/lib/opkg/info/libc.control:Installed-Size: 285258
+/usr/lib/opkg/info/libcap-ng.control:Installed-Size: 8912
+/usr/lib/opkg/info/libcap.control:Installed-Size: 16272
+/usr/lib/opkg/info/libcomerr0.control:Installed-Size: 4403
+/usr/lib/opkg/info/libcurl4.control:Installed-Size: 207684
+/usr/lib/opkg/info/libdaemon.control:Installed-Size: 9895
+/usr/lib/opkg/info/libdbus.control:Installed-Size: 135419
+/usr/lib/opkg/info/libelf1.control:Installed-Size: 42432
+/usr/lib/opkg/info/libev.control:Installed-Size: 24141
+/usr/lib/opkg/info/libevent2-7.control:Installed-Size: 106850
+/usr/lib/opkg/info/libexif.control:Installed-Size: 82312
+/usr/lib/opkg/info/libexpat.control:Installed-Size: 46189
+/usr/lib/opkg/info/libext2fs2.control:Installed-Size: 192661
+/usr/lib/opkg/info/libf2fs6.control:Installed-Size: 42177
+/usr/lib/opkg/info/libffmpeg-audio-dec.control:Installed-Size: 888471
+/usr/lib/opkg/info/libflac.control:Installed-Size: 178310
+/usr/lib/opkg/info/libgcc1.control:Installed-Size: 36146
+/usr/lib/opkg/info/libgcrypt.control:Installed-Size: 415988
+/usr/lib/opkg/info/libgmp10.control:Installed-Size: 221863
+/usr/lib/opkg/info/libgnutls.control:Installed-Size: 915488
+/usr/lib/opkg/info/libgpg-error.control:Installed-Size: 61526
+/usr/lib/opkg/info/libhyficommon.control:Installed-Size: 33686
+/usr/lib/opkg/info/libi2c.control:Installed-Size: 2406
+/usr/lib/opkg/info/libid3tag.control:Installed-Size: 31004
+/usr/lib/opkg/info/libimobiledevice.control:Installed-Size: 61790
+/usr/lib/opkg/info/libipset13.control:Installed-Size: 52397
+/usr/lib/opkg/info/libiptext-nft0.control:Installed-Size: 3654
+/usr/lib/opkg/info/libiptext0.control:Installed-Size: 41559
+/usr/lib/opkg/info/libiptext6-0.control:Installed-Size: 8757
+/usr/lib/opkg/info/libiwinfo-lua.control:Installed-Size: 8933
+/usr/lib/opkg/info/libiwinfo-lua54.control:Installed-Size: 2432
+/usr/lib/opkg/info/libiwinfo20230701.control:Installed-Size: 38570
+/usr/lib/opkg/info/libjpeg-turbo.control:Installed-Size: 112991
+/usr/lib/opkg/info/libjson-c5.control:Installed-Size: 29745
+/usr/lib/opkg/info/libjson-script20230523.control:Installed-Size: 5820
+/usr/lib/opkg/info/liblua5.1.5.control:Installed-Size: 79483
+/usr/lib/opkg/info/liblua5.4-5.4.control:Installed-Size: 110644
+/usr/lib/opkg/info/liblucihttp-lua.control:Installed-Size: 3711
+/usr/lib/opkg/info/liblucihttp-ucode.control:Installed-Size: 4325
+/usr/lib/opkg/info/liblucihttp0.control:Installed-Size: 8482
+/usr/lib/opkg/info/liblz4-1.control:Installed-Size: 52899
+/usr/lib/opkg/info/liblzma.control:Installed-Size: 66019
+/usr/lib/opkg/info/liblzo2.control:Installed-Size: 38574
+/usr/lib/opkg/info/libmagic.control:Installed-Size: 283281
+/usr/lib/opkg/info/libminiupnpc.control:Installed-Size: 21681
+/usr/lib/opkg/info/libmnl0.control:Installed-Size: 7419
+/usr/lib/opkg/info/libnatpmp1.control:Installed-Size: 3833
+/usr/lib/opkg/info/libncurses6.control:Installed-Size: 192191
+/usr/lib/opkg/info/libnetfilter-conntrack3.control:Installed-Size: 40043
+/usr/lib/opkg/info/libnetfilter-cthelper0.control:Installed-Size: 4674
+/usr/lib/opkg/info/libnetfilter-cttimeout1.control:Installed-Size: 4604
+/usr/lib/opkg/info/libnetfilter-queue1.control:Installed-Size: 11052
+/usr/lib/opkg/info/libnettle8.control:Installed-Size: 358439
+/usr/lib/opkg/info/libnfnetlink0.control:Installed-Size: 10855
+/usr/lib/opkg/info/libnftnl11.control:Installed-Size: 65703
+/usr/lib/opkg/info/libnghttp2-14.control:Installed-Size: 74425
+/usr/lib/opkg/info/libnl-cli200.control:Installed-Size: 12899
+/usr/lib/opkg/info/libnl-core200.control:Installed-Size: 45421
+/usr/lib/opkg/info/libnl-genl200.control:Installed-Size: 8800
+/usr/lib/opkg/info/libnl-nf200.control:Installed-Size: 33196
+/usr/lib/opkg/info/libnl-ppe.control:Installed-Size: 5987
+/usr/lib/opkg/info/libnl-route200.control:Installed-Size: 184335
+/usr/lib/opkg/info/libnl-tiny1.control:Installed-Size: 17508
+/usr/lib/opkg/info/libnl200.control:Installed-Size: 96
+/usr/lib/opkg/info/libogg0.control:Installed-Size: 17960
+/usr/lib/opkg/info/libopenssl-conf.control:Installed-Size: 5475
+/usr/lib/opkg/info/libopenssl-legacy.control:Installed-Size: 37375
+/usr/lib/opkg/info/libopenssl3.control:Installed-Size: 2049085
+/usr/lib/opkg/info/libpcap1.control:Installed-Size: 103361
+/usr/lib/opkg/info/libpcre.control:Installed-Size: 84138
+/usr/lib/opkg/info/libplist.control:Installed-Size: 23835
+/usr/lib/opkg/info/libpopt0.control:Installed-Size: 20341
+/usr/lib/opkg/info/libpthread.control:Installed-Size: 117
+/usr/lib/opkg/info/libreadline8.control:Installed-Size: 144177
+/usr/lib/opkg/info/libroxml2.control:Installed-Size: 10750
+/usr/lib/opkg/info/librt.control:Installed-Size: 117
+/usr/lib/opkg/info/libsmartcols1.control:Installed-Size: 46622
+/usr/lib/opkg/info/libsqlite3-0.control:Installed-Size: 554865
+/usr/lib/opkg/info/libss2.control:Installed-Size: 9564
+/usr/lib/opkg/info/libstdcpp6.control:Installed-Size: 593727
+/usr/lib/opkg/info/libtasn1.control:Installed-Size: 33161
+/usr/lib/opkg/info/libtcmd.control:Installed-Size: 5222
+/usr/lib/opkg/info/libtirpc.control:Installed-Size: 67065
+/usr/lib/opkg/info/libubox-lua.control:Installed-Size: 4550
+/usr/lib/opkg/info/libubox20230523.control:Installed-Size: 25032
+/usr/lib/opkg/info/libubus-lua.control:Installed-Size: 7521
+/usr/lib/opkg/info/libubus20230605.control:Installed-Size: 11901
+/usr/lib/opkg/info/libuci-lua.control:Installed-Size: 8336
+/usr/lib/opkg/info/libuci-lua54.control:Installed-Size: 8234
+/usr/lib/opkg/info/libuci20130104.control:Installed-Size: 18718
+/usr/lib/opkg/info/libuclient20201210.control:Installed-Size: 11404
+/usr/lib/opkg/info/libucode20230711.control:Installed-Size: 79837
+/usr/lib/opkg/info/liburing.control:Installed-Size: 7122
+/usr/lib/opkg/info/libusb-1.0-0.control:Installed-Size: 35176
+/usr/lib/opkg/info/libusbmuxd.control:Installed-Size: 17149
+/usr/lib/opkg/info/libustream-openssl20201210.control:Installed-Size: 5136
+/usr/lib/opkg/info/libuuid1.control:Installed-Size: 13274
+/usr/lib/opkg/info/libuv1.control:Installed-Size: 76816
+/usr/lib/opkg/info/libvorbis.control:Installed-Size: 199275
+/usr/lib/opkg/info/libwifisoncfg.control:Installed-Size: 24544
+/usr/lib/opkg/info/libxml2.control:Installed-Size: 510658
+/usr/lib/opkg/info/libxtables12.control:Installed-Size: 23412
+/usr/lib/opkg/info/libyaml.control:Installed-Size: 41808
+/usr/lib/opkg/info/logd.control:Installed-Size: 13190
+/usr/lib/opkg/info/losetup.control:Installed-Size: 49170
+/usr/lib/opkg/info/lsqlite3-lua5.4.control:Installed-Size: 15888
+/usr/lib/opkg/info/lsqlite3.control:Installed-Size: 15447
+/usr/lib/opkg/info/lua-cjson-lua5.4.control:Installed-Size: 14205
+/usr/lib/opkg/info/lua-cjson.control:Installed-Size: 14169
+/usr/lib/opkg/info/lua-eco-base64.control:Installed-Size: 2441
+/usr/lib/opkg/info/lua-eco-dns.control:Installed-Size: 4041
+/usr/lib/opkg/info/lua-eco-hmac.control:Installed-Size: 767
+/usr/lib/opkg/info/lua-eco-http.control:Installed-Size: 9178
+/usr/lib/opkg/info/lua-eco-ip.control:Installed-Size: 2953
+/usr/lib/opkg/info/lua-eco-log.control:Installed-Size: 4711
+/usr/lib/opkg/info/lua-eco-md5.control:Installed-Size: 4480
+/usr/lib/opkg/info/lua-eco-mqtt.control:Installed-Size: 4688
+/usr/lib/opkg/info/lua-eco-netlink.control:Installed-Size: 12915
+/usr/lib/opkg/info/lua-eco-nl80211.control:Installed-Size: 12692
+/usr/lib/opkg/info/lua-eco-sha256.control:Installed-Size: 3278
+/usr/lib/opkg/info/lua-eco-socket.control:Installed-Size: 11989
+/usr/lib/opkg/info/lua-eco-ssl.control:Installed-Size: 8602
+/usr/lib/opkg/info/lua-eco-termios.control:Installed-Size: 4089
+/usr/lib/opkg/info/lua-eco-ubus.control:Installed-Size: 9291
+/usr/lib/opkg/info/lua-eco.control:Installed-Size: 35988
+/usr/lib/opkg/info/lua.control:Installed-Size: 5224
+/usr/lib/opkg/info/luabitop.control:Installed-Size: 2483
+/usr/lib/opkg/info/luci-app-firewall.control:Installed-Size: 17151
+/usr/lib/opkg/info/luci-app-opkg.control:Installed-Size: 9153
+/usr/lib/opkg/info/luci-app-upnp.control:Installed-Size: 4052
+/usr/lib/opkg/info/luci-base.control:Installed-Size: 125192
+/usr/lib/opkg/info/luci-compat.control:Installed-Size: 45434
+/usr/lib/opkg/info/luci-i18n-base-zh-cn.control:Installed-Size: 51857
+/usr/lib/opkg/info/luci-i18n-firewall-zh-cn.control:Installed-Size: 7707
+/usr/lib/opkg/info/luci-i18n-opkg-zh-cn.control:Installed-Size: 2248
+/usr/lib/opkg/info/luci-i18n-upnp-zh-cn.control:Installed-Size: 1577
+/usr/lib/opkg/info/luci-lib-base.control:Installed-Size: 9636
+/usr/lib/opkg/info/luci-lib-ip.control:Installed-Size: 12422
+/usr/lib/opkg/info/luci-lib-jsonc.control:Installed-Size: 4772
+/usr/lib/opkg/info/luci-lib-nixio.control:Installed-Size: 34354
+/usr/lib/opkg/info/luci-light.control:Installed-Size: 96
+/usr/lib/opkg/info/luci-lua-runtime.control:Installed-Size: 30821
+/usr/lib/opkg/info/luci-mod-admin-full.control:Installed-Size: 96
+/usr/lib/opkg/info/luci-mod-network.control:Installed-Size: 54466
+/usr/lib/opkg/info/luci-mod-status.control:Installed-Size: 38352
+/usr/lib/opkg/info/luci-mod-system.control:Installed-Size: 17640
+/usr/lib/opkg/info/luci-proto-ipv6.control:Installed-Size: 2645
+/usr/lib/opkg/info/luci-proto-ppp.control:Installed-Size: 2203
+/usr/lib/opkg/info/luci-theme-bootstrap.control:Installed-Size: 15866
+/usr/lib/opkg/info/luci.control:Installed-Size: 96
+/usr/lib/opkg/info/map.control:Installed-Size: 8111
+/usr/lib/opkg/info/mcproxy.control:Installed-Size: 145806
+/usr/lib/opkg/info/minidlna.control:Installed-Size: 139464
+/usr/lib/opkg/info/minidump.control:Installed-Size: 5097
+/usr/lib/opkg/info/miniupnpd-nftables.control:Installed-Size: 87306
+/usr/lib/opkg/info/mkf2fs.control:Installed-Size: 16389
+/usr/lib/opkg/info/mptun-core.control:Installed-Size: 9402296
+/usr/lib/opkg/info/mtd.control:Installed-Size: 11052
+/usr/lib/opkg/info/netifd.control:Installed-Size: 116961
+/usr/lib/opkg/info/nftables-json.control:Installed-Size: 314541
+/usr/lib/opkg/info/nginx-ssl.control:Installed-Size: 400941
+/usr/lib/opkg/info/nss-udp-st.control:Installed-Size: 3998
+/usr/lib/opkg/info/ntfs-3g-utils.control:Installed-Size: 340359
+/usr/lib/opkg/info/ntfs-3g.control:Installed-Size: 197777
+/usr/lib/opkg/info/odhcp6c.control:Installed-Size: 29052
+/usr/lib/opkg/info/odhcpd-ipv6only.control:Installed-Size: 44993
+/usr/lib/opkg/info/openssl-util.control:Installed-Size: 369318
+/usr/lib/opkg/info/openvpn-easy-rsa.control:Installed-Size: 48227
+/usr/lib/opkg/info/openvpn-openssl.control:Installed-Size: 293947
+/usr/lib/opkg/info/openwrt-keyring.control:Installed-Size: 311
+/usr/lib/opkg/info/opkg.control:Installed-Size: 80268
+/usr/lib/opkg/info/oui-librpc.control:Installed-Size: 3393
+/usr/lib/opkg/info/pm-utils.control:Installed-Size: 15611
+/usr/lib/opkg/info/ppecfg.control:Installed-Size: 8717
+/usr/lib/opkg/info/ppp-mod-pppoe.control:Installed-Size: 11450
+/usr/lib/opkg/info/ppp-mod-pppol2tp.control:Installed-Size: 5121
+/usr/lib/opkg/info/ppp-mod-pptp.control:Installed-Size: 18546
+/usr/lib/opkg/info/ppp.control:Installed-Size: 139352
+/usr/lib/opkg/info/pppoe-discovery.control:Installed-Size: 7175
+/usr/lib/opkg/info/procd-seccomp.control:Installed-Size: 19441
+/usr/lib/opkg/info/procd-ujail.control:Installed-Size: 44104
+/usr/lib/opkg/info/procd.control:Installed-Size: 63712
+/usr/lib/opkg/info/qca-acfg.control:Installed-Size: 219277
+/usr/lib/opkg/info/qca-cfg80211.control:Installed-Size: 9149
+/usr/lib/opkg/info/qca-cfg80211tool.control:Installed-Size: 35380
+/usr/lib/opkg/info/qca-cnss-daemon.control:Installed-Size: 20684
+/usr/lib/opkg/info/qca-diag.control:Installed-Size: 125971
+/usr/lib/opkg/info/qca-hapd-supp-macsec.control:Installed-Size: 1416876
+/usr/lib/opkg/info/qca-hapd-supp.control:Installed-Size: 1586515
+/usr/lib/opkg/info/qca-hostapd-cli.control:Installed-Size: 41779
+/usr/lib/opkg/info/qca-icm.control:Installed-Size: 118947
+/usr/lib/opkg/info/qca-iface-mgr.control:Installed-Size: 45432
+/usr/lib/opkg/info/qca-lowi.control:Installed-Size: 584292
+/usr/lib/opkg/info/qca-mcs-apps.control:Installed-Size: 46112
+/usr/lib/opkg/info/qca-nsm-app.control:Installed-Size: 4079
+/usr/lib/opkg/info/qca-nsm-lib.control:Installed-Size: 3880
+/usr/lib/opkg/info/qca-qmi-framework.control:Installed-Size: 59896
+/usr/lib/opkg/info/qca-sal-qos-test.control:Installed-Size: 3187
+/usr/lib/opkg/info/qca-sal-qos.control:Installed-Size: 2972
+/usr/lib/opkg/info/qca-sal-rule-test.control:Installed-Size: 6225
+/usr/lib/opkg/info/qca-sal-rule.control:Installed-Size: 5036
+/usr/lib/opkg/info/qca-spectral.control:Installed-Size: 33528
+/usr/lib/opkg/info/qca-ssdk-shell.control:Installed-Size: 308827
+/usr/lib/opkg/info/qca-thermald.control:Installed-Size: 21259
+/usr/lib/opkg/info/qca-wifi-scripts.control:Installed-Size: 6961
+/usr/lib/opkg/info/qca-wlanfw-upgrade.control:Installed-Size: 2040
+/usr/lib/opkg/info/qca-wpa-cli.control:Installed-Size: 58512
+/usr/lib/opkg/info/qca-wrapd.control:Installed-Size: 51861
+/usr/lib/opkg/info/qti-encrypt.control:Installed-Size: 688795
+/usr/lib/opkg/info/qti-license-pfm.control:Installed-Size: 1630
+/usr/lib/opkg/info/qti-mfg-provision.control:Installed-Size: 3739
+/usr/lib/opkg/info/qti-softsku-license-loader-libs.control:Installed-Size: 24846
+/usr/lib/opkg/info/relayd.control:Installed-Size: 12124
+/usr/lib/opkg/info/resolveip.control:Installed-Size: 1966
+/usr/lib/opkg/info/rng-tools.control:Installed-Size: 46068
+/usr/lib/opkg/info/rp-pppoe-common.control:Installed-Size: 414
+/usr/lib/opkg/info/rp-pppoe-server.control:Installed-Size: 26804
+/usr/lib/opkg/info/rpcd-mod-file.control:Installed-Size: 7843
+/usr/lib/opkg/info/rpcd-mod-iwinfo.control:Installed-Size: 7982
+/usr/lib/opkg/info/rpcd-mod-luci.control:Installed-Size: 14788
+/usr/lib/opkg/info/rpcd-mod-rrdns.control:Installed-Size: 4213
+/usr/lib/opkg/info/rpcd-mod-ucode.control:Installed-Size: 8270
+/usr/lib/opkg/info/rpcd.control:Installed-Size: 27918
+/usr/lib/opkg/info/rstp.control:Installed-Size: 62822
+/usr/lib/opkg/info/rtty-openssl.control:Installed-Size: 26339
+/usr/lib/opkg/info/samba4-libs.control:Installed-Size: 9377980
+/usr/lib/opkg/info/samba4-server.control:Installed-Size: 251925
+/usr/lib/opkg/info/samba4-utils.control:Installed-Size: 34036
+/usr/lib/opkg/info/smstools3.control:Installed-Size: 150720
+/usr/lib/opkg/info/squashfs4.control:Installed-Size: 86576
+/usr/lib/opkg/info/ssmtp.control:Installed-Size: 13456
+/usr/lib/opkg/info/stubby.control:Installed-Size: 22024
+/usr/lib/opkg/info/sudo.control:Installed-Size: 513216
+/usr/lib/opkg/info/swconfig.control:Installed-Size: 10332
+/usr/lib/opkg/info/sysstat.control:Installed-Size: 327637
+/usr/lib/opkg/info/sysupgrade-helper.control:Installed-Size: 142750
+/usr/lib/opkg/info/tailscale.control:Installed-Size: 9443955
+/usr/lib/opkg/info/tayga.control:Installed-Size: 21360
+/usr/lib/opkg/info/tc-full.control:Installed-Size: 205464
+/usr/lib/opkg/info/tc-mod-iptables.control:Installed-Size: 3779
+/usr/lib/opkg/info/tcpdump.control:Installed-Size: 408872
+/usr/lib/opkg/info/terminfo.control:Installed-Size: 8200
+/usr/lib/opkg/info/tor-geoip.control:Installed-Size: 1282086
+/usr/lib/opkg/info/tor.control:Installed-Size: 1421004
+/usr/lib/opkg/info/ubi-utils.control:Installed-Size: 116069
+/usr/lib/opkg/info/uboot-envtools.control:Installed-Size: 17395
+/usr/lib/opkg/info/ubox.control:Installed-Size: 20054
+/usr/lib/opkg/info/ubus.control:Installed-Size: 6995
+/usr/lib/opkg/info/ubusd.control:Installed-Size: 13806
+/usr/lib/opkg/info/uci.control:Installed-Size: 7550
+/usr/lib/opkg/info/uclient-fetch.control:Installed-Size: 7940
+/usr/lib/opkg/info/ucode-mod-fs.control:Installed-Size: 10808
+/usr/lib/opkg/info/ucode-mod-html.control:Installed-Size: 31846
+/usr/lib/opkg/info/ucode-mod-lua.control:Installed-Size: 9587
+/usr/lib/opkg/info/ucode-mod-math.control:Installed-Size: 2864
+/usr/lib/opkg/info/ucode-mod-ubus.control:Installed-Size: 15360
+/usr/lib/opkg/info/ucode-mod-uci.control:Installed-Size: 7837
+/usr/lib/opkg/info/ucode.control:Installed-Size: 6790
+/usr/lib/opkg/info/uhttpd-mod-ubus.control:Installed-Size: 8984
+/usr/lib/opkg/info/uhttpd.control:Installed-Size: 31256
+/usr/lib/opkg/info/unzip.control:Installed-Size: 120928
+/usr/lib/opkg/info/uqmi.control:Installed-Size: 53036
+/usr/lib/opkg/info/urandom-seed.control:Installed-Size: 830
+/usr/lib/opkg/info/urngd.control:Installed-Size: 8061
+/usr/lib/opkg/info/usb-modeswitch.control:Installed-Size: 14358
+/usr/lib/opkg/info/usbmuxd.control:Installed-Size: 34197
+/usr/lib/opkg/info/usign.control:Installed-Size: 12676
+/usr/lib/opkg/info/vsftpd-tls.control:Installed-Size: 65357
+/usr/lib/opkg/info/vxlan.control:Installed-Size: 1452
+/usr/lib/opkg/info/wififw_mount_script.control:Installed-Size: 5273
+/usr/lib/opkg/info/wireguard-tools.control:Installed-Size: 28899
+/usr/lib/opkg/info/wireless-regdb.control:Installed-Size: 2462
+/usr/lib/opkg/info/wireless-tools.control:Installed-Size: 27209
+/usr/lib/opkg/info/wsdd2.control:Installed-Size: 21230
+/usr/lib/opkg/info/wwan.control:Installed-Size: 10030
+/usr/lib/opkg/info/xtables-nft.control:Installed-Size: 84839
+/usr/lib/opkg/info/zerotier.control:Installed-Size: 563801
+/usr/lib/opkg/info/zlib.control:Installed-Size: 36460
+/usr/lib/opkg/info/zoneinfo-africa.control:Installed-Size: 8532
+/usr/lib/opkg/info/zoneinfo-america.control:Installed-Size: 87280
+/usr/lib/opkg/info/zoneinfo-asia.control:Installed-Size: 30625
+/usr/lib/opkg/info/zoneinfo-atlantic.control:Installed-Size: 5793
+/usr/lib/opkg/info/zoneinfo-australia-nz.control:Installed-Size: 6687
+/usr/lib/opkg/info/zoneinfo-core.control:Installed-Size: 20176
+/usr/lib/opkg/info/zoneinfo-europe.control:Installed-Size: 21706
+/usr/lib/opkg/info/zoneinfo-indian.control:Installed-Size: 940
+/usr/lib/opkg/info/zoneinfo-pacific.control:Installed-Size: 6660
+/usr/lib/opkg/info/zoneinfo-poles.control:Installed-Size: 5043
+/usr/lib/opkg/info/zoneinfo-simple.control:Installed-Size: 16827
