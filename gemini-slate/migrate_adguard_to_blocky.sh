@@ -55,6 +55,10 @@ upstream:
     - 1.1.1.2 # Cloudflare Security
     - 9.9.9.9 # Quad9 Security
 
+bootstrapDns:
+  - 1.1.1.1
+  - 8.8.8.8
+
 blocking:
   refreshPeriod: 4h
   downloadTimeout: 5m
