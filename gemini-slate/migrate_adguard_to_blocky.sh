@@ -67,21 +67,16 @@ blocking:
   blackLists:
     # --- Max Security & Privacy ---
     
-    # 1. Hagezi Ultimate (Aggressive General + Trackers)
+    # 1. Hagezi Ultimate (Aggressive General + Trackers + 1Hosts + Telemetry)
+    # WARNING: May break Facebook/Instagram
     hagezi_ultimate:
       - https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/ultimate.txt
     
-    # 2. 1Hosts Pro (Strict Ad/Tracking)
-    one_hosts_pro:
-      - https://raw.githubusercontent.com/badmojr/1Hosts/master/Pro/domains.wildcards
-
-    # 3. Dedicated Telemetry & Spyware
-    tiuxo_telemetry:
-      - https://raw.githubusercontent.com/tiuxo/hosts/master/telemetry
+    # 2. Windows Telemetry
     crazy_max_windows_spy:
       - https://raw.githubusercontent.com/crazy-max/WindowsSpyBlocker/master/data/hosts/spy.txt
 
-    # 4. Security (Malware/Phishing)
+    # 3. Security (Malware/Phishing)
     security_tif:
       - https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/tif.medium.txt
     malware_urlhaus:
@@ -92,8 +87,6 @@ blocking:
   clientGroupsBlock:
     default:
       - hagezi_ultimate
-      - one_hosts_pro
-      - tiuxo_telemetry
       - crazy_max_windows_spy
       - security_tif
       - malware_urlhaus
