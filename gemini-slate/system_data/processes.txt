@@ -1,0 +1,170 @@
+  PID USER       VSZ STAT COMMAND
+    1 root      1976 S    /sbin/procd
+    2 root         0 SW   [kthreadd]
+    3 root         0 IW<  [rcu_gp]
+    4 root         0 IW<  [rcu_par_gp]
+    8 root         0 IW<  [mm_percpu_wq]
+    9 root         0 SW   [ksoftirqd/0]
+   10 root         0 IW   [rcu_preempt]
+   11 root         0 SW   [migration/0]
+   12 root         0 SW   [cpuhp/0]
+   13 root         0 SW   [cpuhp/1]
+   14 root         0 SW   [migration/1]
+   15 root         0 SW   [ksoftirqd/1]
+   17 root         0 IW<  [kworker/1:0H-ev]
+   18 root         0 SW   [cpuhp/2]
+   19 root         0 SW   [migration/2]
+   20 root         0 SW   [ksoftirqd/2]
+   22 root         0 IW<  [kworker/2:0H-ev]
+   23 root         0 SW   [cpuhp/3]
+   24 root         0 SW   [migration/3]
+   25 root         0 SW   [ksoftirqd/3]
+   26 root         0 IW   [kworker/3:0-eve]
+   27 root         0 IW<  [kworker/3:0H-ev]
+   28 root         0 IW<  [netns]
+   29 root         0 SW   [rcu_tasks_kthre]
+   30 root         0 IW   [kworker/0:1-eve]
+   31 root         0 SW   [oom_reaper]
+   32 root         0 IW<  [writeback]
+   33 root         0 SW   [kcompactd0]
+   46 root         0 IW<  [cryptd]
+   74 root         0 IW<  [kblockd]
+   75 root         0 IW<  [blkcg_punt_bio]
+   76 root         0 IW<  [kworker/u9:0]
+   77 root         0 SW   [watchdogd]
+   78 root         0 IW   [kworker/1:1-eve]
+  134 root         0 SW   [kswapd0]
+  135 root         0 IW   [kworker/2:1-eve]
+  137 root         0 IW<  [kthrotld]
+  138 root         0 SW   [irq/93-smp2p]
+  139 root         0 SW   [hwrng]
+  141 root         0 IW<  [nvme-wq]
+  142 root         0 IW<  [nvme-reset-wq]
+  143 root         0 IW<  [nvme-delete-wq]
+  144 root         0 IW<  [kworker/0:1H-ev]
+  145 root         0 SW   [spi0]
+  148 root         0 IW   [kworker/1:2-rcu]
+  149 root         0 SW   [irq/94-q6v5 wdo]
+  150 root         0 IW<  [ipv6_addrconf]
+  151 root         0 IW<  [dsa_ordered]
+  152 root         0 SW   [ubi_bgt0d]
+  158 root         0 IW   [kworker/0:2-eve]
+  159 root         0 SW   [irq/114-soc:gpi]
+  160 root         0 SW   [irq/115-soc:gpi]
+  161 root         0 IW<  [ata_sff]
+  166 root         0 IW<  [uas]
+  286 root         0 IW   [kworker/2:2-rcu]
+  289 root         0 SW   [ubifs_bgt0_3]
+  374 ubus      1396 S    /sbin/ubusd
+  379 root       920 S    /sbin/askfirst /usr/libexec/login.sh
+  443 root      6324 S    /sbin/rngd -f -r /dev/hwrng
+  496 root      1076 S    /sbin/urngd
+  500 root         0 IW<  [kworker/3:2H-kb]
+  520 root         0 IW   [kworker/u8:1-wm]
+  567 root      4056 S    /usr/bin/cnssdaemon -s
+  595 root         0 IW   [kworker/u8:3-ec]
+  604 root         0 SW   [kworker/u8:2+WC]
+  722 root         0 Z    [modem_sim_statu]
+  725 root      1460 S    /bin/ash -c sleep 40; /usr/bin/modem_sim_status_check.sh
+  727 root      1460 S    /bin/ash -c sleep 50; /usr/bin/modem_sim_status_check.sh
+  729 root      1452 S    sleep 40
+  732 root      1452 S    sleep 50
+  759 root      1380 S    /usr/sbin/dropbear -F -P /var/run/dropbear.main.pid -p 22 -K 300 -T 3 -W 262144 -2 9
+  772 root      1460 R    ps w
+  936 root      1200 S    /usr/bin/fcgiwrap -c 4 -s unix:/var/run/fcgiwrap.socket
+  969 root      1200 S    /usr/bin/fcgiwrap -c 4 -s unix:/var/run/fcgiwrap.socket
+  970 root      1200 S    /usr/bin/fcgiwrap -c 4 -s unix:/var/run/fcgiwrap.socket
+  971 root      1200 S    /usr/bin/fcgiwrap -c 4 -s unix:/var/run/fcgiwrap.socket
+  972 root      1200 S    /usr/bin/fcgiwrap -c 4 -s unix:/var/run/fcgiwrap.socket
+ 1006 root      5940 S    eco /usr/sbin/gl-ngx-session
+ 1079 root      1852 S    /usr/sbin/acfg_tool -e -s -t 192.168.1.2
+ 1166 root         0 IW<  [bond0]
+ 1751 root         0 IW<  [cfg80211]
+ 1754 root         0 IW   [kworker/3:3-eve]
+ 1825 root         0 IW<  [diag_real_time_]
+ 1826 root         0 IW<  [diag_wq]
+ 1827 root         0 IW<  [DIAG_USB_diag]
+ 1828 root         0 IW<  [diag_cntl_wq]
+ 1829 root         0 IW<  [diag_dci_wq]
+ 1830 root         0 IW<  [WCNSS_CNTL]
+ 1831 root         0 IW<  [WCNSS_DATA]
+ 1832 root         0 IW<  [WCNSS_CMD]
+ 1833 root         0 IW<  [WCNSS_DCI]
+ 1834 root         0 IW<  [WCNSS_DCI_CMD]
+ 1835 root         0 IW<  [DIAG_RPMSG_DIAG]
+ 1836 root         0 IW<  [DIAG_RPMSG_DIAG]
+ 1837 root         0 IW<  [DIAG_RPMSG_DIAG]
+ 1838 root         0 IW<  [DIAG_RPMSG_DIAG]
+ 1839 root         0 IW<  [DIAG_RPMSG_DIAG]
+ 1840 root         0 IW<  [DIAG_RPMSG_DIAG]
+ 1841 root         0 IW<  [DIAG_RPMSG_DIAG]
+ 1842 root         0 IW<  [DIAG_RPMSG_DIAG]
+ 1843 root         0 IW<  [DIAG_RPMSG_DIAG]
+ 1844 root         0 IW<  [DIAG_RPMSG_DIAG]
+ 1845 root         0 IW<  [DIAG_RPMSG_APPS]
+ 1846 root         0 IW<  [DIAG_RPMSG_APPS]
+ 1847 root         0 IW<  [DIAG_RPMSG_DIAG]
+ 1848 root         0 IW<  [DIAG_RPMSG_DIAG]
+ 1849 root         0 IW<  [DIAG_RPMSG_DIAG]
+ 1850 root         0 IW<  [DIAG_RPMSG_DIAG]
+ 1851 root         0 IW<  [DIAG_RPMSG_DIAG]
+ 1852 root         0 IW<  [DIAG_RPMSG_DIAG]
+ 1853 root         0 IW<  [DIAG_RPMSG_DIAG]
+ 1854 root         0 IW<  [DIAG_RPMSG_DIAG]
+ 1855 root         0 IW<  [diag_mhi_MDM]
+ 1856 root         0 IW<  [DIAG_USB_diag_m]
+ 1857 root         0 IW<  [diag_mhi_MDM_DC]
+ 1858 root         0 IW<  [diag_dci_MDM_DC]
+ 1859 root         0 IW<  [diag_mhi_MDM_2]
+ 1860 root         0 IW<  [DIAG_USB_diag_m]
+ 1861 root         0 IW<  [diag_mhi_MDM_DC]
+ 1862 root         0 IW<  [diag_dci_MDM_DC]
+ 1939 root         0 IW<  [ppe_qdisc_stats]
+ 1949 root         0 IW<  [wq_rtm_newneigh]
+ 2126 root         0 SW   [irq/149-cst816x]
+ 3215 root       920 S    /usr/bin/breakpad/breakpad_reporter
+ 3325 logd      1408 S    /sbin/logd -S 128
+ 3442 root      3248 S    /sbin/rpcd -s /var/run/ubus/ubus.sock -t 30
+ 3980 root      2984 S    /usr/bin/lua /usr/sbin/qca-wifi-configurator
+ 4056 root      5024 S    /usr/bin/eco /usr/sbin/gl-repeater
+ 4721 root         0 SW   [wlan_logging_th]
+ 5137 root      1356 S    /usr/sbin/dropbear -F -P /var/run/dropbear.main.pid -p 22 -K 300 -T 3 -W 262144
+ 5425 root         0 SW<  [scheduler_threa]
+ 6082 root      1072 S    /usr/bin/carrier-monitor
+ 6362 root      2180 S    /sbin/netifd
+ 6892 root         0 SW   [ECM_wifi_event]
+ 6893 root         0 IW<  [ecm_ppe_ipv4_wo]
+ 6894 root         0 IW<  [ecm_sfe_ipv4_wo]
+ 6906 root         0 IW<  [ecm_ppe_ipv6_wo]
+ 6907 root         0 IW<  [ecm_sfe_ipv6_wo]
+ 6980 root     11620 S    wpa_supplicant -g /var/run/wpa_supplicantglobal -B -P /var/run/wpa_supplicant-global.pid
+ 6982 root     12588 S    hostapd -g /var/run/hostapd/global -B -P /var/run/hostapd-global.pid -f tmp/hostapd.txt
+ 7043 root         0 SW   [qrtr_rx]
+ 7980 root      1452 S    udhcpc -p /var/run/udhcpc-eth0.pid -s /lib/netifd/dhcp.script -f -t 0 -i eth0 -x hostname:GL-BE3600 -C -R
+ 9027 root         0 IW<  [mld0]
+ 9088 root         0 IW<  [mld1]
+11876 root      1460 S    /usr/sbin/crond -f -c /tmp/gl_crontabs -l 10
+12244 root      7932 S    /usr/sbin/uhttpd -f -h /www -r GL-BE3600 -x /cgi-bin -u /ubus -t 60 -T 30 -k 20 -A 1 -n 3 -N 100 -R -p 12
+12451 root      1976 S    /usr/bin/dbus-daemon --system --nofork
+12749 nobody    2504 S    avahi-daemon: running [GL-BE3600.local]
+14450 root     18180 S<   /usr/bin/gl_screen -c /tmp/gl_screen/config
+14591 root     20440 S    nginx: master process /usr/sbin/nginx -c /etc/nginx/nginx.conf -g daemon off;
+16148 root     27076 S    nginx: worker process
+16149 root     26388 S    nginx: worker process
+16150 root     27404 S    nginx: worker process
+16154 root     26748 S    nginx: worker process
+17003 root      8248 S    /usr/bin/sms_manager
+19768 root      2776 S    {ntpd} /sbin/ujail -t 5 -n ntpd -U ntp -G ntp -C /etc/capabilities/ntpd.json -c -u -r /bin/ubus -r /usr/b
+19776 ntp       1452 S    /usr/sbin/ntpd -n -N -S /usr/sbin/ntpd-hotplug -p 0.openwrt.pool.ntp.org -p 1.openwrt.pool.ntp.org -p 2.o
+19806 root      1260 S<   /usr/sbin/thermald
+20147 root      3652 S    /usr/bin/eco /usr/bin/alarm_event_report
+20307 root     12480 S    /usr/bin/lua /usr/bin/gl_clients_update
+20376 root       928 S    /usr/bin/gl_fan -T /sys/devices/virtual/thermal/thermal_zone0/temp -D 1000 -t 75
+20856 root      2776 S    {dnsmasq} /sbin/ujail -t 5 -n dnsmasq -u -l -r /bin/ubus -r /etc/TZ -r /etc/dnsmasq.conf -r /etc/ethers -
+21153 dnsmasq   4872 S    /usr/sbin/dnsmasq -C /var/etc/dnsmasq.conf.cfg01411c -k -x /var/run/dnsmasq/dnsmasq.cfg01411c.pid
+21170 root      4860 S    /usr/sbin/dnsmasq -C /var/etc/dnsmasq.conf.cfg01411c -k -x /var/run/dnsmasq/dnsmasq.cfg01411c.pid
+25123 root         0 IW<  [kworker/0:0H-ev]
+25124 root         0 IW<  [kworker/1:1H]
+25125 root         0 IW<  [kworker/2:1H]
+31068 root         0 IW   [kworker/u8:4-ec]
+32417 root         0 IW   [kworker/u8:0-ec]
