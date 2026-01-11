@@ -74,18 +74,25 @@ blocking:
     concurrency: 4
   
   denylists:
-    # --- Max Security & Privacy ---
+    # --- ULTRA AGGRESSIVE AD BLOCKING ---
     
-    # 1. Hagezi Ultimate (Aggressive General + Trackers + 1Hosts + Telemetry)
-    # WARNING: May break Facebook/Instagram
+    # 1. Hagezi Ultimate (General + Trackers + Telemetry)
     hagezi_ultimate:
       - https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/ultimate.txt
-    
-    # 2. Windows Telemetry
+
+    # 2. 1Hosts Xtra (The 'Break Everything' List)
+    one_hosts_xtra:
+      - https://o0.pages.dev/Xtra/domains.wildcards
+
+    # 3. OISD Big (Massive coverage)
+    oisd_big:
+      - https://big.oisd.nl/
+
+    # 4. Windows/OS Telemetry
     crazy_max_windows_spy:
       - https://raw.githubusercontent.com/crazy-max/WindowsSpyBlocker/master/data/hosts/spy.txt
 
-    # 3. Security (Malware/Phishing)
+    # 5. Security (Malware/Phishing)
     security_tif:
       - https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/tif.medium.txt
     malware_urlhaus:
@@ -96,6 +103,8 @@ blocking:
   clientGroupsBlock:
     default:
       - hagezi_ultimate
+      - one_hosts_xtra
+      - oisd_big
       - crazy_max_windows_spy
       - security_tif
       - malware_urlhaus
