@@ -84,11 +84,7 @@ blocking:
     one_hosts_xtra:
       - https://o0.pages.dev/Xtra/domains.wildcards
 
-    # 3. OISD Big (Massive coverage)
-    oisd_big:
-      - https://big.oisd.nl/
-
-    # 4. Windows/OS Telemetry
+    # 3. Windows/OS Telemetry
     crazy_max_windows_spy:
       - https://raw.githubusercontent.com/crazy-max/WindowsSpyBlocker/master/data/hosts/spy.txt
 
