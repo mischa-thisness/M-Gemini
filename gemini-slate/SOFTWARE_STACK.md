@@ -4,22 +4,21 @@
 
 | Component | Developer | Version | Link | Function |
 | :--- | :--- | :--- | :--- | :--- |
-| **Firmware** | GL.iNet | v4.8 (Stable) | [GL.iNet Firmware](https://dl.gl-inet.com/) | Proprietary firmware image bundling OS, UI, and custom tools. |
-| **Operating System** | OpenWrt Community | OpenWrt 23.05 "Inception" | [OpenWrt 23.05](https://openwrt.org/releases/23.05/start) | The base embedded Linux operating system providing package management (`opkg`) and system configuration. |
+| **Firmware** | GL.iNet | v4.8.1 | [GL.iNet Firmware](https://dl.gl-inet.com/) | Proprietary firmware image bundling OS, UI, and custom tools. |
+| **Operating System** | OpenWrt Community | OpenWrt 23.05 | [OpenWrt 23.05](https://openwrt.org/releases/23.05/start) | The base embedded Linux operating system providing package management (`opkg`) and system configuration. |
 | **Kernel** | Linux Foundation / OpenWrt | 5.4.213 | [Linux Kernel](https://kernel.org) | Core system kernel managing hardware resources (CPU, Memory, Drivers). |
 
 ## Core Packages
 
-| Package Name | Developer | Version (Approx) | Link | Function |
+| Package Name | Developer | Version | Link | Function |
 | :--- | :--- | :--- | :--- | :--- |
 | `luci` | OpenWrt Community | git-23.xxx | [LuCI](https://github.com/openwrt/luci) | Standard OpenWrt web interface (Advanced Settings). |
-| `gl-sdk4-ui-*` | GL.iNet | 4.x | [GL.iNet GitHub](https://github.com/gl-inet) | GL.iNet's proprietary user-friendly admin panel interface. |
-| `wireguard-tools` | Jason A. Donenfeld | 1.0.x | [WireGuard](https://www.wireguard.com/) | Utilities for managing WireGuard VPN tunnels (kernel-space implementation). |
-| `openvpn-openssl` | OpenVPN Inc. | 2.5.x | [OpenVPN](https://openvpn.net/) | SSL VPN client/server application. |
-| `adguardhome` | AdGuard Software | v0.107.x | [AdGuard Home](https://github.com/AdguardTeam/AdGuardHome) | Network-wide ad and tracker blocking software acting as a DNS server. |
-| `tailscale` | Tailscale Inc. | 1.x | [Tailscale](https://tailscale.com/) | Mesh VPN client based on WireGuard for easy remote access. |
-| `mwan3` | OpenWrt Community | 2.10.x | [mwan3](https://openwrt.org/docs/guide-user/network/wan/multiwan/mwan3) | Multi-WAN load balancing and failover manager. |
-| `samba4-server` | Samba Team | 4.x | [Samba](https://www.samba.org/) | SMB/CIFS file server for sharing files from USB storage. |
+| `gl-sdk4-ui-*` | GL.iNet | git-2025.xxx | [GL.iNet GitHub](https://github.com/gl-inet) | GL.iNet's proprietary user-friendly admin panel interface. |
+| `wireguard-tools` | Jason A. Donenfeld | 1.0.20210424-2 | [WireGuard](https://www.wireguard.com/) | Utilities for managing WireGuard VPN tunnels. |
+| `openvpn-openssl` | OpenVPN Inc. | 2.6.12-1 | [OpenVPN](https://openvpn.net/) | SSL VPN client/server application. |
+| `adguardhome-conntrack` | AdGuard Software | 0.107.56-3 | [AdGuard Home](https://github.com/AdguardTeam/AdGuardHome) | Network-wide ad and tracker blocking software. |
+| `tailscale` | Tailscale Inc. | 1.80.3-1 | [Tailscale](https://tailscale.com/) | Mesh VPN client based on WireGuard. |
+| `samba4-server` | Samba Team | 4.18.8-1 | [Samba](https://www.samba.org/) | SMB/CIFS file server for sharing files. |
 
 ## Key Services & Daemons
 
