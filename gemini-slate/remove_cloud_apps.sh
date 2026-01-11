@@ -15,6 +15,10 @@ opkg remove gl-sdk4-ui-cloud
 echo "Removing gl-sdk4-cloud..."
 opkg remove gl-sdk4-cloud
 
+echo "Removing astrowarp..."
+opkg remove gl-sdk4-ui-astrowarp
+opkg remove astrowarp 2>/dev/null
+
 # 3. Clean up residual config
 echo "Cleaning up configuration..."
 rm -f /etc/config/gl_cloud
