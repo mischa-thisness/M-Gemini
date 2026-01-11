@@ -60,7 +60,7 @@ bootstrapDns:
   - 8.8.8.8
 
 ports:
-  dns: 5353
+  dns: 5053
   http: 4000
 
 queryLog:
@@ -136,14 +136,14 @@ chmod +x /etc/init.d/blocky
 # 5. Configure DNSmasq to forward to Blocky
 # ------------------------------------------------------------------------------
 echo "Configuring DNSmasq to use Blocky..."
-# Set dnsmasq to listen on 53 and forward to 127.0.0.1#5353
+# Set dnsmasq to listen on 53 and forward to 127.0.0.1#5053
 uci set dhcp.@dnsmasq[0].noresolv='1'
 uci delete dhcp.@dnsmasq[0].server
-uci add_list dhcp.@dnsmasq[0].server='127.0.0.1#5353'
+uci add_list dhcp.@dnsmasq[0].server='127.0.0.1#5053'
 uci commit dhcp
 
 echo "Restarting services..."
 /etc/init.d/blocky start
 /etc/init.d/dnsmasq restart
 
-echo "Migration complete. Blocky is running on port 5353, DNSmasq forwarding enabled."
+echo "Migration complete. Blocky is running on port 5053, DNSmasq forwarding enabled."
